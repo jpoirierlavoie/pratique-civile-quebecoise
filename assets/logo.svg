@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Pratique civile québécoise">
+  <!-- Balanced scales over an open civil code, 16px+ outer margin -->
+  <g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Open civil code base -->
+    <path d="M22 96 C36 90 50 90 64 96 C78 90 92 90 106 96" stroke="#4F46E5" />
+    <path d="M22 106 C36 100 50 100 64 106 C78 100 92 100 106 106" stroke="#6366F1" />
+    <line x1="64" y1="24" x2="64" y2="96" stroke="#4F46E5" />
+    <!-- Scale beam -->
+    <line x1="28" y1="34" x2="100" y2="34" stroke="#F59E0B" />
+    <circle cx="64" cy="24" r="4" stroke="#F59E0B" />
+    <!-- Left pan -->
+    <path d="M28 34 L18 62 L38 62 Z" stroke="#6366F1" />
+    <path d="M18 62 C20 71 36 71 38 62" stroke="#F59E0B" />
+    <!-- Right pan -->
+    <path d="M100 34 L90 62 L110 62 Z" stroke="#6366F1" />
+    <path d="M90 62 C92 71 108 71 110 62" stroke="#F59E0B" />
+  </g>
+</svg>

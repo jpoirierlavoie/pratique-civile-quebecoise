@@ -1,0 +1,17 @@
+{
+  "name": "pratique-civile-quebecoise",
+  "displayName": "Pratique civile québécoise",
+  "version": "1.3.0",
+  "description": "Recherche, rédaction, analyse documentaire, calendrier procédural et déontologie en droit civil et commercial québécois. Cinq compétences qui se répondent, indépendantes de tout gestionnaire de dossiers.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Vérifie le fondement juridique, les conditions d'ouverture et le délai de prescription d'un recours pour vice caché",
+    "Rédige le bloc d'allégations et les conclusions d'une demande introductive d'instance en responsabilité contractuelle",
+    "Calcule et qualifie les délais procéduraux à compter de la signification de la demande introductive d'instance"
+  ],
+  "author": {
+    "name": "Jason Poirier Lavoie"
+  },
+  "homepage": "https://github.com/jpoirierlavoie/pratique-civile-quebecoise",
+  "repository": "https://github.com/jpoirierlavoie/pratique-civile-quebecoise"
+}
