@@ -281,9 +281,3 @@ Aucune disposition trouvée dans les divisions lues sur les points suivants. **S
 | Règl. 75-76 / 78 | 75-76 : cessation **volontaire** (cession et avis par l'avocat lui-même, avant la date). 78 : **décès ou inaptitude** (désignation préalable d'un cessionnaire; avis donnés par le cessionnaire). |
 | C.p.c. 192 / 193 / 194 | 192 : **effets** du retrait, du décès ou de l'inhabilité (mise en demeure, 10 jours, suspension des actes). 193 : **déclaration d'inhabilité** à la demande d'une partie. 194 : **conditions** pour cesser d'occuper (notification avant fixation de la date d'instruction; autorisation du tribunal après). |
 | Code 51 / C.p.c. 194 | Le Code exige l'avis au client « le plus tôt possible » et, en temps utile, à l'autre partie et au tribunal, avec les raisons et un délai raisonnable. Le C.p.c. exige la notification à la partie, aux autres parties et **au greffier**, et l'autorisation du tribunal une fois la date d'instruction fixée. Les deux se cumulent; ni l'un ni l'autre ne dispense de l'autre. |
-
-Point que vous n'avez pas soulevé et que le texte impose au praticien seul : Règl. 78, désignation préalable d'un avocat cessionnaire pour le cas de décès ou d'inaptitude, faute de quoi le syndic prend possession des dossiers. C'est une obligation permanente, non une obligation de fin d'exercice.
-agentId: a24307cdae44c360a (use SendMessage with to: 'a24307cdae44c360a', summary: '<5-10 word recap>' to continue this agent)
-<usage>subagent_tokens: 136785
-tool_uses: 21
-duration_ms: 552354</usage>

@@ -68,6 +68,10 @@ BANNED_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("variable Claude $ARGUMENTS", re.compile(r"\$ARGUMENTS\b")),
     ("variable ${CLAUDE_...", re.compile(r"\$\{CLAUDE_")),
     (
+        "artefact de sous-agent (<usage> / agentId)",
+        re.compile(r"</?usage>|\bagentId:\s*[0-9a-f]+", re.I),
+    ),
+    (
         "nom d'outil de gestionnaire de dossiers",
         re.compile(
             r"\b(?:"
