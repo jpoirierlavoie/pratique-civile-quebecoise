@@ -70,20 +70,23 @@ complètement qu'un tableau isolé, et ils le font au bon moment, c'est-à-dire 
 des allégations plutôt qu'à la veille de l'audience.
 
 Lorsque la recherche n'a pas été faite, ne pas produire une note d'apparence achevée sur des
-propositions de droit non vérifiées. Rédiger en marquant chaque assise manquante, ou invoquer
-`recherche-juridique` d'abord.
+propositions de droit non vérifiées. Rédiger en marquant chaque assise manquante, ou lire
+`../recherche-juridique/SKILL.md` et exécuter d'abord la recherche proportionnelle au besoin.
 
 ## 2. La discipline de la source
 
 **Chaque proposition de droit porte sa source.** Article avec son numéro et sa date de
-consolidation; décision avec sa citation neutre vérifiée, son tribunal et sa date; doctrine avec
-son auteur, son titre et sa provenance.
+consolidation; décision avec sa citation neutre vérifiée, son tribunal, sa date et, lorsqu'un
+principe est tiré du texte, le renvoi au paragraphe (`[par. X]`) vérifié majoritaire; doctrine
+avec son auteur, son titre et sa provenance.
 
-**Calibrer l'affirmation sur ce qu'on a réellement lu.** « La Cour d'appel a jugé que »
-suppose la lecture du texte de la décision. Quand on n'a que la fiche ou le résumé, écrire « la
-fiche annonce que le tribunal a rejeté le moyen ». Quand on tient l'information d'un auteur,
-écrire « selon X, la Cour aurait retenu que ». Ce ne sont pas des faiblesses de rédaction :
-c'est l'information dont le lecteur a besoin pour décider s'il doit aller voir lui-même.
+**Calibrer l'affirmation sur ce qu'on a réellement lu.** « La Cour d'appel a jugé que… »
+suppose le statut `Lue (intégrale)` ou `Lue (extrait)` vérifié majoritaire au `[par. X]`. Dans
+une note interne d'analyse ou d'orientation, on peut toutefois exploiter des décisions `Résumée`
+ou `Rapportée` à condition d'écrire « la fiche annonce que le tribunal a rejeté le moyen » ou
+« selon X, la Cour aurait retenu que… », et de réserver le texte complet avant tout dépôt au
+tribunal. Ce ne sont pas des faiblesses de rédaction : c'est l'information dont le lecteur a
+besoin pour décider s'il doit aller voir lui-même.
 
 **Ce qui n'est pas vérifié est marqué comme tel**, dans une rubrique dédiée en fin de note
 plutôt que dilué dans le corps. Une note honnête sur ses trous est plus utile qu'une note lisse.
@@ -274,12 +277,13 @@ de délai. Il ne se rédige pas sur ce gabarit; vérifier le régime applicable 
 Les références suivent le *Manuel canadien de la référence juridique*, avec citation neutre et
 renvoi au paragraphe précis lorsqu'il s'agit d'une décision.
 
-**Aucune décision ne se cite au juge sans avoir été lue.** C'est ici que la règle du statut de
-lecture porte le plus : « la Cour d'appel a jugé que » adressé à un juge, sur la foi d'un résumé,
-est une faute professionnelle en attente d'être découverte. Une décision qui n'est connue que par
-sa fiche ou par un auteur ne va pas au plan d'argumentation — ou y va avec l'attribution exacte de
-ce qu'on en sait. Lorsque le texte d'une décision déterminante n'a pas pu être obtenu, le dire à
-l'utilisateur avant qu'il ne dépose.
+**Aucune proposition décisive ne se cite au juge sur la seule foi d'un résumé ou d'une mention
+doctrinale.** C'est ici que la règle du statut de lecture est impérative : « la Cour d'appel a
+jugé que » adressé à un juge sur la foi d'un sommaire est une faute professionnelle en attente
+d'être découverte. Au plan d'argumentation, toute décision fondant un moyen doit être au statut
+`Lue (intégrale)` ou `Lue (extrait)` avec `[par. X]` vérifié majoritaire; si une décision reste
+au statut `Résumée` ou `Rapportée`, soit la retirer du plan, soit ne la mentionner qu'avec son
+attribution exacte et l'avis explicite à l'utilisateur d'en obtenir le texte avant dépôt.
 
 Prévoir le cahier d'autorités correspondant : chaque source citée au plan doit s'y retrouver, et
 rien d'autre.

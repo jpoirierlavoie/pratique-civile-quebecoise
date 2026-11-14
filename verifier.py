@@ -10,6 +10,7 @@ ligne d'erreur par manquement sur la sortie d'erreur standard (code 1) sinon.
 
 from __future__ import annotations
 
+import ast
 import json
 import re
 import sys
@@ -86,6 +87,8 @@ BANNED_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
 _SKILL_NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
 _REF_PATH_RE = re.compile(r"references/[a-z0-9-]+\.md")
+_SCRIPT_PATH_RE = re.compile(r"scripts/[a-z0-9_-]+\.py")
+_SCRIPT_NAME_RE = re.compile(r"^[a-z0-9_]+\.py$")
 _CROSS_SKILL_RE = re.compile(
     r"(?:(?:voir|relève\s+de)\s+`?([a-z0-9]+-[a-z0-9-]+)`?|`([a-z0-9]+-[a-z0-9-]+)`)"
 )
@@ -201,13 +204,14 @@ def verifier(racine: Path) -> list[str]:
         if rel not in file_set:
             erreurs.append(f"fichier racine requis manquant : {rel}")
 
-    skill_files: list[str] = []
+    skill_md_files: list[str] = []
+    skill_script_files: list[str] = []
     for rel in files:
         if rel in ROOT_ALLOWLIST:
             continue
         parts = rel.split("/")
         if len(parts) == 3 and parts[0] == "skills" and parts[2] == "SKILL.md":
-            skill_files.append(rel)
+            skill_md_files.append(rel)
             continue
         if (
             len(parts) == 4
@@ -215,7 +219,15 @@ def verifier(racine: Path) -> list[str]:
             and parts[2] == "references"
             and parts[3].endswith(".md")
         ):
-            skill_files.append(rel)
+            skill_md_files.append(rel)
+            continue
+        if (
+            len(parts) == 4
+            and parts[0] == "skills"
+            and parts[2] == "scripts"
+            and parts[3].endswith(".py")
+        ):
+            skill_script_files.append(rel)
             continue
         erreurs.append(f"fichier hors inventaire autorisé : {rel}")
 
@@ -447,6 +459,40 @@ def verifier(racine: Path) -> list[str]:
                 + ", ".join(orphan_refs)
             )
 
+        scripts_mentioned = set(_SCRIPT_PATH_RE.findall(text))
+        scripts_dir = racine / "skills" / skill / "scripts"
+        scripts_actual: set[str] = set()
+        if scripts_dir.is_dir():
+            for p in scripts_dir.iterdir():
+                if not p.is_file():
+                    continue
+                if not _SCRIPT_NAME_RE.match(p.name):
+                    erreurs.append(
+                        f"skills/{skill}/scripts/{p.name} : nom de script invalide "
+                        "(minuscules, chiffres, '_' et '.py' requis)"
+                    )
+                    continue
+                scripts_actual.add(f"scripts/{p.name}")
+                script_rel = f"skills/{skill}/scripts/{p.name}"
+                script_src = decoded.get(script_rel)
+                if script_src is not None:
+                    try:
+                        ast.parse(script_src, filename=script_rel)
+                    except SyntaxError as exc:
+                        erreurs.append(
+                            f"{script_rel} : erreur de syntaxe Python à la ligne {exc.lineno} ({exc.msg})"
+                        )
+        missing_scripts = sorted(scripts_mentioned - scripts_actual)
+        orphan_scripts = sorted(scripts_actual - scripts_mentioned)
+        if missing_scripts:
+            erreurs.append(
+                f"{skill_rel} : scripts cités mais absents : " + ", ".join(missing_scripts)
+            )
+        if orphan_scripts:
+            erreurs.append(
+                f"{skill_rel} : scripts non cités dans SKILL.md : " + ", ".join(orphan_scripts)
+            )
+
         # Cross-skill references
         for m in _CROSS_SKILL_RE.finditer(text):
             directed = m.group(1)
@@ -470,13 +516,17 @@ def verifier(racine: Path) -> list[str]:
                 erreurs.append(f"{rel} : ancien identifiant de dépôt interdit ({slug})")
 
     # Information-contract isolation across all files in skills/
-    for rel in sorted(skill_files):
+    for rel in sorted(skill_md_files + skill_script_files):
         text = decoded.get(rel)
         if text is None:
             continue
         for label, pat in BANNED_PATTERNS:
             if pat.search(text):
                 erreurs.append(f"{rel} : {label} interdit")
+    for rel in sorted(skill_md_files):
+        text = decoded.get(rel)
+        if text is None:
+            continue
         for span in _BACKTICK_SPAN_RE.findall(text):
             m = _TOOL_SPAN_RE.match(span)
             if m and (span.endswith("_") or span.endswith("_*") or "(" in span):

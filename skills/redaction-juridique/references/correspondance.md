@@ -187,19 +187,21 @@ RECOMMANDÉ, PAR TÉLÉCOPIEUR. La signification par huissier fournit la meilleu
 réception, ce qui compte lorsque la date de la mise en demeure fixe le point de départ des
 intérêts ou d'un délai contractuel.
 
-**Réserve** : SOUS TOUTES RÉSERVES, ou WITHOUT PREJUDICE en anglais.
+**Réserve** : SOUS TOUTES RÉSERVES en français; en anglais au Québec, **UNDER ALL RESERVES** pour
+réserver les droits et recours, et **WITHOUT PREJUDICE** lorsque la lettre renferme une offre ou
+des pourparlers de règlement.
 
-Une nuance à ne pas écraser : « sous toutes réserves » exprime au Québec la réserve des droits
-et recours, et sert aussi de marqueur de confidentialité des pourparlers transactionnels. Ce
-n'est pas exactement le *without prejudice* de common law, qui est d'abord une règle de
-privilège de règlement. Le marquage n'est pas magique : ce qui protège les pourparlers est leur
-nature transactionnelle, pas la mention. Une lettre qui ne contient aucune offre n'est pas
-protégée parce qu'on y a inscrit la mention, et une lettre qui contient une offre l'est
-largement même sans elle.
+Une nuance à ne pas écraser : « sous toutes réserves » (et *under all reserves*) exprime au
+Québec la réserve générale des droits et recours, tandis que *without prejudice* relève d'abord du
+privilège de règlement sur les pourparlers transactionnels. Le marquage n'est pas magique : ce
+qui protège les pourparlers est leur nature transactionnelle, pas la mention. Une lettre qui ne
+contient aucune offre n'est pas protégée parce qu'on y a inscrit la mention, et une lettre qui
+contient une offre l'est largement même sans elle.
 
-Ne pas inscrire « SOUS TOUTES RÉSERVES » sur une mise en demeure qu'on entend produire en
-preuve pour établir la demeure. C'est une contradiction fréquente : on marque la lettre comme
-confidentielle et on veut ensuite la déposer.
+Ne pas inscrire « SOUS TOUTES RÉSERVES », « UNDER ALL RESERVES » ni « WITHOUT PREJUDICE » sur une
+mise en demeure qu'on entend produire en preuve pour établir la demeure. C'est une contradiction
+fréquente : on marque la lettre comme confidentielle ou réservée alors qu'on veut ensuite la
+déposer au tribunal.
 
 ## 8. Marqueurs de contamination propres à la correspondance
 
@@ -210,11 +212,12 @@ singulier pour désigner une lettre; « recommandé avec accusé de réception �
 Québec « courrier recommandé »; la mention « LRAR »; « votre courrier du » plutôt que « votre
 lettre du ».
 
-**Common law** : *cease and desist letter*; *without prejudice save as to costs*, qui renvoie à
-une pratique anglaise; *demand letter* traduit en « lettre de demande » plutôt que mise en
-demeure; *we are instructed by our client that*, calque de « nous sommes chargés »; *kindly*
-employé comme adverbe de politesse; *please be advised that*; *herein*, *hereto*, *aforesaid*;
-*time is of the essence* dans un ultimatum.
+**Common law** : *cease and desist letter* (en anglais au Québec : *extrajudicial demand*,
+*formal notice* ou *mise en demeure*); *without prejudice save as to costs*, qui renvoie à une
+pratique anglaise; *demand letter* traduit en « lettre de demande » plutôt que mise en demeure;
+*we are instructed by our client that*, calque de « nous sommes chargés »; *kindly* employé comme
+adverbe de politesse; *please be advised that*; *herein*, *hereto*, *aforesaid*; *time is of the
+essence* dans un ultimatum.
 
 **Registre américain** : les majuscules d'emphase, les points d'exclamation, les adverbes
 d'indignation, l'annonce de dommages punitifs, l'annonce d'un montant de réclamation

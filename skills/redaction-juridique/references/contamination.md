@@ -108,12 +108,17 @@ son auteur. La rédaction québécoise laisse les faits porter le poids.
 | Signification par acte d'huissier de justice | Signification par huissier |
 | Sous huitaine, sous quinzaine | Dans un délai de huit (8) jours, de quinze (15) jours |
 
+*En rédaction française : les termes de la table suivante sont des anglicismes ou réflexes de
+common law à proscrire en français. En rédaction anglaise devant un tribunal québécois,
+*pleading* (art. 99 C.p.c.) et *affidavit* (art. 105 C.p.c.) sont des termes officiels du Code
+(section 9).*
+
 | Marqueur de common law | Québec |
 |---|---|
-| Statement of claim, claim | Demande introductive d'instance |
-| Pleadings | Actes de procédure |
-| Motion, notice of motion | Demande, demande en cours d'instance |
-| Affidavit | Déclaration sous serment |
+| Statement of claim, claim | Demande introductive d'instance (en anglais : *originating application*) |
+| Pleadings | Actes de procédure (en français; en anglais, *pleading* est officiel, art. 99 C.p.c.) |
+| Motion, notice of motion | Demande, demande en cours d'instance (en anglais : *application*) |
+| Affidavit | Déclaration sous serment (en français; en anglais, *affidavit* est officiel, art. 105 C.p.c.) |
 | Examination for discovery, discovery | Interrogatoire préalable à l'instruction |
 | Particulars | Précisions |
 | Prayer for relief | Conclusions |
@@ -135,7 +140,7 @@ son auteur. La rédaction québécoise laisse les faits porter le poids.
 | Tort, tortfeasor | Responsabilité extracontractuelle; auteur de la faute |
 | Consideration | N'existe pas; art. 1385 C.c.Q. |
 | Estoppel, promissory estoppel | Fin de non-recevoir |
-| Specific performance | Exécution en nature, art. 1601 C.c.Q. |
+| Specific performance | Exécution en nature, art. 1601 C.c.Q. (en anglais, *specific performance* est le terme officiel de l'art. 1601 C.c.Q.) |
 | Punitive damages, exemplary damages | Dommages-intérêts punitifs, seulement où la loi les prévoit, art. 1621 C.c.Q. |
 | Liquidated damages | Clause pénale |
 | Fiduciary duty | Obligations de l'administrateur du bien d'autrui; devoir de loyauté |
@@ -156,21 +161,21 @@ son auteur. La rédaction québécoise laisse les faits porter le poids.
 
 ## 6. Lexique de substitution
 
-À appliquer en rédaction anglaise pour un forum québécois — les termes québécois se conservent,
-ils ne se traduisent pas.
+À appliquer en rédaction anglaise pour un forum québécois : employer la terminologie officielle
+des versions anglaises du C.c.Q. et du C.p.c. (section 9) plutôt que des calques de common law.
 
 | Ne pas écrire | Écrire |
 |---|---|
-| Statement of claim | Originating application / demande introductive d'instance |
-| Cease and desist letter | Mise en demeure (le terme se conserve en anglais) |
-| Defence pleading | Defence / défense |
-| Prayer for relief | Conclusions |
-| Exhibit A, Exhibit 1 | Exhibit P-1 (côté demande), D-1 (côté défense) |
-| Without prejudice | Sous toutes réserves (les deux se rencontrent; conserver l'usage du cabinet) |
-| Hold harmless and indemnify | Indemnify and take up the defence / garantir et prendre fait et cause |
-| Severability | La divisibilité étant supplétive (art. 1438 C.c.Q.), la clause est facultative |
-| Consideration clause | Retirer |
-| Best efforts | Obligation de moyens, à qualifier explicitement |
+| Statement of claim | *Originating application* (art. 141 C.p.c.) |
+| Cease and desist letter | *Extrajudicial demand* (art. 1595 C.c.Q.), *formal notice* ou *mise en demeure* |
+| Statement of defence, defence pleading | *Defence* (art. 170 C.p.c.); *pleading* (art. 99 C.p.c.) demeure valide au sens général d'acte de procédure |
+| Prayer for relief | *Conclusions* (terme officiel en anglais au C.p.c.) |
+| Exhibit A, Exhibit 1 | *Exhibit P-1* (côté demande), *D-1* (côté défense) |
+| Without prejudice (pour réserver ses droits) | *UNDER ALL RESERVES* (réserve de droits); réserver *WITHOUT PREJUDICE* aux pourparlers de règlement (privilège transactionnel), et omettre les deux sur une mise en demeure produite |
+| Hold harmless and indemnify | *Indemnify and take up the defence* (garantir et prendre fait et cause) |
+| Severability clause | *Divisibility* — clause facultative puisque la divisibilité partielle est supplétive (art. 1438 C.c.Q.) |
+| Consideration clause | Retirer (le contrat se forme par le seul échange de consentement, art. 1385 C.c.Q.) |
+| Best efforts | Préciser explicitement comme *obligation of means* (moyens) ou *obligation of result* (résultat) |
 
 ## 7. Faux amis
 
@@ -283,9 +288,10 @@ pour un terme absent de la table, appeler l'article.
 
 **Ce qui reste contaminé en anglais.** *Statement of claim*, *motion* (pour une demande),
 *discovery*, *limitation period*, *tort*, *duty of care*, *consideration*, *estoppel*, *cease and
-desist*, *without prejudice* au sens de réserve de droits — aucun n'est dans une version officielle
-québécoise, et chacun signale un modèle de common law. Les remplacer par le terme officiel de la
-table, ou l'aller chercher.
+desist*, *without prejudice* employé comme simple réserve générale de droits plutôt que *under all
+reserves* — aucun ne reflète le vocabulaire officiel du C.c.Q. ou du C.p.c., et chacun signale
+un modèle de common law. À l'inverse, *pleading*, *affidavit*, *specific performance* et
+*extrajudicial demand* appartiennent bien aux versions anglaises officielles du droit québécois.
 
 **Ce que la table ne règle pas.** Les désignations des parties (*plaintiff*, *defendant*,
 *applicant*) suivent la version anglaise du Code pour l'acte en cause; les formules consacrées

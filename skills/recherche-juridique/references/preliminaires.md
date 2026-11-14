@@ -1,8 +1,16 @@
 # La passe des préalables
 
-À exécuter pour **toute** question de fond, quelle que soit la question posée, et à écrire même
-quand une rubrique est vide. Un préalable non vérifié est un préalable manqué, et c'est ce qui
-tue les dossiers.
+Un préalable non vérifié est un préalable manqué, et c'est ce qui tue les dossiers. L'étendue de
+la passe et de son écriture suit le palier du livrable (voir `SKILL.md` et
+`references/livrables.md`) :
+
+- **Vérification ponctuelle** (question ciblée sur un article, une citation ou une définition) :
+  contrôler mentalement s'il existe un piège temporel ou de compétence; n'écrire un préalable que
+  si quelque chose mord.
+- **Fiche** : contrôler les quatre rubriques et n'écrire de façon compacte que celles qui
+  s'appliquent (plus le délai/prescription s'il est pertinent).
+- **Note de recherche** (et avis sur dossier réel avant procédure) : exécuter et écrire
+  intégralement la grille à quatre rubriques, même quand une rubrique est vide.
 
 ## Table des matières
 
@@ -93,7 +101,7 @@ au moment du rejet, et non trois mois plus tard.
 | Article C.p.c. | Objet |
 |---|---|
 | 33 | La Cour supérieure est le tribunal de droit commun; compétence sur toute demande que la loi n'attribue pas formellement et exclusivement ailleurs; **seule compétente** pour les actions collectives et les demandes d'injonction |
-| 35 | Cour du Québec : compétence **exclusive** sous 75 000 $, **concurrente** de 75 000 $ à moins de 100 000 $ au choix du demandeur, hors intérêts; indexation par tranches de 5 000 $ publiée à la *Gazette officielle* |
+| 35 | Cour du Québec : compétence **exclusive** sous 75 000 $, **concurrente** de 75 000 $ à moins de 100 000 $ au choix du demandeur, hors intérêts; indexation par tranches de 5 000 $ publiée à la *Gazette officielle*. En Cour du Québec, toute demande visée par l'art. 35 (< 100 000 $) relève du **régime simplifié (art. 535.1 à 535.15)** : aucun protocole (535.2), demande <= 5 pages (535.3), séquence fixe sur l'avis d'assignation et expertise commune obligatoire sous 50 000 $ (535.15) |
 | 41 | **Règle principale** de compétence territoriale : domicile du défendeur; à défaut de domicile au Québec, résidence, établissement d'une personne morale ou lieu de ses biens; domicile élu ou for conventionnel si l'ordre public le permet, **sauf contrat d'adhésion** |
 | 42 | **Fors additionnels, au choix du demandeur** : lieu de conclusion du contrat en matière d'exécution contractuelle; lieu du fait générateur ou d'un lieu du préjudice en matière extracontractuelle; lieu de l'immeuble |
 | 51 | Abus de procédure, déclarable d'office, sans égard à l'intention |
@@ -104,7 +112,10 @@ au moment du rejet, et non trois mois plus tard.
 
 **Attention au seuil de l'article 35.** Il monte par indexation. Toute conclusion, tout gabarit
 ou toute note qui énonce un autre chiffre est à corriger après vérification. C'est l'exemple type
-du nombre qui dérive.
+du nombre qui dérive. Dans la tranche concurrente (75 000 $ à moins de 100 000 $), le choix du
+forum dicte aussi la procédure : la Cour du Québec entraîne automatiquement le régime simplifié
+des articles 535.1 à 535.15 (sans protocole, plafonds de pages et interrogatoires limités), alors
+que la Cour supérieure suit l'instance ordinaire.
 
 **Attention à la confusion 41/42.** Le domicile du défendeur relève de l'article 41. L'article 42
 n'ajoute que trois fors, au choix du demandeur. Citer 42 pour le domicile est une erreur visible.

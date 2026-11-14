@@ -1,17 +1,15 @@
 ---
 name: calendrier-procedural
 description: >-
-  Construire et vérifier le calendrier d'une instance civile québécoise : depuis une date
-  d'ancrage — signification, notification, jugement, avis de jugement, acceptation du protocole —,
-  dérouler la chaîne des délais du Code de procédure civile, compter chaque délai selon l'art. 83,
-  le qualifier (rigueur, ordinaire, conventionnel, judiciaire) et dire ce que son dépassement
-  emporte. Utiliser dès qu'une date de procédure est en jeu — réponse, protocole, mise en état,
-  inscription, communication des pièces, appel, rétractation, cessation d'occuper —, dès qu'il
-  faut savoir si un délai est échu ou combien il reste, et chaque fois qu'un document daté fait
-  courir quelque chose, même sans qu'on le demande. Amorces — quel est le délai, jusqu'à quand,
-  est-ce échu, combien de jours reste-t-il, calcule l'échéance, délai de rigueur. En anglais —
-  deadline, time limit, when is it due, strict time limit, days left. Ne pas utiliser pour la
-  prescription, qui relève de recherche-juridique, ni pour inscrire une échéance.
+  Construire et vérifier le calendrier d'une instance civile québécoise (régime ordinaire,
+  Cour du Québec art. 535.1 s., appel) : depuis une date d'ancrage — signification, avis
+  d'assignation, notification, jugement, acceptation du protocole —, dérouler la chaîne des
+  délais du C.p.c., compter selon l'art. 83, qualifier le délai et dire ce que son dépassement
+  emporte. Utiliser dès qu'une date de procédure est en jeu, lorsqu'une pièce datée est relevée
+  par analyse-documentaire, ou avant de rédiger avec redaction-juridique. Amorces — quel est le
+  délai, jusqu'à quand, est-ce échu, combien de jours reste-t-il, calcule l'échéance, délai de
+  rigueur. En anglais — deadline, time limit, when is it due, strict time limit, days left. Ne pas
+  utiliser pour la prescription, qui relève de recherche-juridique, ni pour inscrire une échéance.
 ---
 
 # Calendrier procédural
@@ -48,11 +46,21 @@ jugement rendu sur une demande issue d'une scission n'est appelable qu'à compte
 jugement qui met fin à l'instance (art. 211 al. 2). Si l'ancrage n'est pas établi par une pièce,
 le dire et le marquer.
 
-**2. Identifier le régime.** Le forum et la matière commandent des délais différents : le protocole
-se dépose dans les 45 jours, ou dans les trois mois en matière familiale; la mise en état se fait
-dans les six mois, ou dans un an en matière familiale. Les règlements de pratique du tribunal et du
-district s'ajoutent au Code : les lire à la source pour l'instance en cause, ils ne sont pas
-reproduits ici.
+**2. Identifier le régime.** Le forum et la matière commandent des chaînes différentes :
+
+- **Instance ordinaire en Cour supérieure (ou matière dépassant le seuil de l'art. 535.1).** Le
+  protocole se dépose dans les 45 jours, ou dans les trois mois en matière familiale; la mise en
+  état se fait dans les six mois, ou dans un an en matière familiale.
+- **Régime simplifié devant la Cour du Québec (art. 535.1 à 535.15 C.p.c.).** S'applique de plein
+  droit à toute demande visée par l'art. 35 dont la valeur est inférieure à 100 000 $ hors
+  intérêts : aucun protocole de l'instance (535.2), ancrage sur la **signification de l'avis
+  d'assignation** avec la séquence 20 / 45 / 95 / 110 / 130 à 160 jours et inscription au plus
+  tard dans les 6 mois (535.4 à 535.13). Dans la tranche concurrente (75 000 $ à moins de
+  100 000 $), le choix du demandeur déposé au greffe tranche le régime : Cour du Québec = régime
+  simplifié; Cour supérieure = protocole ordinaire.
+
+Les règlements de pratique du tribunal et du district s'ajoutent au Code : les lire à la source
+pour l'instance en cause, ils ne sont pas reproduits ici.
 
 **3. Dérouler la chaîne.** Prendre la table de `references/chaine-de-l-instance.md` et n'en
 retenir que les maillons que l'ancrage déclenche. Une chaîne complète pour une question ponctuelle
@@ -121,14 +129,16 @@ en existe une.
 ## Le périmètre
 
 Cette compétence **ne calcule pas la prescription**. Le point de départ d'un délai de prescription
-est une question de fait et de droit substantiel; il relève de `recherche-juridique`, avec la
-grille des préalables. Une échéance de prescription qu'on lui demanderait se renvoie là-bas.
+est une question de fait et de droit substantiel; il relève de `recherche-juridique` (lire
+`../recherche-juridique/SKILL.md`), avec la grille des préalables. Une échéance de prescription
+qu'on lui demanderait se renvoie là-bas.
 
 Elle **ne lit pas les règlements de pratique à la place de l'avocat** : elle dit qu'ils s'ajoutent
 au Code et lesquels s'appliquent au forum, et elle les lit à la source quand la question en dépend.
 
 Elle **n'inscrit rien** : elle propose, ligne par ligne, et l'avocat décide. Elle ne rédige pas
-l'acte que l'échéance commande — c'est `redaction-juridique`.
+l'acte que l'échéance commande — enchaîner avec `redaction-juridique` (lire
+`../redaction-juridique/SKILL.md`) si l'utilisateur demande l'acte correspondant.
 
 Elle ne verse jamais le contenu d'une pièce dans une requête de recherche web.
 
@@ -148,8 +158,10 @@ Elle ne verse jamais le contenu d'une pièce dans une requête de recherche web.
 6. **Périodes de non-siège** — aucune n'a été traitée comme une suspension.
 7. **Hors calendrier** — la prescription, les règlements de pratique et le Règlement de la Cour
    d'appel sont renvoyés là où ils vivent, en toutes lettres.
-8. **Déontologie** — toute obligation professionnelle aperçue en dressant le calendrier est
-   signalée; voir `deontologie-professionnelle`.
+8. **Déontologie** — toute obligation professionnelle aperçue concrètement en dressant le
+   calendrier (p. ex. délai échu par erreur de l'avocat, art. 48 du Code de déontologie) est
+   signalée avec lecture de `../deontologie-professionnelle/SKILL.md`; sans déclencheur concret,
+   aucune mention générique.
 
 ## Fichiers de référence
 

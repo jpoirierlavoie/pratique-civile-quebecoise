@@ -2,16 +2,15 @@
 name: analyse-documentaire
 description: >-
   Qualifier les documents d'un dossier de litige civil québécois, en lot ou pièce par pièce :
-  arrêter la nature, contrôler les mentions, établir le régime de protection; puis, selon le mode,
-  résumer une pièce et dire ce qu'elle prouve, dresser le bordereau des pièces et en contrôler la
-  cotation, ou tirer d'un lot la chronologie des événements. Utiliser dès qu'il s'agit de classer,
-  trier, qualifier ou analyser un document, une pièce, un courriel ou un lot, quel qu'en soit le
-  format (.eml, .pdf, .docx, .xlsx, image), même pour un seul; pour savoir si un document est
-  privilégié, communicable ou déposé, ou de quel moyen de preuve il relève. Amorces — classe,
-  trie, qualifie ces documents, est-ce privilégié, analyse cette pièce, que prouve ce document,
-  liste des pièces, bordereau, cotation, chronologie, ligne du temps. En anglais — classify, is
-  this privileged, review these exhibits, what does this prove, exhibit list, timeline. Ne pas
-  utiliser pour établir une règle de droit, pour rédiger, ni pour calculer un délai.
+  nature, mentions, régime de protection, résumé et force probante, bordereau, cotation et
+  chronologie. Fournit les faits établis et cotes à redaction-juridique et signale les pièces
+  datées à calendrier-procedural. Utiliser dès qu'il faut classer, trier, qualifier ou analyser
+  un document (.eml, .pdf, .docx, .xlsx, image), ou vérifier s'il est privilégié ou communicable.
+  Amorces — classe, trie, qualifie ces documents, est-ce privilégié, analyse cette pièce, que
+  prouve ce document, liste des pièces, bordereau, cotation, chronologie. En anglais — classify,
+  is this privileged, review these exhibits, what does this prove, exhibit list, timeline. Ne pas
+  utiliser pour établir une règle de droit (recherche-juridique), pour rédiger
+  (redaction-juridique), ni pour calculer un délai (calendrier-procedural).
 ---
 
 # Analyse documentaire
@@ -30,12 +29,9 @@ régime — et divergent ensuite.
 | **Bordereau** | Les pièces d'un acte à lister, coter ou contrôler; l'état de communication à établir | La liste des pièces : cote, désignation, date, régime, communiquée ou non — et les écarts de cotation |
 | **Chronologie** | Un lot dont il faut tirer la suite des événements | Une ligne par événement daté, avec sa source, ses incertitudes et ses trous |
 
-Le mode se choisit par ce qui est demandé, non par le nombre de fichiers. « Voici les douze pièces
-du client, classe-les » est du tri. « Voici le courriel du 14 mars, qu'est-ce qu'il vaut pour
-nous? » est une pièce. « Dresse la liste des pièces de la demande » est un bordereau. « Qu'est-ce
-qui s'est passé, et dans quel ordre? » est une chronologie. En cas de doute, trier d'abord, puis
-proposer le mode qui convient à ce que le tri révèle. Les modes bordereau et chronologie ont chacun
-leur fichier : `references/bordereau.md` et `references/chronologie.md`.
+Le mode suit la demande, jamais le nombre de fichiers. En cas de doute, trier d'abord puis
+proposer le mode adapté; les modes bordereau et chronologie se lisent respectivement dans
+`references/bordereau.md` et `references/chronologie.md`.
 
 ## La règle asymétrique
 
@@ -89,29 +85,22 @@ des provenances ne rendent qu'un nom et des métadonnées.
 | **Image, photographie, numérisation** | Regarder. Décrire ce qui est visible, et seulement cela | Une photographie est un élément matériel (art. 2854 à 2856 C.c.Q.), non un écrit : sa date et son auteur ne sont pas dans l'image |
 | **Métadonnées seules** | Ne pas qualifier | Demander le document ou le dire non qualifiable |
 
-**La page sans couche texte.** Rien n'est océrisé automatiquement. Sur un document accessible
-localement, rasteriser la page et la regarder; sinon, l'absence de texte est une impasse, et elle
-se signale comme telle.
+**Inspection technique locale et page sans texte.** Rien n'est océrisé automatiquement. Sur toute
+pièce locale (`.docx`, `.xlsx`, `.eml`, `.pdf`, image), exécuter d'abord `scripts/inspecter_piece.py`
+(`python scripts/inspecter_piece.py <fichier>`) pour révéler commentaires Word, révisions, formules
+et onglets cachés, `Bcc`/`X-Unsent`, chiffrement, `AUCUNE_COUCHE_TEXTE_DETECTEE` ou EXIF. Sur
+PDF sans texte, rasteriser et regarder; sinon, signaler l'impasse.
 
 ## Ce qui ne se fait jamais
 
-- **Inventer un code** hors des tables de référence. Si rien ne convient, le dire et proposer la
-  sous-nature la plus proche en le signalant.
-- **Rattacher un nom de partie à un contact du dossier.** Les noms extraits restent des chaînes
-  libres : rattacher au mauvais contact est plus grave que l'absence de rattachement, et se
-  propagerait en silence.
-- **Calculer un délai.** Reconnaître qu'un procès-verbal d'audience porte un jugement est utile —
-  un jugement rendu à l'audience fait courir les délais d'appel — mais cela se **signale**, cela ne
-  se calcule pas : le compte appartient à `calendrier-procedural`.
-- **Présenter une hypothèse comme une qualification.** Toute qualification produite ici est
-  **présumée** jusqu'à ce que l'avocat la confirme. « Acte authentique » et « public » sont des
-  qualifications à conséquences; toujours dire sur quoi elles se fondent.
-- **Confirmer soi-même.** La confirmation est un geste de l'avocat, dans son système. Ne pas la
-  demander, ne pas l'annoncer comme faite.
-- **Faire sortir le contenu d'une pièce.** Le contenu des pièces est privilégié : n'en citer que ce
-  que la tâche exige, et **jamais** dans une requête de recherche web. Un nom de partie, une
-  clause, un montant, un numéro de dossier versés dans une requête web quittent le cabinet. Pour
-  identifier un tiers ou une entreprise, demander à l'avocat.
+- **Inventer un code** hors des tables; si rien ne convient, proposer la sous-nature la plus proche.
+- **Rattacher un nom à un contact du dossier.** Les noms restent des chaînes libres.
+- **Calculer un délai.** Un jugement rendu à l'audience fait courir l'appel : le **signaler**,
+  renvoyer le calcul à `calendrier-procedural` (`../calendrier-procedural/SKILL.md`).
+- **Présenter une hypothèse comme confirmée.** Toute qualification est **présumée** jusqu'à
+  confirmation de l'avocat dans son système — ne pas confirmer ni demander confirmation.
+- **Faire sortir le contenu d'une pièce.** Le contenu est privilégié : n'en citer que l'essentiel
+  et **jamais** dans une requête web; pour identifier un tiers, demander à l'avocat.
 
 ## Les deux signalements à chercher systématiquement
 
@@ -157,27 +146,16 @@ plus tard dans une procédure.
 pièce est-elle communicable, est-elle déjà communiquée, sa production emporterait-elle renonciation
 sur un ensemble plus large. Signaler toute marque de renonciation possible.
 
-**3. Ce qu'il prouve.** Le moyen de preuve dont il relève (art. 2811 C.c.Q.), la qualification de
-l'écrit s'il en est un, la force probante qui en découle, et les obstacles de recevabilité
-prévisibles — original ou copie, intégrité d'un document technologique, déclaration d'un tiers,
-prohibition de la preuve testimoniale. Voir `references/force-probante.md`. Ce qu'il **ne** prouve
-pas mérite autant d'être écrit que ce qu'il prouve.
+**3. Ce qu'il prouve.** Moyen de preuve (art. 2811 C.c.Q.), force probante et obstacles de
+recevabilité (original, intégrité technologique, ouï-dire, preuve testimoniale) selon
+`references/force-probante.md`, en précisant aussi ce que la pièce **ne** prouve pas. Clore par le
+**statut du fait** pour `redaction-juridique` : **établi** (pièce lue faisant preuve), **rapporté**
+(relaté par un tiers/résumé) ou **absent** (non établi).
 
-Terminer la rubrique par le **statut du fait** que la pièce porte, dans le vocabulaire que
-`redaction-juridique` attend : **établi** si la pièce a été lue et qu'elle fait preuve de ce fait;
-**rapporté** si elle ne fait que le relater — déclaration d'un tiers, résumé, reconstitution;
-**absent** si la pièce ne l'établit pas du tout. C'est cette ligne qui décide si une allégation
-pourra être ferme ou devra porter un crochet.
-
-**4. Ce qu'il change.** Les conséquences pour le dossier : le fait qu'il établit ou fragilise, son
-effet sur la théorie de la cause, ce qu'il ouvre ou ferme comme moyen, ce qu'il faut aller chercher
-ensuite, et tout délai qu'il fait courir — **signalé, jamais calculé**. Si la pièce contredit ce
-que le dossier porte, le dire ici et au premier plan.
-
-Terminer par ce qui reste incertain et par la vérification qui lèverait l'incertitude.
-
-**Une pièce défavorable s'analyse comme une pièce favorable.** L'analyse qui ne trouve que ce qui
-appuie le client est un piège à retardement, et il se déclenche toujours au mauvais moment.
+**4. Ce qu'il change.** Impact sur les faits, la théorie de la cause, les moyens, les vérifications
+à suivre et tout délai déclenché (**signalé, jamais calculé**). Toute contradiction avec la fiche
+du dossier se met au premier plan, suivie de ce qui reste incertain. Une pièce défavorable s'analyse
+avec la même rigueur qu'une pièce favorable.
 
 ## Les modes bordereau et chronologie
 
@@ -196,34 +174,21 @@ son régime, jamais sur son seul nom de fichier.
 
 ## Ce qu'il faut du dossier
 
-Le besoin **INVENTAIRE** dit quels documents existent et sous quelle catégorie; le besoin **TEXTE**
-donne leur contenu, quand le système l'expose. En mode pièce, le besoin **FICHE** situe le recours
-et le forum, le besoin **THÉORIE** dit à quoi la pièce sert ou nuit, et le besoin **PARTIES**
-identifie les auteurs et destinataires — sans jamais rattacher un nom extrait à un contact.
+Les besoins **INVENTAIRE** (liste et catégorie) et **TEXTE** (contenu) guident tout tri. En mode
+pièce s'ajoutent **FICHE** (recours/forum), **THÉORIE** et **PARTIES** (sans jamais rattacher un
+nom à un contact).
 
-Le besoin **VOCABULAIRE** donne les codes qu'un système accepte en écriture; le besoin
-**INSCRIPTION** verse la qualification sur le document. Une analyse qui reste dans le fil de la
-conversation est une analyse perdue : quand le système connecté permet de l'inscrire, le proposer.
-
-**Sur un lot, la demande est l'instruction.** Quand l'avocat demande d'analyser plusieurs
-documents, il n'y a pas à confirmer chaque inscription une à une : un appel d'inscription par
-document, avec sa clé d'idempotence, et un rapport à la fin. Sur **un seul** document dont la
-nature est douteuse, proposer avant d'inscrire. Cette autorisation ne couvre que l'inscription de
-la qualification — rien d'autre.
-
-Comment servir ces besoins dépend du système — c'est l'affaire d'une compétence d'outillage, s'il
-en existe une. **Sans système connecté**, ou lorsque le système n'expose pas l'inscription d'une analyse, régime
-dégradé : l'analyse vit dans la conversation, et il faut le dire — rien n'est inscrit sur le
-document, aucune catégorie ne change, aucun cliquet de protection ne joue. Verser l'analyse en
-note au dossier reste possible **sur instruction expresse**, en sachant qu'une note n'est pas une
-qualification : elle n'est pas marquée présumée, elle ne se corrige pas depuis la conversation, et
-elle ne doit pas porter plus de contenu privilégié que la tâche n'en exige.
+Les besoins **VOCABULAIRE** et **INSCRIPTION** permettent d'inscrire la qualification présumée au
+système connecté. Sur un lot, la demande autorise l'inscription pièce par pièce (avec clé
+d'idempotence et rapport final); sur un document unique douteux, proposer d'abord. **Sans système
+connecté**, l'analyse vit dans la conversation — le signaler explicitement; une note au dossier
+n'est versée que sur instruction expresse, avec le minimum de contenu privilégié.
 
 ## Le périmètre
 
 | À portée | Tentation | Règle |
 |---|---|---|
-| Calcul de délai | Un procès-verbal portant jugement fait courir l'appel | **Signaler, jamais calculer.** Le calcul appartient à l'avocat ou à `recherche-juridique` |
+| Calcul de délai | Un procès-verbal portant jugement fait courir l'appel | **Signaler, jamais calculer.** Le calcul appartient à l'avocat ou à `calendrier-procedural` (`../calendrier-procedural/SKILL.md`) |
 | Écriture au dossier — fiche, échéance, signification, tâche | Corriger la fiche que le document contredit, inscrire la signification que le procès-verbal établit | **Hors périmètre.** Poser le signalement, proposer l'écriture prête à exécuter, ne pas l'exécuter |
 | Recherche web | Identifier un tiers, une entreprise, un expert | **Jamais avec le contenu d'une pièce** |
 | Messagerie, stockage, envoi | Transmettre, classer, renommer | **Hors périmètre.** Cette compétence lit |
@@ -233,27 +198,20 @@ La seule écriture que cette compétence propose de son propre chef est l'inscri
 qualification sur le document analysé. Rien d'autre : ni note, ni champ de dossier, ni tâche, ni
 courriel.
 
-Établir une règle de droit relève de `recherche-juridique`; les ancrages cités ici servent à
-**nommer** un document, pas à argumenter. Rédiger un texte à partir de la pièce relève de
-`redaction-juridique`.
+Établir une règle de droit relève de `recherche-juridique` (`../recherche-juridique/SKILL.md`);
+les ancrages cités ici servent à **nommer** un document, pas à argumenter. Rédiger un texte à
+partir de la pièce relève de `redaction-juridique` (`../redaction-juridique/SKILL.md`).
 
 ## Ce que les sources de droit ajoutent au tri
 
-La décomposition d'un numéro de dossier de cour (besoin **GREFFE**) en tire le palais, le district,
-le tribunal et le type de greffe. C'est ce qui fait apparaître le segment de matière — celui qui
-signale un dossier à accès restreint sous l'art. 16 C.p.c. —, et ce qui permet de contrôler un
-district ou un tribunal que l'en-tête du document contredit, divergence qui vaut un signalement.
-Trois réserves : les valeurs de segment sont une nomenclature locale, à confirmer plutôt qu'à
-mémoriser; l'outil lit une table figée à une date, sans interroger aucun registre ni plumitif; et
-il n'établit donc ni que le dossier existe, ni qu'il est actif.
+La décomposition d'un numéro de cour (besoin **GREFFE**) extrait palais, district, tribunal et
+segment de matière (signalant un accès restreint sous l'art. 16 C.p.c., ou une divergence avec
+l'en-tête) sur une table locale figée, sans confirmer que le dossier est actif.
 
-L'authentification d'une citation neutre éprouve en un appel un document qui se présente comme un
-jugement ou un arrêt. **Confirmée** conforte la nature. **Discordante** ou **introuvable** est un
-signalement, non une conclusion : projet de jugement, décision non diffusée, extrait mal recopié,
-ou pièce qui n'est pas ce qu'elle annonce. **Indéterminée** ne porte aucun constat — la
-vérification n'a pas eu lieu, et elle reste à faire. N'en jamais tirer un dispositif : ces sources
-ne rendent que des métadonnées, et la date qu'un résultat de recherche affiche peut être
-approximative.
+L'authentification d'une citation neutre éprouve un prétendu jugement : **Confirmée** conforte la
+nature; **Discordante** ou **introuvable** appelle un signalement (projet, extrait fautif ou pièce
+trompeuse); **Indéterminée** laisse la vérification à faire. Ces sources ne rendent que des
+métadonnées, jamais un dispositif.
 
 ## Contrôle avant remise
 
@@ -271,13 +229,18 @@ approximative.
    résultat est écrit même s'il est négatif.
 8. **En mode pièce** — les quatre rubriques y sont, y compris ce que la pièce ne prouve pas et ce
    qui reste incertain.
-9. **Déontologie** — toute obligation professionnelle que le lot révèle — pièce obtenue d'un tiers,
-   communication protégée reçue par erreur, preuve à conserver — est signalée; voir
-   `deontologie-professionnelle`.
+9. **Déontologie** — uniquement si une pièce révèle un déclencheur concret (pièce obtenue d'un
+   tiers, communication privilégiée reçue par erreur, preuve à conserver), lire
+   `../deontologie-professionnelle/SKILL.md` et signaler l'obligation au texte; sans déclencheur
+   concret, aucune mention générique.
 
-## Fichiers de référence
+## Fichiers de référence et outillage local
 
 À lire au besoin, un à la fois.
+
+- `scripts/inspecter_piece.py` — utilitaire local autonome en bibliothèque standard Python pour
+  inspecter métadonnées, commentaires, marques de révision, formules/onglets cachés, en-têtes de
+  courriel et couche texte PDF de pièces locales avant de les qualifier (`--json` pris en charge).
 
 - `references/natures.md` — natures et sous-natures : le vocabulaire de classification, avec son
   ancrage légal. À lire dès qu'il faut nommer un document (temps 1).

@@ -1,9 +1,10 @@
 # Les livrables
 
-Deux formats principaux — la fiche et la note de recherche — qui partagent une seule structure,
-et un format court réservé à la vérification de citations. La présentation est cartésienne : on
-sépare les sources par nature avant de les appliquer aux faits, de sorte que le lecteur voie d'où
-vient chaque proposition et puisse en contester une sans démonter le reste.
+Trois paliers gradués selon l'enjeu de la question : la **vérification ponctuelle** (question
+ciblée ou contrôle de citations), la **fiche** (question de droit d'une page) et la **note de
+recherche** (opinion développée sur dossier). La présentation est cartésienne : on sépare les
+sources par nature avant de les appliquer aux faits, de sorte que le lecteur voie d'où vient chaque
+proposition et puisse en contester une sans démonter le reste.
 
 Le plan d'argumentation ne figure plus ici : il appartient à `redaction-juridique`,
 qui en fait le mode 2 de sa note de stratégie. Ce que la recherche lui transmet, ce sont des
@@ -33,17 +34,22 @@ plusieurs, les numéroter et garder l'ordre dans tout le document.
 **Réponse courte** — trois à cinq lignes. Ce qu'on répondrait au téléphone. Si la réponse est
 incertaine, le dire ici plutôt que de le réserver aux réserves.
 
-**Préalables** — la grille de `references/preliminaires.md`, y compris les rubriques vides. Le
-délai et sa nature y figurent toujours, même quand la question ne portait pas dessus.
+**Préalables** — selon le palier (`references/preliminaires.md`) : en note de recherche, grille
+complète à quatre rubriques même vides; en fiche, rubriques actives seulement plus le délai
+applicable; en vérification ponctuelle, mention uniquement si un piège temporel ou de compétence
+mord.
 
 **Législation** — les articles, avec leur numéro, leur objet et la date de consolidation. Citer
 le texte lorsqu'il est court et déterminant; le paraphraser sinon. Indiquer quelle version
 s'applique quand la question est temporelle.
 
 **Jurisprudence** — chaque décision avec sa citation vérifiée, son tribunal, sa date et **son
-statut de lecture**. Ne jamais énoncer un ratio pour une décision qui n'est pas au statut
-« Lue ». Une décision seulement « Résumée » se présente comme telle : « la fiche annonce que le
-tribunal a rejeté le moyen d'irrecevabilité », et non « le tribunal a jugé que ».
+statut de lecture** (`Citée`, `Résumée`, `Rapportée`, `Lue (extrait)` ou `Lue (intégrale)`).
+Dans un écrit destiné au tribunal, ne jamais fonder une proposition décisive sur une décision qui
+n'est au moins au statut `Lue (extrait)` avec `[par. X]` vérifié majoritaire. En fiche ou en
+note d'orientation, une décision `Résumée` ou `Rapportée` se présente avec son attribution
+exacte : « la fiche annonce que le tribunal a rejeté le moyen d'irrecevabilité », « selon X… »,
+et jamais « le tribunal a jugé que ».
 
 **Doctrine** — auteur, titre, source, et ce que l'auteur en dit. Distinguer la doctrine savante
 du bulletin de cabinet.
@@ -82,11 +88,13 @@ d'une question à plusieurs volets.
 
 Prose plutôt que listes à puces, sauf pour les données structurées, qui vont en tableau.
 
-## 4. La vérification de citations
+## 4. La vérification ponctuelle ou de citations
 
-Format court, pour le cas particulier d'un texte d'origine douteuse — un mémoire reçu, une
-recherche produite par une IA, un bulletin recopié — dont il faut éprouver les autorités avant
-de s'y fier.
+Format court pour deux cas : une question ciblée en passant (article exact, seuil indexé,
+définition) ou un texte d'origine douteuse — un mémoire reçu, une recherche produite par une IA,
+un bulletin recopié — dont il faut éprouver les autorités. Réponse directe, article consolidé ou
+tableau de citations vérifiées, puis signalement seulement si un écueil de prescription ou de
+compétence mord.
 
 Analyser d'abord les formes avec `jurisprudence_parse_citation` pour écarter celles qui ne se
 résoudront pas, puis vérifier le reste par lots de vingt-cinq avec `jurisprudence_verify_citations`.
@@ -131,14 +139,16 @@ Ne pas créer de fichier, ne pas créer de note orpheline.
 
 ## 6. Deux règles de rédaction
 
-**Calibrer l'affirmation sur la preuve.** « La Cour d'appel a jugé que » suppose une lecture.
-« La fiche annonce », « selon tel auteur », « sous réserve de lecture » sont des formulations
-honnêtes, pas des faiblesses. Le lecteur est un avocat : il sait lire un degré de certitude, et
-il en a besoin.
+**Calibrer l'affirmation sur la preuve.** « La Cour d'appel a jugé que… [par. X] » suppose une
+lecture au statut `Lue (intégrale)` ou `Lue (extrait)` vérifiée majoritaire. « La fiche annonce »,
+« selon tel auteur », « sous réserve de lecture » permettent d'exploiter prudemment les
+autorités `Résumée` et `Rapportée` dans les échanges de travail et notes internes. Le lecteur
+est un avocat : il sait lire un degré de certitude, et il en a besoin.
 
-**Ne pas remplir.** Une note courte et sûre vaut mieux qu'une note longue et molle. Quand une
-rubrique est vide, écrire qu'elle est vide et pourquoi — c'est une information, et souvent la
-plus utile.
+**Ne pas remplir.** Une note courte et sûre vaut mieux qu'une note longue et molle. En note de
+recherche, quand une rubrique obligatoire est vide, écrire qu'elle est vide et pourquoi; en fiche
+ou en vérification ponctuelle, omettre les rubriques sans objet plutôt que d'aligner des mentions
+vides.
 
 **Remonter ce qui contredit le dossier.** Lorsque la recherche établit que la qualification, le
 délai, le point de départ ou le forum inscrits au dossier sont inexacts, cela va en tête du

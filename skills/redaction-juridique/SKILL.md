@@ -1,17 +1,16 @@
 ---
 name: redaction-juridique
 description: >-
-  Rédiger le bloc de contenu de tout écrit juridique québécois en droit civil et commercial — acte
-  de procédure, acte juridique (contrat, entente, transaction, quittance), correspondance (mise en
-  demeure, lettre au confrère, au client, au tribunal) et note interne (analyse, théorie de la
-  cause, plan d'argumentation). Utiliser dès qu'il faut produire, réviser, reformuler ou corriger
-  un texte juridique destiné à un dossier québécois, même sans le mot « rédiger », même pour un
-  seul paragraphe. Amorces — rédige, prépare, ébauche, projet de, brouillon, révise, corrige,
-  allégations, conclusions, clause, mise en demeure, lettre, note au dossier. En anglais — draft,
-  write, revise, redline, pleading, statement of claim, demand letter, contract clause, memo.
-  Utiliser surtout pour purger un texte de ses réflexes français ou de common law. Seuil
-  volontairement bas. Ne pas utiliser pour établir le fondement juridique, qui relève de
-  recherche-juridique, ni pour la mise en forme, qui relève des gabarits.
+  Rédiger le bloc de contenu de tout écrit civil ou commercial québécois — procédure, contrat,
+  entente, quittance, correspondance (mise en demeure, lettre) et note interne (analyse, théorie
+  de la cause, plan d'argumentation). S'enchaîne avec recherche-juridique (assises),
+  analyse-documentaire (faits et cotes) et calendrier-procedural (délais). Utiliser dès qu'il
+  faut rédiger, réviser ou corriger un texte québécois, même un seul paragraphe. Amorces — rédige,
+  prépare, ébauche, brouillon, révise, corrige, allégations, conclusions, clause, mise en demeure,
+  lettre, note au dossier. En anglais — draft, write, revise, redline, pleading, originating
+  application, statement of claim, demand letter, contract clause, memo. Purger les réflexes
+  français et de common law. Ne pas utiliser pour établir le droit (recherche-juridique) ni pour
+  la mise en forme par gabarit.
 ---
 
 # Rédaction juridique québécoise
@@ -25,21 +24,21 @@ première décision, et elle commande tout le reste.
 
 ## Le principe qui gouverne
 
-**Un écrit juridique repose sur deux assises et se défend contre deux contaminations.** L'assise
-factuelle vient du dossier, l'assise juridique vient de la recherche; la contamination française et
-celle de common law déforment la langue même quand les deux assises tiennent. Un texte qui manque
-l'une des quatre se reprend au complet — c'est pourquoi la méthode les traite dans cet ordre, et
-pourquoi le contrôle final les revérifie une à une.
+**Deux assises, deux défenses.** Un écrit tient sur son assise factuelle (du dossier) et son assise
+juridique (de la recherche), tout en repoussant la contamination française et de common law.
+Sauter une étape oblige à reprendre le texte au complet.
 
 ## Ce que le bloc ne contient pas
 
 Sauf demande expresse : en-tête, pied de page, intitulé de cour ou cartouche, numéro de dossier,
-bloc d'adresses des parties, date et lieu de signature, bloc de signature, coordonnées du cabinet,
-avis d'assignation, page de présentation, table des matières. Le gabarit s'en charge.
+adresses des parties, date, signature, coordonnées du cabinet, avis d'assignation, table des
+matières — le gabarit s'en charge.
 
-Aucun balisage Markdown non plus : ni titres `#`, ni listes à puces, ni blocs de code. Les
-intertitres conventionnels s'écrivent en majuscules sur leur propre ligne. Le gras ne sert qu'aux
-cotes de pièces, où la convention l'exige.
+Aucun balisage Markdown dans les blocs externes destinés à un gabarit (procédure, acte juridique,
+correspondance) : intertitres en majuscules sur leur ligne, gras réservé aux cotes de pièces. **En
+revanche**, le Markdown structuré est permis — et recommandé — dans les **notes internes**
+(`references/notes-internes.md`), sur **demande expresse**, et dans les **notes ou fiches de
+mémoire** structurant un dossier.
 
 ## La méthode
 
@@ -65,86 +64,58 @@ demander.
 
 ### Étape 2 — Réunir les deux assises
 
-Une assise factuelle, qui vient du dossier; une assise juridique, qui vient de la recherche. Un
-texte qui tient sur une seule des deux se reprend au complet.
-
 #### 2.1 L'assise factuelle
 
-Un écrit juridique tient sur des désignations et des dates exactes, et ce que l'utilisateur dicte
-de mémoire est un résumé : un résumé n'a ni les désignations, ni les dates, ni les cotes. Les
-obtenir dans cet ordre de préférence, et dire lequel a servi.
+Les désignations, dates et cotes exactes se puisent dans cet ordre, en indiquant la source :
 
-**1. Le gestionnaire de dossiers, s'il y en a un de connecté.** L'interroger avant d'écrire,
-systématiquement, et ne pas demander à l'utilisateur ce que le dossier détient. Les besoins sont au
-tableau de la section « Ce qu'il faut du dossier ».
-
-**2. À défaut, demander à l'utilisateur.** Nommer chaque élément manquant — désignation, date,
-cote, montant — plutôt que de demander « les faits ».
-
-**3. À défaut encore, rédiger avec des crochets apparents**, et les reprendre hors du bloc dans le
-signalement final. **Ne jamais basculer en silence sur la mémoire pour combler.**
+1. **Le gestionnaire de dossiers, s'il est connecté** — l'interroger avant d'écrire selon le tableau
+   « Ce qu'il faut du dossier ».
+2. **À défaut, demander à l'utilisateur** les éléments précis manquants (désignation, date, cote,
+   montant).
+3. **À défaut encore, laisser des crochets apparents**, repris hors du bloc dans le signalement
+   final — **jamais de mémoire**.
 
 #### 2.2 Le statut du fait
 
-Une valeur saisie dans un système n'est pas un fait prouvé : elle peut être périmée, incomplète ou
-fausse — un rôle inversé, une date de prescription qui ignore une interruption. Un acte de
-procédure allègue des faits qu'un témoin devra confirmer et qu'une pièce devra soutenir.
+Une saisie administrative peut être périmée ou fausse; tout fait allégué doit pouvoir être prouvé.
 
 | Statut | Origine | Ce que la rédaction peut en faire |
 |---|---|---|
 | **Établi** | Pièce lue, document téléversé, aveu, jugement, acte signé | Allégation ferme, avec sa cote de pièce |
 | **Rapporté** | Déclaration du client, note au dossier, courriel | Allégation, mais signalée à l'utilisateur comme reposant sur la parole du client |
-| **Administratif** | Valeur saisie dans un système de gestion — rôle, montants, qualification, date de prescription | Rien. Sert à orienter, nommer et repérer; jamais à alléguer sans vérification |
-| **Absent** | Rien au dossier | Un crochet visible dans le brouillon |
+| **Administratif** | Valeur saisie dans un système — rôle, montants, qualification, date de prescription | Sert à repérer seulement; jamais à alléguer sans vérification |
+| **Absent** | Rien au dossier | Crochet visible : [DATE À CONFIRMER], [MONTANT], [COTE], [DÉSIGNATION EXACTE] |
 
-**La dernière ligne est celle qui compte.** Quand un fait manque, laisser un crochet apparent —
-[DATE À CONFIRMER], [MONTANT], [COTE], [DÉSIGNATION EXACTE] — et le reprendre hors du bloc dans le
-signalement final. **Ne jamais combler par un fait plausible.** Une date vraisemblable inventée
-dans une allégation ne se voit pas à la relecture; elle se découvre à l'interrogatoire.
-
-Le statut d'un fait tiré d'une pièce vient de `analyse-documentaire` : une pièce lue et qualifiée
-porte un fait **établi**; une pièce dont on ne connaît que le nom de fichier n'en porte aucun.
+**Ne jamais combler par un fait plausible** : une date inventée se découvre à l'interrogatoire. Le
+statut d'un fait tiré d'une pièce vient de `analyse-documentaire` (`../analyse-documentaire/SKILL.md`);
+si une échéance procédurale est en jeu, la valider via `calendrier-procedural`
+(`../calendrier-procedural/SKILL.md`).
 
 #### 2.3 L'assise juridique
 
-Cette compétence peut être invoquée après `recherche-juridique`, mais rien ne le garantit. Se
-situer dans l'un des trois états, et le dire à l'utilisateur si ce n'est pas le premier.
+Situer la demande dans l'un de ces trois états, et avertir l'utilisateur hors du premier :
 
-**Fondement établi.** La recherche a été faite dans la conversation, ou l'utilisateur fournit les
-assises. Rédiger.
+**Fondement établi.** La recherche a été faite dans la conversation ou l'utilisateur fournit les
+assises : rédiger.
 
-**Fondement à établir.** La rédaction suppose une règle, un délai, un seuil de compétence ou une
-condition d'ouverture non vérifiée. Invoquer `recherche-juridique` d'abord. C'est le cas ordinaire
-d'une demande reçue à froid, et sauter l'étape est exactement ce qui produit une procédure fondée
-sur un article inventé.
+**Fondement à établir.** Une règle, un délai, un seuil ou une condition reste non vérifié : lire
+`../recherche-juridique/SKILL.md` et exécuter la recherche proportionnelle avant de rédiger.
 
-**Fondement volontairement écarté.** L'utilisateur veut un brouillon, un canevas, une
-reformulation. Rédiger, mais marquer en fin de bloc chaque endroit où le texte repose sur une
-proposition de droit non vérifiée.
+**Fondement volontairement écarté.** L'utilisateur veut un canevas ou une reformulation : rédiger,
+et marquer hors du bloc les propositions de droit non vérifiées.
 
-**Aucun numéro d'article ne s'écrit de mémoire, dans aucune des quatre familles.** Un numéro récité
-est indistinguable d'un numéro inventé, et le lecteur ne peut pas faire la différence. Le vérifier
-à la source, ou l'omettre.
+**Aucun numéro d'article ne s'écrit de mémoire.** Le vérifier à la source ou l'omettre.
 
 ### Étape 3 — Le contrôle de contamination
 
-C'est le mode d'échec dominant, et il est structurel plutôt qu'accidentel. Le corpus juridique
-francophone est massivement français; le corpus juridique canadien est massivement de common law.
-Le Québec est minoritaire dans les deux, et son vocabulaire coïncide presque parfaitement avec
-celui de la France tout en recouvrant un droit différent. Un texte contaminé se lit donc comme du
-droit applicable : c'est précisément ce qui le rend dangereux.
+Le Québec étant minoritaire dans les corpus francophone (français) et canadien (common law), la
+contamination produit des textes dangereux qui imitent la forme du droit applicable.
 
 #### La contamination française
 
-**La racine du problème.** En France, l'acte introductif expose les moyens **en fait et en droit**
-: il cite les articles, discute la jurisprudence, développe le syllogisme. C'est la forme normale
-là-bas. Au Québec, l'article 99 C.p.c. exige que l'acte de procédure « énonce les faits qui le
-justifient ». Les faits, et non les moyens de droit. Le tribunal est présumé connaître la loi;
-l'argumentation appartient à l'audience et au plan d'argumentation.
-
-Toute pulsion d'écrire « Vu l'article… », « aux termes de l'article… », « conformément aux
-dispositions de l'article 1457 C.c.Q. » ou « il est de jurisprudence constante que » dans un acte
-de procédure est la signature de ce réflexe. La supprimer.
+En France, l'acte introductif plaide en droit; au Québec, l'article 99 C.p.c. exige d'énoncer
+**les faits**, sans argumenter le droit (« Vu l'article… », « de jurisprudence constante » sont à
+supprimer).
 
 | Marqueur français | Correspondance québécoise |
 |---|---|
@@ -174,17 +145,18 @@ français correct reste un concept de common law.
 | Duty of care, standard of care | Faute au sens de l'article 1457 C.c.Q.; il n'existe pas de duty of care en droit québécois |
 | Consideration, « en contrepartie de la somme de 1 $ » | Le contrat se forme par le seul échange de consentement (art. 1385 C.c.Q.) |
 | Tort, tortious | Responsabilité extracontractuelle |
-| Statement of claim, pleadings, motion | Demande introductive d'instance, actes de procédure, demande |
+| Statement of claim, motion | Demande introductive d'instance, demande (en anglais : *originating application*, *application*) |
+| Pleadings | Actes de procédure — **en anglais**, *pleading* est le terme officiel du C.p.c. (art. 99) |
 | Affidavit | Déclaration sous serment — **en anglais**, *affidavit* est le terme officiel du C.p.c. |
-| Discovery, examination for discovery | Interrogatoire préalable à l'instruction |
-| Limitation period | Prescription |
-| Specific performance | Exécution en nature — **en anglais**, *specific performance* est le terme officiel du C.c.Q. |
+| Discovery, examination for discovery | Interrogatoire préalable à l'instruction (*examination on discovery* / *examination* au C.p.c.) |
+| Limitation period | Prescription (*prescription* en anglais au C.c.Q.) |
+| Specific performance | Exécution en nature — **en anglais**, *specific performance* est le terme officiel du C.c.Q. (art. 1601) |
 | Punitive damages réclamés d'office | Ils n'existent que « lorsque la loi prévoit » leur attribution (art. 1621 C.c.Q.) : nommer la loi ou ne pas les réclamer |
 | Estoppel | Fin de non-recevoir; la préclusion n'est pas reçue telle quelle |
-| Indemnify and hold harmless | Garantir et prendre fait et cause |
+| Indemnify and hold harmless | Garantir et prendre fait et cause (*indemnify and take up the defence*) |
 | Severability / clause de divisibilité importée | La divisibilité est la règle par défaut (art. 1438 C.c.Q.) |
-| Without prejudice | Sous toutes réserves |
-| Cease and desist letter | Mise en demeure |
+| Without prejudice | *SOUS TOUTES RÉSERVES*; en anglais : *UNDER ALL RESERVES* (réserve de droits) vs *WITHOUT PREJUDICE* (pourparlers); omettre sur une mise en demeure produite |
+| Cease and desist letter | Mise en demeure (en anglais : *extrajudicial demand*, art. 1595 C.c.Q., *formal notice* ou *mise en demeure*) |
 | Equitable relief, equity | Aucun équivalent; raisonner en droit civil |
 
 **Ce qui n'est pas contaminé.** Les arrêts de la Cour suprême, le droit fédéral et les décisions
@@ -222,26 +194,16 @@ sur la mémoire pour combler.**
 
 ## La discipline commune aux quatre familles
 
-**Sobriété calibrée, jamais télégraphique.** La rédaction québécoise est sobre; elle n'est pas
-dépouillée. Retirer le volume émotif et le commentaire éditorial, non la précision. « dur et acéré »,
-« avec force », « sur-le-champ », « manifeste » caractérisent un fait de manière contestable — ils
-restent. « Scandaleux », « outrageux », « totalement inacceptable », « deeply troubling » tranchent
-une question que le tribunal n'a pas tranchée — ils partent, sans exception. Le test : si le retrait
-change ce qu'un lecteur raisonnable comprend, garder; sinon, couper. En sens inverse, un verbe nu et
-imprécis se **précise**, il ne se dépouille pas davantage.
+**Sobriété calibrée.** Couper l'émotivité et l'éditorial (« scandaleux », « outrageux »), jamais la
+précision (« dur et acéré », « manifeste »). Un qualificatif survit si son retrait appauvrit les
+faits; sinon, couper.
 
-**Une idée cohérente par unité.** Un paragraphe d'allégation, un article de contrat, un paragraphe
-de lettre porte une idée et les qualificatifs qui s'y rattachent directement. Ce n'est pas « un
-verbe par paragraphe ». L'unité se scinde quand elle franchit une frontière de catégorie — la
-faute, le préjudice, le lien de causalité; l'obligation, sa modalité, sa sanction. Elle ne se
-scinde pas pour séparer un fait de son descripteur.
+**Une idée cohérente par unité.** Un paragraphe d'allégation ou une clause porte une idée et ses
+descripteurs directs; ne scinder qu'au changement de catégorie (faute, préjudice, lien de
+causalité).
 
-**Verbes.** Présent pour les faits actuels, passé composé pour les actes accomplis. Le verbe précis
-plutôt que le générique : « a constaté » plutôt que « a vu »; « a fait défaut de donner suite »
-plutôt que « n'a pas répondu ».
-
-**Ne pas remplir.** Répéter un point sous trois formes ne le renforce pas; une procédure courte est
-plus difficile à attaquer.
+**Verbes.** Présent pour l'actuel, passé composé pour l'accompli; préférer le verbe exact (« a
+constaté », « a fait défaut de donner suite »). Ne pas répéter un point sous trois formes.
 
 **Bilinguisme.** Suivre la langue du dossier, non celle de la demande. En anglais, **ne jamais
 traduire un terme de procédure ou de droit civil : le prendre dans la version anglaise officielle
@@ -270,8 +232,9 @@ Elle ne met pas en forme : en-têtes, cartouches et blocs de signature appartien
 1. **Famille** — le fichier de la famille a été lu, et le texte suit sa structure.
 2. **Faits** — chaque fait allégué est établi ou rapporté, sa source est identifiable, aucun
    crochet n'a été comblé par un fait plausible, et les désignations viennent du dossier.
-3. **Mise en forme** — le bloc est exempt d'en-tête, d'intitulé de cour, de bloc de signature, de
-   coordonnées et de tout balisage Markdown.
+3. **Mise en forme** — un bloc externe destiné à un gabarit est exempt d'en-tête, d'intitulé de
+   cour, de bloc de signature, de coordonnées et de tout balisage Markdown; le Markdown reste admis
+   dans les notes internes, les fiches de mémoire et sur demande expresse.
 4. **Contamination française** — aucun marqueur, aucun numéro d'article français, aucune formule
    d'écriture française.
 5. **Contamination de common law** — aucun concept importé, aucune énumération de *grounds*, aucune
@@ -283,9 +246,10 @@ Elle ne met pas en forme : en-têtes, cartouches et blocs de signature appartien
    conversation, ou est signalé comme à vérifier.
 8. **Sobriété** — relire en cherchant les adjectifs; chacun survit s'il précise, tombe s'il
    amplifie.
-9. **Déontologie** — toute obligation professionnelle que l'écrit met en jeu — communication avec
-   une partie représentée, engagement pris, franchise envers le tribunal — est signalée; voir
-   `deontologie-professionnelle`.
+9. **Déontologie** — si un fait concret de l'écrit déclenche une obligation (communication avec
+   une partie représentée, engagement pris, sincérité envers le tribunal), lire
+   `../deontologie-professionnelle/SKILL.md` et la signaler au texte; sans déclencheur concret,
+   aucune mention générique.
 
 Signaler à l'utilisateur, **hors du bloc**, ce qui reste à décider ou à vérifier : crochets à
 combler, montants à confirmer, pièces à coter, dates à valider, désignations à compléter,

@@ -295,6 +295,13 @@ Ne jamais écrire un seuil récité de mémoire. Un chiffre périmé dans une al
 compétence est visible, embarrassant, et peut faire perdre au client le choix du forum dans la
 tranche concurrente.
 
+**Conséquence procédurale du choix de la Cour du Québec (art. 535.1 à 535.15 C.p.c.).** Saisir la
+Cour du Québec en vertu de l'article 35 pour une demande inférieure à 100 000 $, hors intérêts,
+déclenche d'office le régime simplifié particulier : demande introductive plafonnée à **cinq
+pages** (art. 535.3), aucun protocole de l'instance (art. 535.2), et expertise commune obligatoire
+sous 50 000 $ (art. 535.15). Dans la tranche concurrente, vérifier avec le client avant le dépôt
+si le choix de la Cour supérieure convient mieux à la complexité de la preuve.
+
 **Compétence territoriale.** Deux dispositions, et confondre les deux est une erreur fréquente.
 
 | Disposition | Contenu |
@@ -373,6 +380,14 @@ de la première partie, avec ses propres caractérisations et ses pièces cotée
 Conclusions : REJETER la demande, avec les frais de justice. Ajouter les conclusions propres
 aux moyens soulevés.
 
+### L'exposé sommaire des éléments de contestation
+
+Sous le régime simplifié de la Cour du Québec (art. 535.6 C.p.c.), comme lorsque le protocole
+prévoit un exposé sommaire (art. 170 C.p.c.), l'acte remplace une défense développée et respecte
+un format strict : **au plus deux pages** en défense pure, ou **au plus sept pages** lorsqu'il
+comprend une demande reconventionnelle (art. 535.6 al. 2). Aller droit aux faits contestés,
+aux moyens juridiques retenus, aux pièces cotées D-1, D-2 et aux conclusions, sans digression.
+
 ### La demande reconventionnelle
 
 Se rédige comme une demande introductive, à l'intérieur ou à la suite de la défense, avec sa
@@ -388,7 +403,8 @@ pas y réécrire l'histoire du dossier : le tribunal a le dossier.
 
 ### La déclaration sous serment
 
-Le mot est **déclaration sous serment**, pas *affidavit*. Elle est rédigée à la première
+En français, le mot est **déclaration sous serment**, pas *affidavit* (qui ne s'emploie qu'en
+anglais, où il correspond au texte officiel du C.p.c.). Elle est rédigée à la première
 personne, au nom du déclarant, en allégations numérotées de faits que le déclarant connaît
 personnellement. Un fait connu autrement se déclare comme tel et avec sa source.
 
@@ -398,11 +414,15 @@ l'échafaudage n'était pas ancré » est un fait. C'est une contamination fréq
 attaquable.
 
 Clore par la formule de sincérité — « Tous les faits allégués dans la présente déclaration sous
-serment sont vrais » — le gabarit prenant en charge le reste de l'assermentation.
+serment sont vrais » — le gabarit prenant en charge le reste de l'assermentation. En régime
+simplifié devant la Cour du Québec, la déclaration écrite d'un témoin tenant lieu de témoignage
+sur les faits est plafonnée à **cinq pages**, sauf autorisation exceptionnelle (art. 535.14 C.p.c.).
 
 ### Le protocole de l'instance
 
-L'article 148 C.p.c. impose neuf rubriques, et un protocole incomplet se fait retourner. Les
+Aucun protocole n'est dressé sous le régime simplifié de la Cour du Québec (art. 535.2 C.p.c.).
+Dans les autres dossiers, l'article 148 C.p.c. impose neuf rubriques, et un protocole incomplet
+se fait retourner. Les
 parties y précisent leurs conventions et engagements, les questions en litige, la considération
 portée aux modes privés de prévention et de règlement des différends, les opérations à
 effectuer, le temps requis, les coûts prévisibles des frais de justice, et les échéances à

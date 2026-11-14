@@ -42,6 +42,24 @@ réservée aux délais ordinaires, mais elle suppose que la prolongation ait ét
 | Intervention amicale à l'instruction | Notifier l'acte d'intervention aux parties | Au moins **5 jours** avant la présentation de la demande d'autorisation | 187 al. 1 | Ordinaire | Autorisation du tribunal requise |
 | Signification d'un acte d'intervention forcée au tiers | Le tiers répond; les autres parties notifient leur opposition | **15 jours** pour la réponse du tiers; **10 jours de la réponse** pour l'opposition | 188 | Ordinaire | — |
 
+## 1 bis. Régime simplifié devant la Cour du Québec (art. 535.1 à 535.15 C.p.c.)
+
+S'applique de plein droit aux demandes portées devant la Cour du Québec en vertu de l'article 35 dont la valeur ou la somme réclamée est inférieure à 100 000 $, hors intérêts, y compris la résiliation de bail et les demandes accessoires telle l'exécution en nature (535.1). **Aucun protocole de l'instance** n'est requis dans ces dossiers (535.2) : l'ancrage principal est la **signification de l'avis d'assignation**.
+
+| Déclencheur | À faire | Délai | Art. | Statut | Dépassement |
+|---|---|---|---|---|---|
+| Dépôt de la demande introductive (<= 5 pages, 535.3) | Signifier par huissier avec l'avis d'assignation et produire la preuve | 3 mois du dépôt | 107 al. 3 | Ordinaire (péremption) | Demande **périmée** (107 al. 3) |
+| Signification de la demande et de l'avis d'assignation | Réponse du défendeur | 15 jours | 145 al. 2 | Ordinaire | Défaut possible et frais de justice |
+| Signification de l'avis d'assignation | Le demandeur communique ses pièces aux parties et dépose son avis d'intention quant à la preuve (témoins, interrogatoires, expertises) | **20 jours** | 535.4 | Ordinaire | Demande réputée incomplète quant aux avis et pièces à communiquer |
+| Signification de l'avis d'assignation | Dénoncer par écrit et déposer au greffe les moyens préliminaires et incidents; observations écrites en réplique | **45 jours** (dénonciation et dépôt); **10 jours** de la notification pour les observations écrites | 535.5 | Ordinaire | Décision possible sur le vu du dossier sans audience, ou examen à la conférence de gestion (535.5, 535.8) |
+| Signification de l'avis d'assignation | Le défendeur dépose son **exposé sommaire des éléments de contestation** (<= 2 pages, ou <= 7 pages avec demande reconventionnelle), son avis de preuve et ses pièces | **95 jours** | 535.6 | Ordinaire | Défaut possible ou inscription pour jugement par le greffier (175 al. 1) |
+| Signification de l'avis d'assignation (ou mise en cause) | Le tiers intervenant ou mis en cause dépose son acte d'intervention ou son exposé sommaire | **95 jours** | 535.7 | Ordinaire | À vérifier selon la nature de l'intervention au texte de 535.7 |
+| Dossier comportant une partie non représentée, des incidents ou demandes d'autorisation | Conférence de gestion devant le tribunal | **Au plus tard 110 jours** de la signification de l'avis d'assignation | 535.8 | — (délai du tribunal) | Gestion arrêtée par ordonnance; les interrogatoires écrits (<= 3 pages) et oraux (max. 1 par partie, uniquement si réclamation >= 50 000 $, 535.9) et l'expertise commune sous 50 000 $ (535.15) s'y encadrent |
+| Signification de l'avis d'assignation | Tenue de la conférence de règlement à l'amiable (CRA), convertie sinon en conférence préparatoire à l'instruction | **Entre 130 et 160 jours** | 535.12 | — (délai du tribunal) | À défaut de règlement ou de CRA, tenue d'une conférence préparatoire à l'instruction |
+| Ordre du tribunal, avis au greffe ou échéance de 6 mois | Inscription pour instruction et jugement par le greffier (déclarations écrites de témoins <= 5 pages préalablement notifiées, 535.14) | Sur ordre du tribunal ou **au plus tard dans les 6 mois** | 535.13 | Rappel de clôture du titre I.1 | Relire 535.13 et 173 al. 1 au texte pour vérifier le point de départ et les mesures de mise en état applicables |
+
+*Note de preuve (535.10, 535.11, 535.15).* L'origine et l'intégrité des éléments de preuve déposés au greffe sont présumées reconnues sauf opposition; les demandes de précisions ou de radiation d'allégations ne sont admises qu'exceptionnellement; l'expertise doit être commune lorsque la valeur en litige est inférieure à 50 000 $, sauf autorisation du tribunal.
+
 ## 2. Mise en état et inscription
 
 | Déclencheur | À faire | Délai | Art. | Statut | Dépassement |
