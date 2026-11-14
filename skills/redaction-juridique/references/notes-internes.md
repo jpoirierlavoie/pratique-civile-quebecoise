@@ -21,9 +21,10 @@ pourrait un jour tenter d'y accéder : ne jamais y écrire ce qu'on ne pourrait 
 3. La note d'analyse
 4. La note de stratégie — mode 1 : la théorie de la cause
 5. La note de stratégie — mode 2 : le plan d'argumentation
-6. Choisir le mode, et passer de l'un à l'autre
-7. Ce qui distingue une note interne d'une lettre au client
-8. Marqueurs de contamination
+6. La note de stratégie — mode 3 : le plan d'interrogatoire préalable
+7. Choisir le mode, et passer de l'un à l'autre
+8. Ce qui distingue une note interne d'une lettre au client
+9. Marqueurs de contamination
 
 ---
 
@@ -54,9 +55,9 @@ vérification des citations, le statut de lecture de chaque autorité, et la str
 propres livrables — la fiche et la note de recherche. Ces deux documents lui appartiennent et se
 produisent chez elle.
 
-Cette compétence-ci gouverne **la manière d'écrire** les trois documents qui restent : la note
-d'analyse, la théorie de la cause et le plan d'argumentation. Aucun n'est un livrable de
-recherche; tous la présupposent.
+Cette compétence-ci gouverne **la manière d'écrire** les documents qui restent : la note
+d'analyse, la théorie de la cause, le plan d'argumentation et le plan d'interrogatoire préalable.
+Aucun n'est un livrable de recherche; tous la présupposent.
 
 **Le plan d'argumentation relève de cette compétence.** C'est le mode 2 de la note de stratégie,
 traité à la section 5 : un document sommaire remis au juge, où les renvois de droit sont
@@ -307,25 +308,82 @@ mais » se plaide; « notre point faible est… » ne se plaide pas.
 **Un dernier contrôle avant remise du bloc :** relire en se demandant, de chaque phrase, si elle
 serait encore écrite ainsi en sachant que la partie adverse la lira. Elle la lira.
 
-## 6. Choisir le mode, et passer de l'un à l'autre
+## 6. La note de stratégie — mode 3 : le plan d'interrogatoire préalable
+
+Document strictement interne (le Markdown et les tableaux y sont pleinement admis), préparé avant
+un interrogatoire oral ou écrit préalable à l'instruction (art. 221 à 229 et 535.9 C.p.c.).
+
+### Verrous procéduraux préalables
+
+Contrôler ces quatre seuils et délais **avant** de rédiger une seule question :
+
+1. **Seuil de 50 000 $ (art. 229 al. 1 C.p.c.).** Aucun interrogatoire préalable n'est permis
+   lorsque la demande en justice porte sur la réclamation d'une somme d'argent ou d'un bien dont
+   la valeur est inférieure à 50 000 $.
+2. **Protocole ou régime simplifié (art. 221 al. 1, 535.9 C.p.c.).** En instance ordinaire,
+   l'interrogatoire doit être prévu au protocole. En régime simplifié devant la Cour du Québec
+   (50 000 $ à moins de 100 000 $), l'interrogatoire écrit est plafonné à **trois pages** et chaque
+   partie n'a droit qu'à **un seul interrogatoire oral**, à moins que le tribunal n'en décide
+   autrement (art. 535.9 C.p.c.).
+3. **Budget de temps maximal (art. 229 al. 2–3 C.p.c.).** **Trois heures** en matière familiale
+   ou lorsque la valeur en litige est inférieure à 100 000 $ (prolongeable par entente en cours
+   d'interrogatoire à quatre heures); **cinq heures** dans les autres cas (prolongeable par entente
+   à sept heures); toute autre prolongation exige l'autorisation du tribunal.
+4. **Délais (art. 223, 226 C.p.c.).** Avis ou citation à l'interrogatoire oral signifié **au
+   moins 5 jours** à l'avance (art. 226); interrogatoire écrit avec délai de réponse de **15 jours à
+   1 mois** (art. 223). Les personnes visées sans consentement ni autorisation sont limitées à
+   celles énumérées à l'art. 221 al. 2 C.p.c.
+
+### Raccord à la théorie de la cause
+
+Tirer chaque module directement des faits contestés (bloc B), des éléments constitutifs (bloc C)
+et des lacunes de preuve (bloc E). Chaque question poursuit l'un de quatre objectifs : obtenir un
+aveu (art. 2852 C.c.Q.), faire reconnaître l'origine ou l'auteur d'un écrit non signé (art. 2835
+C.c.Q.), figer la version du témoin pour prévenir une surprise au procès, ou arracher un engagement
+précis de communication de document ou de renseignement (art. 221 al. 1 C.p.c.).
+
+### Structure par défaut
+
+```
+VERROUS PROCÉDURAUX ET BUDGET DE TEMPS
+OBJECTIFS CIBLÉS (AVEUX ET ENGAGEMENTS)
+MODULES DE QUESTIONS (PAR THÈME)
+OBJECTIONS ANTICIPÉES (ART. 228 C.P.C.)
+```
+
+| Colonne du module | Ce qu'elle porte |
+|---|---|
+| **Fait cible** | Numéro d'allégation ou rangée du bloc B/E |
+| **Pièce à exhiber** | Cote et onglet précis; mentionner si l'authenticité doit être établie |
+| **Questions** | Questions courtes, factuelles, chronologiques, une idée par question |
+| **Relance / contrôle** | Réponse documentée attendue ou pièce de contradiction en cas de dérobade |
+| **Engagement souhaité** | Libellé exact à dicter au dossier sténographique s'il y a lieu |
+
+Dans **OBJECTIONS ANTICIPÉES**, distinguer expressément les objections suspensives où le témoin
+peut s'abstenir de répondre — contraignabilité, droits fondamentaux, faits présumés non pertinents
+en matière de violence sexuelle ou conjugale, intérêt légitime important — soumises au juge dans
+les **5 jours** (art. 228 al. 2 C.p.c.), des objections de simple pertinence où l'interrogatoire se
+poursuit et où le témoin **doit répondre** sous réserve (art. 228 al. 3 C.p.c.).
+
+## 7. Choisir le mode, et passer de l'un à l'autre
 
 | Signal | Mode |
 |---|---|
 | Ouverture d'un dossier, réception d'un mandat, préparation d'une procédure, réévaluation après un fait nouveau | **Mode 1** — théorie de la cause |
 | Audience fixée, moyen préliminaire à présenter ou à contester, demande interlocutoire, plaidoirie à préparer | **Mode 2** — plan d'argumentation |
+| Préparation d'un interrogatoire oral ou écrit préalable à l'instruction | **Mode 3** — plan d'interrogatoire préalable |
 | Une question de droit précise appliquée au dossier | **Note d'analyse**, section 3 |
 | Une question de droit à établir | **`recherche-juridique`**, pas cette compétence |
 
-Le mode 1 alimente le mode 2, jamais l'inverse. Quand la théorie de la cause existe, la lire
-avant d'écrire un plan d'argumentation : le plan en est la version publiable, et il doit être
-cohérent avec elle. Quand elle n'existe pas et que le dossier a de l'ampleur, le signaler — un
-plan d'argumentation écrit sans théorie de la cause préalable est un plan qui découvre ses
-faiblesses à l'audience.
+Le mode 1 alimente les modes 2 et 3, jamais l'inverse. Quand la théorie de la cause existe, la lire
+avant d'écrire un plan d'argumentation ou un plan d'interrogatoire préalable. Quand elle n'existe
+pas et que le dossier a de l'ampleur, le signaler — un plan d'argumentation ou d'interrogatoire
+écrit sans théorie de la cause préalable découvre ses angles morts trop tard.
 
 Lorsque l'utilisateur demande simplement « une note de stratégie », déterminer le mode par le
 contexte du dossier plutôt que de choisir au hasard, et si le contexte ne tranche pas, demander.
 
-## 7. Ce qui distingue une note interne d'une lettre au client
+## 8. Ce qui distingue une note interne d'une lettre au client
 
 Elles se confondent souvent, à tort. La note interne est un instrument de travail : elle
 consigne les incertitudes, les hypothèses, les faiblesses, les questions à poser. La lettre au
@@ -339,7 +397,7 @@ qu'on avait adoucies.
 
 Lorsque l'utilisateur demande les deux, produire deux textes distincts.
 
-## 8. Marqueurs de contamination
+## 9. Marqueurs de contamination
 
 Dans cette famille, la contamination passe surtout par les autorités citées.
 

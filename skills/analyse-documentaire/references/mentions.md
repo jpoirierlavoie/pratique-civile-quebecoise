@@ -118,6 +118,30 @@ délais, et le nom de la personne signifiée détermine par rapport à qui. Une 
 se signale immédiatement. Une date de signification relevée ici se **rapporte**, elle ne se convertit
 jamais en échéance calculée.
 
+## Transcription d'interrogatoire ou d'audience (`TRANS_INTERROGATOIRE`, `TRANS_AUDIENCE`)
+
+| Mention | Statut | Source |
+|---|---|---|
+| Tribunal, district, numéro de dossier de cour et nom des parties | Exigée en pratique | — |
+| Date et durée de la séance | Exigée (contrôle des plafonds de 3 h / 5 h) | art. 229 C.p.c. |
+| Identité, qualité et assermentation de la personne interrogée | Exigée | art. 221, 227 C.p.c. |
+| Procureurs présents et attestation du sténographe officiel | Exigée | art. 227 al. 1 C.p.c. |
+| Index ou relevé des engagements et des objections | Usuelle en tête de cahier; à reconstituer sinon | — |
+
+**Extraction obligatoire sur `TRANS_INTERROGATOIRE` en mode pièce.** Dresser deux tableaux
+structurés avec référence page et ligne :
+
+1. **Tableau des engagements (art. 221 al. 1 C.p.c.)** : cote (`E-1`, `E-2`...), page/ligne,
+   engagement exact pris par la partie ou son avocat, pièce ou renseignement visé, état (reçu ou en
+   suspens).
+2. **Tableau des objections (art. 228 C.p.c.)** : page/ligne, question visée, motif invoqué, et
+   classement entre **objection suspensive** (refus de répondre fondé sur la contraignabilité, les
+   droits fondamentaux, les faits présumés non pertinents en matière de violence sexuelle ou
+   conjugale, ou un intérêt légitime important — délai de **5 jours** pour saisir le tribunal selon
+   l'art. 228 al. 2, à **signaler** vers `calendrier-procedural` sans calculer l'échéance) et
+   **objection non suspensive** (simple pertinence — le témoin répond sous réserve et le tribunal
+   tranche à l'instruction selon l'art. 228 al. 3).
+
 ## Correspondance
 
 | Mention | Statut |

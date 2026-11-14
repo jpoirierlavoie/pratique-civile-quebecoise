@@ -70,6 +70,8 @@ d'une capture d'écran.
 |---|---|---|
 | Contrat signé | `SOUS_SEING_PRIVE` | Signature de **toutes** les parties; pouvoir du signataire |
 | Acte notarié, déclaration d'un officier public | `ACTE_NOTARIE` / `ACTE_AUTHENTIQUE` | Signature de toutes les parties (art. 2819); copie authentique (art. 2820) |
+| État certifié d'un registre public (REQ, Registre foncier, RDPRM) | `ACTE_AUTHENTIQUE` si copie ou extrait certifié; sinon `AUTRE_ECRIT` | Présence de la certification officielle (art. 2814 (7°), 2818, 2820 C.c.Q.); une simple impression d'écran exige vérification ou aveu |
+| Notes sténographiques d'interrogatoire préalable (`TRANS_INTERROGATOIRE`) | `ECRIT` / déposition transcrite; `AVEU` sur les reconnaissances d'une partie | Obéit aux règles du témoignage et fait partie du dossier des parties; seule la partie qui a interrogé décide de la produire en tout ou en extrait, sous réserve des extraits indissociables demandés par une autre partie (art. 227 C.p.c.) |
 | Courriel | `AUTRE_ECRIT`, parfois `ECRIT_ENTREPRISE` | L'auteur réel (art. 2835); l'intégrité de la chaîne; les en-têtes |
 | Facture, relevé, bon de commande, registre | `ECRIT_ENTREPRISE` | Qu'il soit **habituellement utilisé dans le cours des activités** — non fabriqué pour le litige |
 | Tableur | `ECRIT_ENTREPRISE` si tenu couramment; sinon reconstitution | La date de création; qui l'a produit; les formules et la méthode |

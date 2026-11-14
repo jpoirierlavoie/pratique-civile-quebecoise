@@ -31,7 +31,7 @@ jours non juridiques du compte. Trente jours civils, puis report si le trentièm
 | **Deuxième lundi d'octobre** | art. 61 (23°) g.1) | Mobile |
 | **25 décembre** | art. 61 (23°) h) | |
 | **26 décembre** | art. 82 al. 1 C.p.c. | « Considéré jour férié » en matière de procédure civile |
-| Le jour fixé par **proclamation** du gouverneur général pour l'anniversaire du Souverain | art. 61 (23°) i) | **Variable** : vérifier la proclamation de l'année |
+| Le jour fixé par **proclamation** du gouverneur général pour l'anniversaire du Souverain | art. 61 (23°) i) | **Variable** : au Québec, la Journée nationale des patriotes (lundi précédant le 25 mai); vérifier la proclamation de l'année |
 | Tout autre jour fixé par **proclamation ou décret** du gouvernement comme jour de fête publique ou d'action de grâces | art. 61 (23°) j) | **Variable** : vérifier chaque année |
 
 Les deux dernières lignes sont la raison pour laquelle ce fichier périme : la liste légale est
@@ -56,6 +56,15 @@ le compte des délais.
 **Les jours de fermeture d'un greffe** annoncés par avis ou directive ne sont pas dans la loi. S'ils
 existent, ils se lisent dans les directives du tribunal, et leur effet sur un délai s'apprécie au
 cas par cas — signaler, ne pas présumer.
+
+**Le 30 septembre et les veilles de fêtes (24 et 31 décembre).** La Journée nationale de la
+vérité et de la réconciliation (**30 septembre**) est un jour férié **fédéral**, mais elle ne
+figure **ni à l'art. 61 (23°) de la Loi d'interprétation du Québec (RLRQ, c. I-16) ni à l'art. 82
+al. 1 C.p.c.** En procédure civile québécoise, un délai expirant un 30 septembre n'est **pas**
+reporté de plein droit (sauf délai régi par une loi fédérale ou directive expresse applicable). Il en
+va de même des **24 décembre** et **31 décembre**, qui restent des jours ouvrables selon le Code
+même si certains bureaux ou greffes ferment plus tôt : vérifier l'heure de dépôt (art. 107 al. 4
+C.p.c.) et agir la veille par prudence.
 
 ## Les heures : ce qui déplace l'ancrage, et ce qui déplace le dépôt
 

@@ -33,6 +33,14 @@ ROOT_ALLOWLIST = frozenset(
     }
 )
 
+EVALS_ALLOWLIST = frozenset(
+    {
+        "evals/README.md",
+        "evals/scenarios.json",
+        "evals/executer_evals.py",
+    }
+)
+
 ANTIGRAVITY_PLUGIN_KEYS = frozenset(
     {
         "name",
@@ -94,6 +102,12 @@ _CROSS_SKILL_RE = re.compile(
 )
 _BACKTICK_SPAN_RE = re.compile(r"`([^`\n]+)`")
 _TOOL_SPAN_RE = re.compile(r"^([a-z][a-z0-9_]*)_")
+_FENCE_RE = re.compile(r"(?ms)^```[^\n]*\n.*?^```\s*$")
+
+
+def _extract_h2_headings(body: str) -> list[str]:
+    stripped = _FENCE_RE.sub("", body)
+    return [line.strip() for line in stripped.splitlines() if line.startswith("## ")]
 
 
 def _iter_repo_files(racine: Path) -> list[str]:
@@ -200,14 +214,18 @@ def verifier(racine: Path) -> list[str]:
     file_set = set(files)
 
     # 1. File inventory & allowlist
-    for rel in sorted(ROOT_ALLOWLIST):
+    for rel in sorted(ROOT_ALLOWLIST | EVALS_ALLOWLIST):
         if rel not in file_set:
-            erreurs.append(f"fichier racine requis manquant : {rel}")
+            erreurs.append(f"fichier requis manquant : {rel}")
 
     skill_md_files: list[str] = []
     skill_script_files: list[str] = []
+    eval_files: list[str] = []
     for rel in files:
         if rel in ROOT_ALLOWLIST:
+            continue
+        if rel in EVALS_ALLOWLIST:
+            eval_files.append(rel)
             continue
         parts = rel.split("/")
         if len(parts) == 3 and parts[0] == "skills" and parts[2] == "SKILL.md":
@@ -504,6 +522,127 @@ def verifier(racine: Path) -> list[str]:
             elif backticked is not None and backticked in skill_dir_set:
                 continue
 
+        # 7-invariant structural contract
+        non_empty_lines = [line.strip() for line in body.splitlines() if line.strip()]
+        if not non_empty_lines or not non_empty_lines[0].startswith("# "):
+            erreurs.append(f"{skill_rel} : titre '# ' d'ouverture manquant")
+        first_h2 = body.find("\n## ")
+        intro_zone = body[:first_h2] if first_h2 >= 0 else body
+        intro_lines = [
+            line.strip()
+            for line in intro_zone.splitlines()
+            if line.strip() and not line.strip().startswith("# ")
+        ]
+        if not intro_lines:
+            erreurs.append(f"{skill_rel} : texte introductif manquant sous le titre '# '")
+
+        h2 = _extract_h2_headings(body)
+        if len(h2) < 6:
+            erreurs.append(
+                f"{skill_rel} : ossature incomplète ({len(h2)} sections '## ', au moins 6 requises)"
+            )
+        else:
+            if h2[0] not in ("## Le principe qui gouverne", "## La règle asymétrique"):
+                erreurs.append(
+                    f"{skill_rel} : premier intertitre '## ' invalide ({h2[0]!r})"
+                )
+            core_h2 = h2[:-3]
+            if "## La méthode" not in core_h2:
+                erreurs.append(f"{skill_rel} : section '## La méthode' manquante avant le triptyque final")
+            if "## Ce qu'il faut du dossier" not in core_h2:
+                erreurs.append(
+                    f"{skill_rel} : section '## Ce qu'il faut du dossier' manquante avant le triptyque final"
+                )
+            if (
+                "## La méthode" in core_h2
+                and "## Ce qu'il faut du dossier" in core_h2
+                and core_h2.index("## La méthode") > core_h2.index("## Ce qu'il faut du dossier")
+            ):
+                erreurs.append(
+                    f"{skill_rel} : '## La méthode' doit précéder '## Ce qu'il faut du dossier'"
+                )
+            if h2[-3] != "## Le périmètre":
+                erreurs.append(
+                    f"{skill_rel} : antépénultième section attendue '## Le périmètre' (trouvé {h2[-3]!r})"
+                )
+            if h2[-2] != "## Contrôle avant remise":
+                erreurs.append(
+                    f"{skill_rel} : avant-dernière section attendue '## Contrôle avant remise' "
+                    f"(trouvé {h2[-2]!r})"
+                )
+            expected_last = (
+                "## Fichiers de référence et outillage local"
+                if scripts_actual
+                else "## Fichiers de référence"
+            )
+            if h2[-1] != expected_last:
+                erreurs.append(
+                    f"{skill_rel} : dernière section attendue {expected_last!r} (trouvé {h2[-1]!r})"
+                )
+
+    # 5. Evals validation
+    eval_py_rel = "evals/executer_evals.py"
+    if eval_py_rel in decoded:
+        try:
+            ast.parse(decoded[eval_py_rel], filename=eval_py_rel)
+        except SyntaxError as exc:
+            erreurs.append(
+                f"{eval_py_rel} : erreur de syntaxe Python à la ligne {exc.lineno} ({exc.msg})"
+            )
+
+    eval_json_rel = "evals/scenarios.json"
+    eval_data = _load_json(racine, eval_json_rel, erreurs)
+    if eval_data is not None:
+        scenarios = eval_data.get("scenarios")
+        if not isinstance(scenarios, list) or not scenarios:
+            erreurs.append(f"{eval_json_rel} : 'scenarios' doit être une liste non vide")
+        else:
+            seen_ids: set[str] = set()
+            for idx, sc in enumerate(scenarios):
+                if not isinstance(sc, dict):
+                    erreurs.append(f"{eval_json_rel} : scenarios[{idx}] doit être un objet JSON")
+                    continue
+                sid = sc.get("id")
+                if not isinstance(sid, str) or not sid.strip():
+                    erreurs.append(f"{eval_json_rel} : scenarios[{idx}].id invalide")
+                elif sid in seen_ids:
+                    erreurs.append(f"{eval_json_rel} : identifiant en double ({sid!r})")
+                else:
+                    seen_ids.add(sid)
+                comp = sc.get("competence")
+                if comp not in skill_dir_set:
+                    erreurs.append(
+                        f"{eval_json_rel} ({sid}) : compétence inconnue ({comp!r})"
+                    )
+                for req_str in ("titre", "prompt"):
+                    val = sc.get(req_str)
+                    if not isinstance(val, str) or not val.strip():
+                        erreurs.append(
+                            f"{eval_json_rel} ({sid}) : champ '{req_str}' requis et non vide"
+                        )
+                crit = sc.get("criteres")
+                if not isinstance(crit, list) or not crit or any(
+                    not isinstance(c, str) or not c.strip() for c in crit
+                ):
+                    erreurs.append(
+                        f"{eval_json_rel} ({sid}) : 'criteres' doit contenir au moins une chaîne"
+                    )
+                for pat_field in ("doit_contenir", "ne_doit_pas_contenir"):
+                    pats = sc.get(pat_field)
+                    if not isinstance(pats, list) or any(not isinstance(p, str) for p in pats):
+                        erreurs.append(
+                            f"{eval_json_rel} ({sid}) : '{pat_field}' doit être une liste de chaînes"
+                        )
+                        continue
+                    for pat in pats:
+                        try:
+                            re.compile(pat, flags=re.I | re.M)
+                        except re.error as exc:
+                            erreurs.append(
+                                f"{eval_json_rel} ({sid}) : regex invalide dans '{pat_field}' "
+                                f"({pat!r} : {exc})"
+                            )
+
     # Retired repository slugs across all files except verifier.py
     for rel in files:
         if rel == "verifier.py":
@@ -515,8 +654,8 @@ def verifier(racine: Path) -> list[str]:
             if slug in text:
                 erreurs.append(f"{rel} : ancien identifiant de dépôt interdit ({slug})")
 
-    # Information-contract isolation across all files in skills/
-    for rel in sorted(skill_md_files + skill_script_files):
+    # Information-contract isolation across all files in skills/ and evals/
+    for rel in sorted(skill_md_files + skill_script_files + eval_files):
         text = decoded.get(rel)
         if text is None:
             continue

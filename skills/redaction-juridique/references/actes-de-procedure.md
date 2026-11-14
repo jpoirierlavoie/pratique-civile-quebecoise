@@ -15,6 +15,7 @@
 10. L'ordre des sections
 11. Les variantes : défense, reconvention, demande en cours d'instance, déclaration sous
     serment, protocole de l'instance
+12. Les actes de procédure modifiés (art. 206 à 208 C.p.c.)
 
 ---
 
@@ -345,6 +346,21 @@ cabinet si l'utilisateur en a un.
 **Point de départ des intérêts.** Généralement la date de la mise en demeure. Le préciser
 plutôt que de laisser « à compter de la demande », qui perd du temps d'intérêts.
 
+**Solidarité entre défendeurs.** Ne jamais conclure à `CONDAMNER solidairement` par automatisme.
+La solidarité entre codébiteurs ne se présume pas (art. 1525 al. 1 C.c.Q.) : elle exige une
+stipulation expresse, une disposition légale, une obligation contractée pour le service ou
+l'exploitation d'une entreprise (art. 1525 al. 2 C.c.Q.) ou une faute extracontractuelle commune
+(art. 1526 C.c.Q.). Vérifier que les allégations établissent cette assise; sinon, conclure de
+manière conjointe ou vérifier si une obligation *in solidum* s'applique.
+
+**Exécution provisoire malgré l'appel.** L'appel régulièrement formé suspend l'exécution du
+jugement (art. 355 C.p.c.), sauf dans les cas d'exécution provisoire de plein droit énumérés à
+l'art. 660 C.p.c. Lorsque le délai d'appel risque de causer un préjudice sérieux ou irréparable
+(art. 661 al. 1 C.p.c.), vérifier avec l'utilisateur s'il faut alléguer les faits d'urgence ou de
+péril et conclure à `ORDONNER l'exécution provisoire du présent jugement nonobstant appel` : si le
+jugement de première instance ne l'ordonne pas lui-même, seule la Cour d'appel pourra être saisie
+de la demande par la suite (art. 661 al. 2 C.p.c.).
+
 **Clôture** : LE TOUT avec les frais de justice, incluant les frais d'expertise.
 
 ## 10. L'ordre des sections
@@ -449,3 +465,35 @@ utile au dossier.
 
 Lorsque les parties ne s'entendent pas sur un point, l'article 148 permet un complément
 indiquant les points non réglés. Le dire plutôt que d'écrire une entente fictive.
+
+---
+
+## 12. Les actes de procédure modifiés (art. 206 à 208 C.p.c.)
+
+**Cadre légal.** Avant le jugement, une partie peut modifier ou retirer un acte de procédure de son
+propre chef, sans autorisation du tribunal, pourvu que cela ne retarde pas l'instance, ne soit pas
+contraire aux intérêts de la justice et, s'il s'agit d'une modification, ne donne pas lieu à une
+demande entièrement nouvelle sans rapport avec la demande initiale (art. 206 C.p.c.). L'acte
+modifié est notifié aux autres parties, qui ont **10 jours** pour notifier leur opposition (art.
+207); en cas d'opposition, le tribunal tranche sur demande. Pendant l'instruction, la modification
+se fait avec l'autorisation du tribunal en présence des parties, consignée au procès-verbal (art.
+208). Sous le régime simplifié de la Cour du Québec, l'acte modifié demeure soumis aux plafonds de
+pages (art. 535.3 et 535.6 C.p.c.).
+
+**Gel des cotes de pièces existantes.** Ne **jamais** renuméroter les pièces déjà invoquées (`P-1`
+à `P-n`, `D-1` à `D-n`), même si une allégation ou une pièce est retirée : décaler les cotes casse
+tous les renvois déjà faits dans la défense, les interrogatoires et le bordereau. Conserver la cote
+d'une pièce retirée comme place réservée (`[Pièce P-3 retirée]`) et attribuer à toute nouvelle
+pièce la cote libre suivante (`P-(n+1)`), ou une sous-cote (`P-4.1`) uniquement si la convention
+du dossier l'impose déjà.
+
+**Stabilité de la numérotation des paragraphes.** Dès que la partie adverse a répondu à l'acte (ou
+qu'un interrogatoire s'y réfère), ne pas renuméroter les paragraphes existants : insérer les
+nouveaux faits par décimales (`12.1`, `12.2`) et remplacer tout paragraphe supprimé par la mention
+`14. [Retiré] ;`.
+
+**Intitulé et identification des ajouts.** Intituler l'acte selon sa séquence (`DEMANDE
+INTRODUCTIVE D'INSTANCE MODIFIÉE`, `DÉFENSE MODIFIÉE`), dater la modification, et repérer
+lisiblement les ajouts et retraits pour le gabarit final (soulignement et rature dans le traitement
+de texte, ou marque convenue avec le greffe — toujours hors balisage Markdown).
+

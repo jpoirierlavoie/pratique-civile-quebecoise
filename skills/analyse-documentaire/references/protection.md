@@ -80,15 +80,37 @@ document a accédé au caractère public, non qu'aucune restriction ne le vise.
 correspondance n'élève pas le régime d'une lettre ordinaire. La marque est un indice; la nature de
 la communication tranche. Le signaler plutôt que de la suivre aveuglément.
 
-*Le privilège perdu par la transmission.* Une communication protégée envoyée à un tiers étranger au
-mandat peut avoir perdu sa protection. Le régime se qualifie sur le document tel qu'il se présente,
-et toute transmission apparente à un tiers se **signale**.
+*Le privilège perdu par la transmission — ou préservé par intérêt commun.* Une communication
+protégée envoyée à un tiers étranger au mandat peut avoir perdu sa protection; à l'inverse, le
+partage entre parties unies par un **intérêt juridique commun** (codéfendeurs, assureur et assuré,
+parties à une opération assortie d'une entente d'intérêt commun) peut préserver `SECRET_PROFESSIONNEL`,
+`LITIGE` ou `REGLEMENT`. Le régime se qualifie sur le document tel qu'il se présente : toute
+transmission à un tiers se **signale** avec l'hypothèse d'intérêt commun si elle ressort du
+document, sans abaisser le niveau d'office à `CONFIDENTIEL`.
 
 *Le cliquet.* Un niveau de protection déjà inscrit ne redescend pas par une nouvelle analyse. Une
 analyse qui retient moins de privilèges qu'une précédente conserve le niveau le plus élevé et
 signale la divergence. C'est voulu : sous-protéger est un manquement professionnel, surprotéger
 coûte du temps. Seul l'avocat, dans son système, peut abaisser un niveau ou confirmer une
 qualification.
+
+## Caviardage, éléments d'identification confidentiels et pli cacheté
+
+L'**art. 108 al. 1 C.p.c.** impose aux parties et aux avocats de veiller à ce que les pièces et
+autres documents comportant des éléments d'identification généralement tenus pour confidentiels
+soient produits sous une forme propre à assurer le caractère confidentiel de l'information. La
+*Loi sur la protection des renseignements personnels dans le secteur privé* (RLRQ, c. P-39.1,
+« Loi 25 ») et les art. 11, 12 et 16 C.p.c. s'y ajoutent.
+
+Déclencher le signalement **`Caviardage ou pli cacheté requis`** avant toute communication à la
+partie adverse ou production au greffe dès qu'apparaissent :
+- numéro d'assurance sociale (NAS), numéro de compte bancaire, de carte de crédit ou relevé financier
+  non caviardé;
+- dossier médical, psychiatrique, psychologique ou psychosocial (art. 16 et 108 al. 3 C.p.c.);
+- nom, adresse ou élément permettant d'identifier un enfant mineur ou une victime visée par une
+  restriction de diffusion (art. 16 C.p.c.);
+- secret commercial, liste de clients ou renseignement financier stratégique nécessitant une demande
+  d'ordonnance de confidentialité ou de mise sous **pli cacheté** (art. 12 C.p.c.).
 
 ## Ce que le régime commande en pratique
 

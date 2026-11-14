@@ -72,8 +72,10 @@ celui de l'échéance compte. En mois, le délai expire le jour du dernier mois 
 quantième; à défaut, le dernier jour du mois. Il expire à 24 h; s'il tombe un samedi ou un jour
 férié, il est prolongé au premier jour ouvrable qui suit. Les jours fériés, et les règles d'heures
 qui déplacent une notification ou un dépôt au jour ouvrable suivant (art. 107 al. 4, 111 al. 2),
-sont dans `references/jours-non-juridiques.md`. Quand le besoin **CALCUL** est servi par un outil,
-s'en servir et rapporter son résultat; sinon compter à la main et montrer le compte.
+sont dans `references/jours-non-juridiques.md`. Quand le besoin **CALCUL** est servi par un outil
+connecté, s'en servir et rapporter son résultat; sinon, lorsque l'exécution Python locale est
+disponible, exécuter `scripts/calcul_delai.py` (`python scripts/calcul_delai.py <AAAA-MM-JJ> --jours <N>`)
+plutôt que de compter mentalement, et dans tous les cas montrer le compte visible étape par étape.
 
 **5. Qualifier chaque délai.** Quatre statuts : **de rigueur** quand le Code le dit — art. 173,
 art. 347 al. 3, art. 363 al. 1; **ordinaire** pour tout autre délai du Code, y compris ceux dont
@@ -163,8 +165,11 @@ Elle ne verse jamais le contenu d'une pièce dans une requête de recherche web.
    signalée avec lecture de `../deontologie-professionnelle/SKILL.md`; sans déclencheur concret,
    aucune mention générique.
 
-## Fichiers de référence
+## Fichiers de référence et outillage local
 
+- `scripts/calcul_delai.py` — utilitaire local autonome en bibliothèque standard Python pour compter
+  les délais en jours ou en mois selon les art. 82, 83, 107 al. 4 et 111 al. 2 C.p.c. (`--json`,
+  `--a-rebours`, `--technologique`, `--heure`). À exécuter au besoin lors de l'étape 4.
 - `references/chaine-de-l-instance.md` — la table des maillons : événement déclencheur, ce qui
   doit être fait, délai, article, statut, conséquence. À lire à chaque calendrier, en n'en retenant
   que les maillons déclenchés.

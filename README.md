@@ -101,16 +101,15 @@ la seule frontière, et c'est elle qui rend ce plugin installable chez quelqu'un
 
 ## Le gabarit d'une compétence
 
-Toute compétence de ce plugin suit la même ossature en sept sections, dans cet ordre. Une
-compétence nouvelle qui s'en écarte est à corriger, non à tolérer.
+Toute compétence de ce plugin respecte un **contrat structurel à sept invariants**, dans cet ordre. Une compétence nouvelle qui s'en écarte est à corriger, non à tolérer; entre la méthode et le périmètre, une compétence peut insérer des sections intermédiaires propres à ses garde-fous ou à ses modes.
 
-1. **Ce que fait la compétence** — deux ou trois phrases, et sa place dans la famille.
-2. **Le principe qui gouverne** — la règle structurante, celle dont tout le reste découle.
-3. **La méthode** — les étapes, ordonnées, chacune sous un titre qui nomme l'opération.
-4. **Ce qu'il faut du dossier** — les besoins du tableau ci-dessus, jamais des noms d'outils.
-5. **Le périmètre** — ce que la compétence ne fait pas, et à qui cela revient.
-6. **Contrôle avant remise** — la liste de vérification, numérotée.
-7. **Fichiers de référence** — un par ligne, avec le moment où il faut le lire.
+1. **Ce que fait la compétence** — ouverture sous le titre `# `, en deux ou trois phrases, et sa place dans la famille.
+2. **Le principe directeur** — premier intertitre `## ` (`## Le principe qui gouverne` ou `## La règle asymétrique`), la règle structurante dont tout le reste découle.
+3. **La méthode** — `## La méthode`, étapes ordonnées sous des titres qui nomment l'opération (suivie, au besoin, des intertitres `## ` propres aux modes ou aux garde-fous de la compétence).
+4. **Ce qu'il faut du dossier** — `## Ce qu'il faut du dossier`, exprimé dans les douze besoins du tableau ci-dessus, jamais en noms d'outils de gestionnaire.
+5. **Le périmètre** — `## Le périmètre`, ce que la compétence ne fait pas et à qui cela revient (premier volet du triptyque final immuable).
+6. **Contrôle avant remise** — `## Contrôle avant remise`, la liste de vérification numérotée.
+7. **Fichiers de référence (et outillage local)** — `## Fichiers de référence`, ou `## Fichiers de référence et outillage local` lorsque la compétence embarque un utilitaire Python autonome sous `scripts/`, un par ligne avec le moment où l'ouvrir ou l'exécuter.
 
 ## Les conventions d'écriture
 
@@ -133,19 +132,22 @@ compétence nouvelle qui s'en écarte est à corriger, non à tolérer.
 - **Les chiffres sont des hypothèses** — seuils, délais, montants. Ils dérivent avec les
   modifications législatives et se revérifient aux sources avant emploi.
 - **Progressive disclosure** : le SKILL.md reste sous 3 000 mots; le détail va dans
-  `references/`, chaque fichier annoncé avec le moment où il faut l'ouvrir.
+  `references/`, chaque fichier annoncé avec le moment où il faut l'ouvrir, et tout calcul ou
+  inspection locale déterministe va dans `scripts/` en bibliothèque standard Python uniquement.
 
 ## Ajouter une compétence
 
 1. La faire entrer dans le partage des rôles — si elle empiète, c'est qu'elle appartient à une
    compétence existante.
-2. Reprendre l'ossature en sept sections.
+2. Respecter les sept invariants et le triptyque final immuable (`Le périmètre` → `Contrôle avant
+   remise` → `Fichiers de référence`).
 3. N'exprimer ses besoins d'information qu'en termes du tableau ci-dessus; si un besoin nouveau
    apparaît, l'ajouter ici d'abord, puis dans l'outillage.
 4. Rédiger la description du frontmatter avec ses amorces en français **et** en anglais, et la
    phrase « Ne pas utiliser pour… » qui la sépare de ses voisines.
-5. Passer le contrôle : aucun nom d'outil, tout fichier annoncé existe, tout renvoi pointe une
-   compétence réelle.
+5. Passer le contrôle : exécuter `python verifier.py` (aucun nom d'outil interdit, tout fichier
+   annoncé existe, tout renvoi pointe une compétence réelle) et ajouter un scénario dans
+   `evals/scenarios.json`.
 
 ---
 
@@ -170,5 +172,7 @@ et **Gemini CLI** : chaque plateforme lit son propre manifeste et ignore les aut
 - **Gemini CLI** — `gemini-extension.json` :
   - installer via `gemini extensions install https://github.com/jpoirierlavoie/pratique-civile-quebecoise`.
 - **Contrôle** — exécuter `python verifier.py` depuis la racine du dépôt; le script valide les
-  manifestes, les en-têtes YAML, les renvois aux fichiers de référence et l'étanchéité du
-  contrat d'information, et ne retourne rien lorsque tout est conforme.
+  manifestes, les en-têtes YAML, les sept invariants structurels, les renvois aux fichiers de
+  référence et l'étanchéité du contrat d'information, et ne retourne rien lorsque tout est conforme.
+  Exécuter ensuite `python evals/executer_evals.py --auto-test` pour vérifier les scripts locaux et
+  les scénarios de régression dans `evals/`.

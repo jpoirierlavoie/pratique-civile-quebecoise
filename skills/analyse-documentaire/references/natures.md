@@ -110,7 +110,16 @@ analysé, signaler les autres, et retenir le régime le plus élevé de l'ensemb
 | `PREUVE_RELEVE` | Relevé, état de compte | `preuve` |
 | `PREUVE_PHOTO` | Photographie | `preuve` |
 | `PREUVE_RAPPORT_EXPERT` | Rapport d'expertise | `preuve` |
+| `PREUVE_ETAT_REQ` | État de renseignements du Registraire des entreprises (REQ) | `preuve` |
+| `PREUVE_REGISTRE_FONCIER` | Index des immeubles, acte publié ou état certifié du Registre foncier | `preuve` |
+| `PREUVE_RDPRM` | État certifié ou fiche d'inscription au RDPRM | `preuve` |
 | `PREUVE_AUTRE` | Autre élément de preuve | `preuve` |
+
+Les extraits et états certifiés des registres publics québécois (`PREUVE_ETAT_REQ`,
+`PREUVE_REGISTRE_FONCIER`, `PREUVE_RDPRM`) ne deviennent `PIECE_COMMUNIQUEE` qu'une fois cotés,
+notifiés ou déposés dans l'instance : avant cette étape, ils restent qualifiés selon leur nature de
+preuve (vérifier s'il s'agit d'un état certifié par l'officier public, art. 2814 C.c.Q., ou d'une
+simple impression de recherche).
 
 **`PIECE_COMMUNIQUEE` ne se retient que si le document porte la marque de sa cotation** — une cote
 (P-1, D-3, PC-2), un avis de notification, une mention de dépôt. C'est la sous-nature qui emporte

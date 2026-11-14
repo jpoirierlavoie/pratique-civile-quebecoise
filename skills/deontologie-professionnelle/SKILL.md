@@ -26,8 +26,10 @@ dois, ici, maintenant? ».
 **L'obligation se signale quand un fait concret la déclenche, et se cite au texte.** Lorsqu'un
 moment à risque apparaît dans une tâche — un nouveau client, une avance reçue, un courriel
 destiné à une partie représentée, une pièce protégée reçue par erreur, un délai échu par erreur de
-l'avocat, un retrait envisagé —, la compétence le dit avec l'article précis, même si la tâche
-portait sur autre chose, parce qu'une obligation récitée de mémoire se déforme vite.
+l'avocat, un retrait envisagé, le versement de pièces confidentielles dans un outil externe, une
+autorité générée non vérifiée ou une facturation face au temps comprimé par un outil —, la
+compétence le dit avec l'article précis, même si la tâche portait sur autre chose, parce qu'une
+obligation récitée de mémoire se déforme vite.
 
 **Déclencheur concret seulement, jamais de formule passe-partout.** Ne pas ajouter de mise en
 garde générique en fin de livrable lorsque la situation ne soulève aucun moment à risque concret :
@@ -64,9 +66,10 @@ impérative.
 **5. Renvoyer les délais au calendrier.** Plusieurs obligations portent un délai : dix jours pour
 répondre à la mise en demeure de désigner un nouvel avocat, trente jours pour donner suite à une
 demande de rectification ou motiver un refus d'accès, trente jours pour déclarer une somme en
-espèces de 7 500 $ ou plus, soixante jours pour vérifier l'identité d'une société. Le compte
-appartient à `calendrier-procedural` (lire `../calendrier-procedural/SKILL.md`); le rappel
-appartient ici.
+espèces de 7 500 $ ou plus, trente jours suivant demande du directeur de l'inspection professionnelle
+pour transmettre le rapport comptable annuel en fidéicommis (Règl., art. 42), soixante jours pour
+vérifier l'identité d'une société. Le compte appartient à `calendrier-procedural` (lire
+`../calendrier-procedural/SKILL.md`); le rappel appartient ici.
 
 ## Ce qu'il faut du dossier
 
@@ -96,9 +99,9 @@ Elle **ne qualifie pas une conduite passée**. Elle dit ce que le texte commande
 pas si un manquement a été commis — ce jugement appartient à l'avocat, et le cas échéant au conseil
 de discipline.
 
-Elle **ne couvre pas** les devoirs envers le public, les communications publiques, la publicité ni
-les incompatibilités de fonctions, qui ne sont pas lus dans le fichier de référence. Les nommer
-comme hors champ quand une question y mène.
+Elle **ne couvre pas** les devoirs généraux envers le public (art. 1 à 19 du Code), la publicité,
+les devoirs envers la profession (art. 124 et suivants) ni les incompatibilités de fonctions, qui ne
+sont pas lus dans le fichier de référence. Les nommer comme hors champ quand une question y mène.
 
 Elle ne verse jamais le contenu d'un dossier dans une requête de recherche web.
 
@@ -120,5 +123,6 @@ Elle ne verse jamais le contenu d'un dossier dans une requête de recherche web.
 ## Fichiers de référence
 
 - `references/moments.md` — les onze moments, chacun avec ses obligations, articles et citations
-  vérifiées; puis ce que le texte ne dit pas et les numéros à ne pas confondre. À lire à chaque
-  usage, au moment concerné.
+  vérifiées (y compris comptabilité en fidéicommis art. 34 à 49, rapports envers la justice
+  art. 111 à 113 et rattachement des usages d'intelligence artificielle); puis ce que le texte ne
+  dit pas et les numéros à ne pas confondre. À lire à chaque usage, au moment concerné.

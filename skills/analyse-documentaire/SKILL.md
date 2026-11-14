@@ -102,7 +102,7 @@ PDF sans texte, rasteriser et regarder; sinon, signaler l'impasse.
 - **Faire sortir le contenu d'une pièce.** Le contenu est privilégié : n'en citer que l'essentiel
   et **jamais** dans une requête web; pour identifier un tiers, demander à l'avocat.
 
-## Les deux signalements à chercher systématiquement
+## Les trois signalements à chercher systématiquement
 
 **Divergence de classement.** Si la nature détectée contredit la catégorie enregistrée, le dire. Ce
 n'est pas nécessairement une erreur d'analyse : c'est aussi ainsi qu'on retrouve un jugement classé
@@ -112,7 +112,14 @@ par mégarde en correspondance.
 publique. Si elle porte par ailleurs les marques d'un régime protégé — en-tête d'avocat, mention
 « sous toutes réserves », correspondance avec le client, rapport d'expert non communiqué —, le
 signaler : c'est soit une erreur de classement, soit une renonciation au privilège dont l'avocat
-doit être averti.
+doit être averti (sauf partage sous privilège d'intérêt commun, également à signaler).
+
+**Caviardage ou pli cacheté requis.** Avant toute communication ou production au dossier du tribunal,
+repérer tout élément d'identification généralement tenu pour confidentiel ou protégé : numéro
+d'assurance sociale (NAS), numéro de compte bancaire ou de carte de crédit, mot de passe, dossier
+médical ou psychosocial, identité ou coordonnées d'un enfant mineur ou d'une victime (art. 108 al. 1
+et 16 C.p.c.; *Loi sur la protection des renseignements personnels dans le secteur privé*, RLRQ,
+c. P-39.1), ou secret commercial critique relevant d'une ordonnance sous l'art. 12 C.p.c.
 
 ## Le mode tri
 
@@ -124,7 +131,7 @@ Une ligne par document suffit :
 
 Le détail appartient à la fiche du document; le réécrire dans le fil le paie deux fois. *La
 préférence de profil pour la prose est écartée pour ce journal : c'est un registre.* Réserver la
-prose au document dont la qualification mérite d'être expliquée, aux deux signalements, et à ce qui
+prose au document dont la qualification mérite d'être expliquée, aux trois signalements, et à ce qui
 n'a pas pu être établi.
 
 **Le tour finira avant le lot.** Dire en terminant combien de documents sont faits, combien restent
@@ -155,7 +162,11 @@ recevabilité (original, intégrité technologique, ouï-dire, preuve testimonia
 **4. Ce qu'il change.** Impact sur les faits, la théorie de la cause, les moyens, les vérifications
 à suivre et tout délai déclenché (**signalé, jamais calculé**). Toute contradiction avec la fiche
 du dossier se met au premier plan, suivie de ce qui reste incertain. Une pièce défavorable s'analyse
-avec la même rigueur qu'une pièce favorable.
+avec la même rigueur qu'une pièce favorable. Sur une transcription `TRANS_INTERROGATOIRE`, dresser
+systématiquement deux tableaux avec page et ligne : **engagements** souscrits (cote, objet, pièce ou
+renseignement promis, état) et **objections** soulevées (art. 228 al. 2 C.p.c., suspensives à
+soumettre dans les 5 jours — délai à signaler vers `calendrier-procedural` — par opposition aux
+objections non suspensives de l'art. 228 al. 3).
 
 ## Les modes bordereau et chronologie
 
@@ -192,7 +203,7 @@ n'est versée que sur instruction expresse, avec le minimum de contenu privilég
 | Écriture au dossier — fiche, échéance, signification, tâche | Corriger la fiche que le document contredit, inscrire la signification que le procès-verbal établit | **Hors périmètre.** Poser le signalement, proposer l'écriture prête à exécuter, ne pas l'exécuter |
 | Recherche web | Identifier un tiers, une entreprise, un expert | **Jamais avec le contenu d'une pièce** |
 | Messagerie, stockage, envoi | Transmettre, classer, renommer | **Hors périmètre.** Cette compétence lit |
-| Authentification d'une citation, décomposition d'un numéro de cour | — | **Utiles** — section suivante |
+| Authentification d'une citation, décomposition d'un numéro de cour | — | **Utiles** — ci-dessous |
 
 La seule écriture que cette compétence propose de son propre chef est l'inscription de la
 qualification sur le document analysé. Rien d'autre : ni note, ni champ de dossier, ni tâche, ni
@@ -202,7 +213,7 @@ courriel.
 les ancrages cités ici servent à **nommer** un document, pas à argumenter. Rédiger un texte à
 partir de la pièce relève de `redaction-juridique` (`../redaction-juridique/SKILL.md`).
 
-## Ce que les sources de droit ajoutent au tri
+### Ce que les sources de droit ajoutent au tri
 
 La décomposition d'un numéro de cour (besoin **GREFFE**) extrait palais, district, tribunal et
 segment de matière (signalant un accès restreint sous l'art. 16 C.p.c., ou une divergence avec
@@ -225,7 +236,8 @@ métadonnées, jamais un dispositif.
    web, ni autrement.
 6. **Statut** — chaque qualification est annoncée comme présumée, et rien n'est présenté comme
    confirmé.
-7. **Signalements** — divergence de classement et renonciation possible ont été cherchées, et le
+7. **Signalements** — divergence de classement, renonciation possible (y compris intérêt commun) et
+   besoin de caviardage ou de pli cacheté (art. 108, 12 C.p.c.; Loi 25) ont été cherchés, et le
    résultat est écrit même s'il est négatif.
 8. **En mode pièce** — les quatre rubriques y sont, y compris ce que la pièce ne prouve pas et ce
    qui reste incertain.

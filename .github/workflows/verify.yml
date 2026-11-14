@@ -23,3 +23,5 @@ jobs:
             echo "$sortie" >&2
             exit 1
           fi
+      - name: Auto-test de la suite d'évaluation
+        run: python evals/executer_evals.py --auto-test

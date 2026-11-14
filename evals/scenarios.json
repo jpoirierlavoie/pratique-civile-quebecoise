@@ -1,0 +1,376 @@
+{
+  "version": "1.0.0",
+  "scenarios": [
+    {
+      "id": "RJ-01",
+      "competence": "recherche-juridique",
+      "titre": "Garantie légale de qualité sans contamination française",
+      "prompt": "Un acheteur découvre une infiltration d'eau cachée six mois après l'achat d'un duplex à Québec. Établir les règles applicables à la garantie de qualité et à la dénonciation du vice.",
+      "criteres": [
+        "Citer le Code civil du Québec (notamment art. 1726 et 1739 C.c.Q.) lu au texte avec date de consolidation.",
+        "Écarter totalement les dispositions du Code civil français (ex. art. 1641) et la jurisprudence française.",
+        "Appliquer la proportionnalité du palier demandé sans omettre les vérifications préalables pertinentes (prescription, préavis).",
+        "Indiquer le statut de lecture exact de chaque autorité jurisprudentielle citée."
+      ],
+      "doit_contenir": [
+        "1726",
+        "1739",
+        "C\\.c\\.Q\\."
+      ],
+      "ne_doit_pas_contenir": [
+        "\\b1641\\b",
+        "Cour de cassation",
+        "vices rédhibitoires",
+        "\\bte\\s+conseill|\\bvous\\s+devez\\b"
+      ]
+    },
+    {
+      "id": "RJ-02",
+      "competence": "recherche-juridique",
+      "titre": "Vérification ponctuelle d'autorité et statut de lecture",
+      "prompt": "Vérifier brièvement si une décision résumée dans une fiche doctrinale est suffisante pour rédiger un plan d'argumentation destiné au juge.",
+      "criteres": [
+        "Appliquer le palier minimal (vérification ponctuelle) sans déployer une note de recherche complète.",
+        "Distinguer le statut Résumée du statut Lue (intégrale) ou Lue (extrait) vérifié majoritaire au [par. X].",
+        "Refuser de citer devant le tribunal une autorité dont seul un sommaire ou un extrait non vérifié majoritaire a été lu."
+      ],
+      "doit_contenir": [
+        "Résumée",
+        "Lue \\(extrait\\)|Lue \\(intégrale\\)",
+        "par\\.\\s*X|majoritaire"
+      ],
+      "ne_doit_pas_contenir": [
+        "aucun contrôle déontologique effectué"
+      ]
+    },
+    {
+      "id": "RJ-03",
+      "competence": "recherche-juridique",
+      "titre": "Détection du régime simplifié à la Cour du Québec (45 000 $)",
+      "prompt": "Analyser les règles procédurales préalables pour une réclamation contractuelle de 45 000 $ devant la Cour du Québec.",
+      "criteres": [
+        "Identifier l'assujettissement au régime simplifié particulier (art. 535.1 à 535.15 C.p.c., valeur inférieure à 100 000 $).",
+        "Signaler l'absence de protocole de l'instance (art. 535.2), le plafond de cinq pages pour la demande (art. 535.3), l'interdiction d'interrogatoire préalable sous 50 000 $ (art. 229 al. 1) et l'expertise commune sous 50 000 $ (art. 535.15)."
+      ],
+      "doit_contenir": [
+        "535\\.1",
+        "535\\.2|protocole",
+        "535\\.3",
+        "229|535\\.15"
+      ],
+      "ne_doit_pas_contenir": [
+        "148.*obligatoire dans tous les dossiers"
+      ]
+    },
+    {
+      "id": "CP-01",
+      "competence": "calendrier-procedural",
+      "titre": "Notification technologique tardive en été et délai d'appel",
+      "prompt": "Un avis de jugement final au fond est notifié par courriel le vendredi 3 juillet 2026 à 17 h 40. Calculer l'échéance d'appel en expliquant le compte.",
+      "criteres": [
+        "Déplacer l'ancrage au lundi 6 juillet 2026 à 8 h 00 en vertu de l'art. 111 al. 2 C.p.c.",
+        "Compter 30 jours selon l'art. 83 C.p.c. jusqu'au mercredi 5 août 2026 et qualifier le délai de rigueur (art. 360 al. 1, 363 C.p.c.).",
+        "Préciser en toutes lettres que la période estivale (30 juin au 1er septembre, art. 82 al. 2 C.p.c.) ne suspend pas les délais."
+      ],
+      "doit_contenir": [
+        "111\\s*al\\.\\s*2",
+        "2026-07-06|6 juillet 2026",
+        "2026-08-05|5 août 2026",
+        "rigueur",
+        "ne suspendent pas|non-siège|30 juin au 1er septembre"
+      ],
+      "ne_doit_pas_contenir": [
+        "2026-08-02|2 août 2026",
+        "suspendu en juillet"
+      ],
+      "test_outil": {
+        "outil": "calcul_delai",
+        "cas": [
+          {
+            "nom": "Notification technologique 2026-07-03 17:40 + 30 jours",
+            "ancrage": "2026-07-03",
+            "valeur": 30,
+            "unite": "jours",
+            "sens": "avant",
+            "mode_notification": "technologique",
+            "heure_notification": "17:40",
+            "attendu": {
+              "ancrage_effectif": "2026-07-06",
+              "echeance": "2026-08-05",
+              "reportee": false,
+              "avertissements_contient": [
+                "30 juin au 1er septembre"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "CP-02",
+      "competence": "calendrier-procedural",
+      "titre": "Piège du 30 septembre et report en cascade de Noël",
+      "prompt": "Comparer deux échéances de procédure civile au Québec : un délai de 15 jours partant du 15 septembre 2026 et un délai de 30 jours partant du 25 novembre 2026.",
+      "criteres": [
+        "Confirmer que le mercredi 30 septembre 2026 n'est pas reporté en procédure civile québécoise (férié fédéral absent des art. 61 (23°) I-16 et 82 C.p.c.).",
+        "Appliquer le report en cascade de décembre : 25 décembre (Noël), 26 décembre (art. 82 al. 1 C.p.c.), 27 décembre (dimanche) → lundi 28 décembre 2026."
+      ],
+      "doit_contenir": [
+        "2026-09-30|30 septembre 2026",
+        "61\\s*\\(23|Loi d'interprétation",
+        "2026-12-28|28 décembre 2026"
+      ],
+      "ne_doit_pas_contenir": [
+        "30 septembre.*reporté au 1er octobre"
+      ],
+      "test_outil": {
+        "outil": "calcul_delai",
+        "cas": [
+          {
+            "nom": "Échéance le 30 septembre 2026 (aucun report provincial)",
+            "ancrage": "2026-09-15",
+            "valeur": 15,
+            "unite": "jours",
+            "sens": "avant",
+            "mode_notification": "ordinaire",
+            "attendu": {
+              "echeance": "2026-09-30",
+              "reportee": false,
+              "avertissements_contient": [
+                "30 septembre"
+              ]
+            }
+          },
+          {
+            "nom": "Report en cascade Noël 2026 -> 28 décembre",
+            "ancrage": "2026-11-25",
+            "valeur": 30,
+            "unite": "jours",
+            "sens": "avant",
+            "mode_notification": "ordinaire",
+            "attendu": {
+              "echeance_brute": "2026-12-25",
+              "echeance": "2026-12-28",
+              "reportee": true,
+              "nb_reports": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "CP-03",
+      "competence": "calendrier-procedural",
+      "titre": "Quantième en mois et calcul à rebours de production au greffe",
+      "prompt": "Calculer un mois depuis le 31 janvier 2026, puis l'échéance de production des pièces au greffe au moins 15 jours avant une instruction fixée le lundi 19 octobre 2026 (art. 250 al. 1 C.p.c.).",
+      "criteres": [
+        "Appliquer la règle du quantième et du report : 31 janvier 2026 + 1 mois → 28 février 2026 (samedi) → lundi 2 mars 2026.",
+        "Appliquer le calcul à rebours des 15 jours avant le 19 octobre 2026 : 4 octobre 2026 (dimanche) → devancé au vendredi 2 octobre 2026 pour préserver le délai minimal."
+      ],
+      "doit_contenir": [
+        "quantième",
+        "2026-03-02|2 mars 2026",
+        "2026-10-02|2 octobre 2026"
+      ],
+      "ne_doit_pas_contenir": [
+        "31 février"
+      ],
+      "test_outil": {
+        "outil": "calcul_delai",
+        "cas": [
+          {
+            "nom": "Quantième 31 janv + 1 mois -> 28 fév (sam) -> 2 mars 2026",
+            "ancrage": "2026-01-31",
+            "valeur": 1,
+            "unite": "mois",
+            "sens": "avant",
+            "mode_notification": "ordinaire",
+            "attendu": {
+              "echeance_brute": "2026-02-28",
+              "echeance": "2026-03-02",
+              "reportee": true,
+              "nb_reports": 2
+            }
+          },
+          {
+            "nom": "À rebours 15 jours avant 2026-10-19 -> 2026-10-02",
+            "ancrage": "2026-10-19",
+            "valeur": 15,
+            "unite": "jours",
+            "sens": "rebours",
+            "mode_notification": "ordinaire",
+            "attendu": {
+              "echeance_brute": "2026-10-04",
+              "echeance": "2026-10-02",
+              "echeance_report_suivant": "2026-10-05",
+              "reportee": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "RD-01",
+      "competence": "redaction-juridique",
+      "titre": "Demande introductive sur dossier incomplet et bloc externe purgé",
+      "prompt": "Rédiger le bloc d'allégations et conclusions d'une demande introductive en vice caché alors que la date exacte de découverte du vice et la date de mise en demeure manquent au dossier.",
+      "criteres": [
+        "Produire le bloc externe sans cartouche, sans bloc de signature, sans balisage Markdown et sans aucune citation d'article de loi ni de jurisprudence dans les allégations.",
+        "Marquer toute date ou donnée manquante par un crochet visible (ex. [DATE À CONFIRMER]) sans jamais l'inventer.",
+        "Signaler hors du bloc les crochets et vérifications à compléter."
+      ],
+      "doit_contenir": [
+        "\\[.*À CONFIRMER.*\\]|\\[DATE",
+        "POUR CES MOTIFS, PLAISE AU TRIBUNAL"
+      ],
+      "ne_doit_pas_contenir": [
+        "PROVINCE DE QUÉBEC",
+        "\\b1726\\b",
+        "COUR DU QUÉBEC\\s*\\n.*DISTRICT",
+        "\\*\\*[^*]+\\*\\*"
+      ]
+    },
+    {
+      "id": "RD-02",
+      "competence": "redaction-juridique",
+      "titre": "Pièges des conclusions : solidarité et exécution provisoire",
+      "prompt": "Deux particuliers copropriétaires sans entreprise ont signé un contrat de rénovation sans clause de solidarité; le demandeur craint que le défendeur liquide ses actifs pendant un éventuel appel. Vérifier et rédiger les conclusions.",
+      "criteres": [
+        "Refuser de conclure solidairement par automatisme et vérifier l'assise (art. 1525–1526 C.c.Q.) puisque la solidarité contractuelle hors entreprise ne se présume pas.",
+        "Signaler la possibilité de conclure à l'exécution provisoire malgré l'appel (art. 661 C.p.c.) en demandant d'alléguer les faits de préjudice sérieux ou irréparable."
+      ],
+      "doit_contenir": [
+        "1525",
+        "exécution provisoire",
+        "661"
+      ],
+      "ne_doit_pas_contenir": [
+        "solidarité est toujours présumée"
+      ]
+    },
+    {
+      "id": "RD-03",
+      "competence": "redaction-juridique",
+      "titre": "Modification d'un acte de procédure après réponse et retrait d'une pièce (art. 206–208 C.p.c.)",
+      "prompt": "Après dépôt de la défense, le demandeur souhaite retirer l'allégation 14 et la pièce P-2 d'une demande qui comptait P-1 à P-4, puis ajouter une nouvelle allégation et une nouvelle facture.",
+      "criteres": [
+        "Appliquer les art. 206 à 208 C.p.c. et rappeler le délai d'opposition de 10 jours (renvoi calendrier à calendrier-procedural).",
+        "Geler strictement les cotes P-1 à P-4 (ne jamais renuméroter P-3 en P-2); attribuer P-5 à la nouvelle facture.",
+        "Conserver la numérotation des paragraphes via 14. [Retiré] et insertion décimale (ex. 12.1)."
+      ],
+      "doit_contenir": [
+        "206|207",
+        "P-5",
+        "\\[Retiré\\]",
+        "MODIFIÉE"
+      ],
+      "ne_doit_pas_contenir": [
+        "renuméroter P-3 en P-2"
+      ]
+    },
+    {
+      "id": "RD-04",
+      "competence": "redaction-juridique",
+      "titre": "Rédaction en anglais et distinction UNDER ALL RESERVES / WITHOUT PREJUDICE",
+      "prompt": "Draft a formal demand letter in English for a Quebec commercial lease default, putting the tenant in default while reserving all legal remedies.",
+      "criteres": [
+        "Utiliser la terminologie anglaise officielle du C.c.Q. et du C.p.c. (extrajudicial demand, originating application, affidavit, specific performance).",
+        "Utiliser UNDER ALL RESERVES (et jamais WITHOUT PREJUDICE) afin que la mise en demeure puisse être produite au tribunal."
+      ],
+      "doit_contenir": [
+        "UNDER ALL RESERVES",
+        "default"
+      ],
+      "ne_doit_pas_contenir": [
+        "WITHOUT PREJUDICE",
+        "Subject to all reservations"
+      ]
+    },
+    {
+      "id": "RD-05",
+      "competence": "redaction-juridique",
+      "titre": "Plan d'argumentation au juge et plan d'interrogatoire préalable",
+      "prompt": "Préparer un plan d'argumentation pour l'audience à partir d'une théorie de la cause dont un arrêt clé est seulement au statut Résumée, ainsi qu'un plan d'interrogatoire préalable dans un litige de 85 000 $.",
+      "criteres": [
+        "Bloquer l'usage décisif devant le juge de l'arrêt au statut Résumée et exiger son obtention intégrale/extrait vérifié majoritaire avant dépôt.",
+        "Purger du plan d'argumentation toutes les faiblesses internes du bloc F et les objectifs ou planchers de règlement.",
+        "Appliquer au plan d'interrogatoire préalable le plafond de 3 heures (valeur inférieure à 100 000 $, art. 229 al. 2 C.p.c.) et les règles du régime simplifié (art. 535.9 C.p.c.)."
+      ],
+      "doit_contenir": [
+        "Résumée",
+        "229|3 heures|trois heures",
+        "535\\.9"
+      ],
+      "ne_doit_pas_contenir": [
+        "notre point faible est"
+      ]
+    },
+    {
+      "id": "AD-01",
+      "competence": "analyse-documentaire",
+      "titre": "Détection de commentaires cachés dans un .docx intitulé Defense_finale",
+      "prompt": "Un fichier nommé Defense_finale.docx ne porte aucun numéro de dossier de cour et contient un commentaire Word interne d'un avocat. Qualifier la nature et le régime de protection.",
+      "criteres": [
+        "Inspecter techniquement le .docx avant de conclure sur la foi du nom de fichier.",
+        "Repérer l'absence de numéro de dossier de cour et la présence de commentaires internes pour qualifier en projet / travail préparatoire (`CAB_MEMO` ou projet non déposé).",
+        "Retenir le régime protégé (`LITIGE` / `SECRET_PROFESSIONNEL`), jamais `PUBLIC`."
+      ],
+      "doit_contenir": [
+        "LITIGE|SECRET_PROFESSIONNEL",
+        "projet|préparatoire|CAB_MEMO"
+      ],
+      "ne_doit_pas_contenir": [
+        "^PUBLIC$"
+      ],
+      "test_outil": {
+        "outil": "inspecter_piece",
+        "fixture": "docx_avec_commentaire",
+        "attendu": {
+          "statut": "ok",
+          "indicateurs_contient": [
+            "COMMENTAIRES_WORD"
+          ],
+          "nombre_commentaires_min": 1
+        }
+      }
+    },
+    {
+      "id": "AD-02",
+      "competence": "analyse-documentaire",
+      "titre": "Caviardage Loi 25 / art. 108 C.p.c. et extraction de TRANS_INTERROGATOIRE",
+      "prompt": "Analyser en mode pièce (1) un relevé bancaire non caviardé portant un NAS et (2) des notes sténographiques d'interrogatoire préalable contenant deux engagements et une objection sur le secret professionnel.",
+      "criteres": [
+        "Déclencher le signalement 'Caviardage ou pli cacheté requis' (art. 108 al. 1 C.p.c. et Loi 25).",
+        "Qualifier les notes sténographiques en TRANS_INTERROGATOIRE et extraire un tableau structuré des engagements (art. 221 C.p.c.) et des objections (distinguer l'objection suspensive soumise dans les 5 jours sous art. 228 al. 2 C.p.c. des objections non suspensives).",
+        "Signaler le délai de 5 jours vers calendrier-procedural sans le calculer soi-même."
+      ],
+      "doit_contenir": [
+        "Caviardage|pli cacheté",
+        "108",
+        "TRANS_INTERROGATOIRE",
+        "228",
+        "calendrier-procedural"
+      ],
+      "ne_doit_pas_contenir": []
+    },
+    {
+      "id": "DP-01",
+      "competence": "deontologie-professionnelle",
+      "titre": "Déclencheurs concrets (partie représentée, IA et facturation) sans formule générique",
+      "prompt": "Un client transfère une réponse reçue directement d'une partie adverse pourtant représentée par avocat, propose de téléverser les contrats confidentiels dans un outil IA gratuit grand public, et demande pourquoi la note d'honoraires reflète 8 heures alors que la rédaction n'a pris que 30 minutes.",
+      "criteres": [
+        "Citer au texte les articles applicables : communication avec une personne représentée (Code, art. 120 al. 1), compétence technologique (art. 21 al. 2), confidentialité et infonuagique (art. 60 à 63; Règl. art. 17), et honoraires justes et raisonnables sans heures fictives (art. 101 et 102).",
+        "Rappeler qu'en l'absence de déclencheur concret dans une autre tâche, aucune mise en garde déontologique générique ne doit être ajoutée."
+      ],
+      "doit_contenir": [
+        "120",
+        "60|61",
+        "101|102",
+        "21"
+      ],
+      "ne_doit_pas_contenir": [
+        "veuillez consulter votre ordre par précaution dans tous les dossiers"
+      ]
+    }
+  ]
+}

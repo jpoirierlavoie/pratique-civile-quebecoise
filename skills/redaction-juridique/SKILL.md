@@ -221,9 +221,9 @@ cette écriture précise.
 
 Elle n'établit pas le droit : c'est `recherche-juridique`, qui produit la fiche et la note de
 recherche. Elle ne qualifie pas les documents ni leur régime de protection : c'est
-`analyse-documentaire`. Elle produit en revanche la note d'analyse, la théorie de la cause et le
-plan d'argumentation — ce dernier étant le document où les citations réapparaissent au grand jour,
-devant le tribunal.
+`analyse-documentaire`. Elle produit en revanche la note d'analyse, la théorie de la cause, le
+plan d'argumentation et le plan d'interrogatoire préalable — le plan d'argumentation étant le
+document où les citations réapparaissent au grand jour, devant le tribunal.
 
 Elle ne met pas en forme : en-têtes, cartouches et blocs de signature appartiennent aux gabarits.
 
@@ -262,13 +262,15 @@ Chacun des quatre fichiers de famille s'ouvre sur une section 0 qui dit ce qu'il
 avant d'écrire.
 
 - `references/actes-de-procedure.md` — la famille la plus codifiée : unité d'allégation, formule de
-  pièce, allégations de caractérisation, dommages, compétence, conclusions, et les variantes.
+  pièce, allégations de caractérisation, dommages, compétence, conclusions (solidarité et exécution
+  provisoire), actes modifiés (art. 206 à 208 C.p.c.) et les variantes.
 - `references/actes-juridiques.md` — contrats et actes consensuels : architecture, clauses usuelles,
   et les limites impératives du C.c.Q. qui rendent inopérantes les clauses importées.
 - `references/correspondance.md` — mise en demeure et lettres : assises légales de la demeure,
   registre, formules d'appel et de politesse, mentions de réserve.
-- `references/notes-internes.md` — note d'analyse, et note de stratégie en deux modes : la théorie
-  de la cause et le plan d'argumentation. La famille où les citations sont exigées.
+- `references/notes-internes.md` — note d'analyse, et note de stratégie en trois modes : la théorie
+  de la cause, le plan d'argumentation et le plan d'interrogatoire préalable. La famille où les
+  citations sont exigées.
 - `references/contamination.md` — tables complètes des marqueurs français et de common law, faux
   amis, lexique de substitution, et la **terminologie anglaise officielle** tirée des versions
   anglaises du C.p.c. et du C.c.Q. À lire pour toute révision d'un texte d'origine incertaine et

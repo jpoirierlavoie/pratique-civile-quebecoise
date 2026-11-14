@@ -5,14 +5,13 @@ du texte officiel. À lire au moment concerné, puis **relire l'article à la so
 l'énoncer : ce fichier est une carte, il vieillit.
 
 *Sources et consolidation : Code de déontologie des avocats, RLRQ, c. B-1, r. 3.1 (« Code »),
-consolidé au 2026-04-15, art. 20 à 110 et 114 à 123; Règlement sur la comptabilité et les normes
+consolidé au 2026-04-15, art. 20 à 123; Règlement sur la comptabilité et les normes
 d'exercice professionnel des avocats, RLRQ, c. B-1, r. 5 (« Règl. »), consolidé au 2026-04-15,
-art. 11 à 33 et 50 à 82; Code de procédure civile, RLRQ, c. C-25.01 (« C.p.c. »), consolidé au
-2026-04-07, art. 192 à 194. Non lus, donc hors de ce fichier : Code, art. 1 à 19 (devoirs envers
-le public), 111 à 113 et suivants (règles générales envers l'administration de la justice,
-devoirs envers la profession, publicité); Règl., art. 1 à 10 et 34 à 49 (définitions, registres
-du compte général, conciliation, rapports). Toute absence signalée plus bas s'entend « dans les
-divisions lues ».*
+art. 11 à 82; Code de procédure civile, RLRQ, c. C-25.01 (« C.p.c. »), consolidé au
+2026-04-07, art. 192 à 194. Non lus, donc hors de ce fichier : Code, art. 1 à 19 (devoirs généraux
+envers le public), 124 et suivants (devoirs envers la profession, publicité, exercice en société);
+Règl., art. 1 à 10 (définitions et dispositions générales). Toute absence signalée plus bas s'entend
+« dans les divisions lues ».*
 
 **Le secret professionnel n'est pas ici.** Son droit est à l'art. 9 de la Charte des droits et
 libertés de la personne, son devoir à l'art. 131 de la Loi sur le Barreau et à l'art. 60.4 du
@@ -166,11 +165,19 @@ obtenir un avis juridique.
 | Conservation : journaux et registres, 7 ans à partir de la fermeture du dossier (sauf registre des rapports mensuels). | Règl. 31 | « L’avocat doit conserver pour une période d’au moins 7 ans à partir de la fermeture du dossier, tous les journaux et registres concernant la comptabilité relative à l’exercice de sa profession à l’exception du registre de rapports comptables mensuels. » |
 | Conservation : rapports mensuels, copies de chèques reçus, pièces justificatives, 7 ans après la fin de l'exercice financier. | Règl. 32 | « L’avocat doit conserver pour une période d’au moins 7 ans après la fin de son exercice financier: 1° les rapports comptables mensuels; 2° une copie de tout chèque ou autre ordre de paiement reçu en fidéicommis; 3° toutes les pièces justificatives ou de contrôle [...] » |
 | Reconstitution de la comptabilité sur demande écrite du Comité exécutif, du syndic ou de l'inspection, sinon aux frais de l'avocat. | Règl. 33 | « À défaut par l’avocat de se conformer à la demande qui lui est faite dans le délai imparti, le Comité exécutif, le syndic ou le directeur de l’inspection professionnelle peut faire procéder à la reconstitution par une personne de son choix, aux frais de l’avocat. » |
+| Comptabilité d'administration : registre permanent chronologique des recettes et déboursés d'argent appartenant à l'avocat. | Règl. 34 | Tenir à jour ce registre avec date, montant, provenance ou bénéficiaire et désignation du dossier *(relire le libellé exact à la source)*. |
+| Journal de caisse en fidéicommis : registre permanent chronologique des recettes et déboursés, avec calcul du solde après chaque inscription. | Règl. 38 | Consigner date, somme, provenance ou bénéficiaire, client, dossier, objet, mention d'espèces ou mode et numéro de retrait, et solde actualisé *(relire le libellé exact à la source)*. |
+| Registre de cartes-clients : suivi séparé par client et par dossier des entrées, sorties et solde en fidéicommis. | Règl. 39 | Tenir ce registre permanent à jour et concordant avec le journal de caisse *(relire le libellé exact à la source)*. |
+| Rapports comptables mensuels et conciliation bancaire de chaque compte général en fidéicommis. | Règl. 40, 41 | Tenir le registre des rapports mensuels et dresser chaque mois, sur le formulaire prescrit, la conciliation entre le relevé financier, le journal de caisse, la liste des soldes des cartes-clients, les chèques et les recettes en circulation *(relire le libellé exact à la source)*. |
+| Rapport comptable annuel : reddition annuelle de la comptabilité en fidéicommis au Barreau. | Règl. 42 | Au moins une fois l'an et dans les 30 jours suivant la réception d'une demande du directeur de l'inspection professionnelle, transmettre le rapport annuel couvrant 12 mois sur le formulaire prescrit *(relire le libellé exact à la source)*. |
+| Autres biens en fidéicommis (valeurs, titres, meubles) : description, avis au client, lieu de garde et affectation. | Règl. 43 à 46 | Tenir un registre permanent dès réception ou remise (43); aviser sans délai le client si le bien provient d'un tiers (44); l'aviser par écrit du lieu de conservation et de tout changement (45); n'utiliser le bien que selon l'affectation convenue (46) *(relire le libellé exact à la source)*. |
 
 ## 7. Rapports avec la partie adverse et son avocat
 
 | Obligation | Article | Citation |
 |---|---|---|
+| Fermeté, dignité, sincérité, courtoisie et respect envers le tribunal et tout autre intervenant du système de justice. | Code 112 | « L’avocat agit avec fermeté et dignité, conformément à la loi, tout en étant sincère, courtois et respectueux envers le tribunal et tout autre intervenant du système de justice. » |
+| Coopération, bonne foi et interdiction de tout procédé purement dilatoire ou destiné à nuire. | Code 113 | « L’avocat coopère avec tout intervenant du système de justice pour en assurer la saine administration. Il adopte une attitude conforme aux exigences de la bonne foi et évite tout procédé purement dilatoire, notamment recourir à une procédure dans le seul but de nuire à autrui. » |
 | Ne pas induire en erreur une partie ou son avocat ni surprendre leur bonne foi. | Code 119 | « L’avocat ne doit pas agir de manière à induire en erreur une partie ou son avocat, ou de manière à surprendre leur bonne foi. » |
 | Personne représentée : ne communiquer qu'en présence ou avec le consentement de son avocat, ou si la loi l'autorise; communication fortuite à dénoncer sans délai. | Code 120 al. 1 | « L’avocat ne doit pas communiquer dans une affaire avec une personne qu’il sait être représentée par un avocat, si ce n’est en la présence ou avec le consentement de ce dernier ou à moins d’y être autorisé par la loi. En cas de communication non sollicitée ou fortuite, il informe sans délai l’avocat de cette personne des circonstances et de la teneur de la communication. » |
 | Respecter tout engagement pris en cours de mandat, sauf impossibilité raisonnable. | Code 44 | « L’avocat respecte tout engagement qu’il prend au cours de l’exécution d’un mandat, sauf s’il n’est pas raisonnablement possible de le faire. » |
@@ -182,6 +189,7 @@ obtenir un avis juridique.
 
 | Obligation | Article | Citation |
 |---|---|---|
+| Servir la justice, soutenir l'autorité des tribunaux et maintenir la confiance du public. | Code 111 | « L’avocat sert la justice et soutient l’autorité des tribunaux. Il ne peut agir de manière à porter préjudice à l’administration de la justice. Il favorise le maintien du lien de confiance entre le public et l’administration de la justice. » |
 | Se présenter ou se faire représenter quand sa présence est requise; aviser client, tribunal et parties en cas d'empêchement. | Code 114 | « Lorsque sa présence est requise, l’avocat se présente ou se fait représenter devant le tribunal, à moins d’en être empêché pour des motifs hors de son contrôle. Autant que possible, il en avise préalablement son client, le tribunal et les parties concernées. » |
 | Franchise : ne pas induire ni tenter d'induire le tribunal en erreur. | Code 116 | « L’avocat ne doit pas induire ou tenter d’induire le tribunal en erreur. » |
 | Preuve : ne pas soustraire une preuve à conserver, révéler ou produire; ne pas participer à une preuve fausse; ne pas retenir, dérober, falsifier ou détruire une pièce du dossier du tribunal. | Code 117 | « L’avocat ne doit pas soustraire une preuve que lui-même ou le client a l’obligation de conserver, de révéler ou de produire, ni participer à la confection d’une preuve qu’il devrait savoir être fausse. Il ne doit pas non plus, directement ou indirectement, retenir indûment, dérober, receler, falsifier, mutiler ou détruire une pièce d’un dossier du tribunal ou un élément de preuve. » |
@@ -233,17 +241,31 @@ obtenir un avis juridique.
 
 ---
 
+## Outils technologiques et intelligence artificielle
+
+Ni le Code ni le Règlement ne nomment l'intelligence artificielle générative : le praticien applique les devoirs existants à ces usages, sans combler le silence par des règles inventées.
+
+| Axe | Fondement | Ce que cela commande |
+|---|---|---|
+| **Compétence technologique** | Code 21 al. 2 | Connaître les capacités, les limites (hallucinations, biais de juridiction étrangère) et les paramètres de confidentialité des outils utilisés |
+| **Supervision et jugement** | Code 20, 35 | Ne pas déléguer le jugement professionnel à un outil; superviser et réviser intégralement tout projet produit avec assistance |
+| **Confidentialité et infonuagique** | Code 60 à 63; Règl. 17, 29 | Ne jamais verser de renseignements confidentiels ou couverts par le secret professionnel dans un outil externe qui conserve les données ou les réutilise sans garanties contractuelles et techniques adéquates |
+| **Honoraires justes et raisonnables** | Code 99, 101, 102 (2°) | Ne jamais facturer d'heures fictives lorsque l'outil comprime le temps consacré à la tâche; obtenir l'accord préalable pour tout débours technologique refacturé |
+| **Sincérité envers le tribunal** | Code 112, 116 | Vérifier à la source officielle l'existence, la teneur exacte et l'autorité actuelle de toute loi, décision ou doctrine suggérée par un outil avant de la présenter au tribunal, conformément aux avis des cours québécoises |
+
+---
+
 ## Ce que le texte ne dit pas
 
-Aucune disposition trouvée dans les divisions lues sur les points suivants. **Signaler sans combler** : un silence du texte n'est pas une permission, et un usage de la profession n'est pas une règle. Certains sujets siègent peut-être dans les divisions non lues (Code, art. 1 à 19 et 111 à 113; Règl., art. 1 à 10 et 34 à 49) ou dans d'autres textes hors du corpus — le dire, et renvoyer au texte ou au bureau du syndic.
+Aucune disposition trouvée dans les divisions lues sur les points suivants. **Signaler sans combler** : un silence du texte n'est pas une permission, et un usage de la profession n'est pas une règle. Certains sujets siègent peut-être dans les divisions non lues (Code, art. 1 à 19 et 124 et suivants; Règl., art. 1 à 10) ou dans d'autres textes hors du corpus — le dire, et renvoyer au texte ou au bureau du syndic.
 
 1. **Procédure de vérification des conflits.** Ni le Code ni le Règlement ne prescrivent une recherche de conflits, un registre des clients ou un moment précis pour cette vérification. Les art. 64, 71, 83 et 87 énoncent des interdictions de résultat; l'art. 74 donne des critères d'appréciation. Rien sur la méthode.
 2. **Convention d'honoraires écrite.** Aucune obligation générale d'écrit. L'écrit n'est exigé que pour les intérêts sur comptes en souffrance (Code 103), la rémunération forfaitaire (Code 104) et l'entente de disponibilité acquise (Règl. 54(2) et 55). L'art. 99 exige l'information et l'accord du client, sans forme.
 3. **Honoraires conditionnels ou à pourcentage.** L'art. 109 du Code est marqué « (Inopérant) »; aucune autre disposition dans les divisions lues.
 4. **Contenu obligatoire du dossier.** Le Règlement n'exige que l'identification du client et la nature du mandat (art. 13-14) et la conservation des documents de vérification d'identité (art. 22). Rien sur les notes d'entrevue, la copie du mandat, le journal des communications ou les pièces reçues; l'art. 16 ne parle que de la séparation procédures / correspondance / autres documents.
 5. **Délai de conservation propre aux documents d'identité.** Aucun délai distinct; seul le délai général du dossier (Règl. 18 : 7 ans après fermeture) s'applique par le texte.
-6. **Communications électroniques.** Rien sur le courriel, le chiffrement, l'infonuagique ou la transmission de renseignements confidentiels par voie électronique. Seuls points de contact : Code 21 al. 2 (compétence technologique), Règl. 15, 22 al. 2 et 30 (supports « faisant appel aux technologies de l'information »; les virements électroniques sont assujettis au Règlement).
-7. **Courtoisie envers la partie adverse et son avocat.** Aucun article dans les chapitres II à IV du titre III. Le chapitre I du titre III (art. 111 à 113) n'a pas été lu.
+6. **Communications électroniques et intelligence artificielle.** Aucune règle technique particulière sur le courriel, le chiffrement ou les modèles d'intelligence artificielle. Seuls points de contact : Code 21 al. 2 (compétence technologique), Code 60 à 63 (confidentialité), Code 116 (exactitude devant le tribunal), Règl. 15, 17, 22 al. 2, 29 et 30 (supports « faisant appel aux technologies de l'information »); les directives des tribunaux sur l'IA s'y ajoutent et se lisent à la source.
+7. **Usages pratiques entre confrères.** Les art. 112 et 113 du Code imposent sincérité, courtoisie, respect, coopération, bonne foi et refus de tout procédé purement dilatoire, mais ne codifient ni les délais de grâce informels ni le préavis d'usage avant d'inscrire pour défaut. Ces pratiques demeurent des usages, non des règles écrites.
 8. **Autorités défavorables.** Aucune obligation de signaler au tribunal la jurisprudence ou la législation contraire. Les art. 116 et 117 portent sur l'erreur et la preuve, non sur les autorités.
 9. **Demandes ex parte / sans préavis.** Rien. L'art. 121 régit les communications avec le juge hors du tribunal dans une affaire pendante, ce qui n'est pas la même chose.
 10. **Exactitude des faits allégués.** Seuls les art. 116 (ne pas induire le tribunal en erreur) et 117 (preuve) s'appliquent; aucune règle propre aux allégations des actes de procédure.
@@ -251,7 +273,7 @@ Aucune disposition trouvée dans les divisions lues sur les points suivants. **S
 12. **Confidentialité des offres de règlement.** L'art. 43 impose seulement de les soumettre au client. Rien sur leur divulgation au tribunal.
 13. **Obligation expresse de cesser d'agir en cas de conflit survenu en cours de mandat.** Hors du mandat commun (Code 85, cessation impérative si le différend persiste), le conflit n'est qu'un motif sérieux permettant de cesser (48(4)); l'art. 49 ne le mentionne pas. L'art. 71 impose d'« éviter » toute situation de conflit. Aucune obligation générale d'informer le client d'un conflit et d'obtenir son consentement : le consentement n'apparaît qu'à l'art. 74 (critère), 84 (mandat commun) et 87 (ancien client).
 14. **Droit de rétention du dossier pour honoraires impayés.** L'art. 96 renvoie aux « cas prévus par la loi » sans les nommer.
-15. **Comptabilité en fidéicommis : définition d'« argent reçu en fidéicommis », journaux et registres du compte général (recettes, débours, cartes-clients), conciliation et rapport comptable mensuel, rapport annuel au Barreau.** Les art. 31-32 mentionnent le « registre de rapports comptables mensuels » et les « journaux et registres prévus à l'article 31 » sans les définir; ces règles sont vraisemblablement aux art. 34 à 49, non lus. Le plafond de 7 500 $ et le compte particulier sont couverts.
+15. **Définitions comptables liminaires.** Les art. 34 à 46 couvrent désormais les journaux d'administration et de fidéicommis, les cartes-clients, les rapports mensuels et leur conciliation, le rapport annuel (dans les 30 jours d'une demande) et les autres biens en fidéicommis. Seules les définitions et exclusions générales de l'argent reçu en fidéicommis (Règl., art. 1 à 10) demeurent hors de ce fichier et se relisent au texte au besoin.
 16. **Art. 104 du Code (compte détaillé).** Rédigé pour « l'avocat qui exerce au sein d'un cabinet »; le texte ne dit pas si la seconde phrase (relevé décrivant les services) s'impose au praticien seul.
 17. **Art. 192 C.p.c.** Le texte ne dit pas qui doit mettre la partie en demeure (formulation passive). Le délai de 10 jours court « de sa notification », c'est-à-dire de la notification de la **mise en demeure**, non du retrait de l'avocat : un calendrier qui compterait depuis le retrait serait faux.
 18. **Fréquence de la reddition de compte (Code 40) et délai de réponse au client (Code 39).** Seulement « périodiquement ou sur demande » et « disponibilité [...] raisonnable ».
