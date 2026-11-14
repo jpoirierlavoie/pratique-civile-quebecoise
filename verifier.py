@@ -24,6 +24,7 @@ ROOT_ALLOWLIST = frozenset(
         ".claude-plugin/plugin.json",
         ".claude-plugin/marketplace.json",
         "plugin.json",
+        "mcp_config.json",
         "gemini-extension.json",
         ".mcp.json",
         "assets/logo.svg",
@@ -66,6 +67,9 @@ RETIRED_REPO_SLUGS = (
 )
 EXPECTED_LICENSE = "CC0-1.0"
 EXPECTED_MCP_SERVERS = {"Legislation": {}, "Jurisprudence": {}}
+EXPECTED_JURISPRUDENCE_URL = "https://jurisprudence.poirierlavoie.ca/mcp"
+EXPECTED_JURISPRUDENCE_AUTH = "Bearer $" + "{MCP_JURISPRUDENCE_SECRET}"
+_HEX_SECRET_RE = re.compile(r"[0-9a-f]{32,}", re.I)
 ALLOWED_TOOL_PREFIXES = frozenset({"legislation", "jurisprudence", "greffe", "palais"})
 
 BANNED_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
@@ -269,8 +273,14 @@ def verifier(racine: Path) -> list[str]:
     claude_plugin = _load_json(racine, ".claude-plugin/plugin.json", erreurs)
     marketplace = _load_json(racine, ".claude-plugin/marketplace.json", erreurs)
     agy_plugin = _load_json(racine, "plugin.json", erreurs)
+    agy_mcp = _load_json(racine, "mcp_config.json", erreurs)
     gemini_ext = _load_json(racine, "gemini-extension.json", erreurs)
     mcp_json = _load_json(racine, ".mcp.json", erreurs)
+
+    for rel_mcp in (".mcp.json", "mcp_config.json", "gemini-extension.json"):
+        brut = decoded.get(rel_mcp)
+        if brut is not None and _HEX_SECRET_RE.search(brut):
+            erreurs.append(f"{rel_mcp} : secret hexadécimal potentiel détecté")
 
     versions: dict[str, str] = {}
 
@@ -377,6 +387,44 @@ def verifier(racine: Path) -> list[str]:
                 "plugin.json : 'suggestedPrompts' doit contenir entre 1 et 3 chaînes non vides"
             )
 
+    if agy_mcp is not None:
+        agy_servers = agy_mcp.get("mcpServers")
+        if not isinstance(agy_servers, dict) or set(agy_servers.keys()) != {"jurisprudence"}:
+            erreurs.append(
+                "mcp_config.json : 'mcpServers' doit déclarer exactement 'jurisprudence'"
+            )
+        else:
+            srv = agy_servers["jurisprudence"]
+            if not isinstance(srv, dict):
+                erreurs.append("mcp_config.json : mcpServers.jurisprudence doit être un objet JSON")
+            else:
+                if srv.get("url") != EXPECTED_JURISPRUDENCE_URL:
+                    erreurs.append(
+                        f"mcp_config.json : url doit valoir '{EXPECTED_JURISPRUDENCE_URL}'"
+                    )
+                if srv.get("headers") != {"Authorization": EXPECTED_JURISPRUDENCE_AUTH}:
+                    erreurs.append(
+                        "mcp_config.json : headers.Authorization doit valoir "
+                        f"'{EXPECTED_JURISPRUDENCE_AUTH}'"
+                    )
+                if "eager" in srv:
+                    erreurs.append("mcp_config.json : 'eager' doit être omis (chargement paresseux)")
+                variables = srv.get("variables")
+                has_secret_var = isinstance(variables, list) and any(
+                    isinstance(v, dict)
+                    and v.get("name") == "MCP_JURISPRUDENCE_SECRET"
+                    and isinstance(v.get("title"), str)
+                    and bool(v["title"].strip())
+                    and isinstance(v.get("description"), str)
+                    and bool(v["description"].strip())
+                    for v in variables
+                )
+                if not has_secret_var:
+                    erreurs.append(
+                        "mcp_config.json : variables doit déclarer MCP_JURISPRUDENCE_SECRET "
+                        "avec 'title' et 'description'"
+                    )
+
     if gemini_ext is not None:
         if gemini_ext.get("name") != EXPECTED_PLUGIN_NAME:
             erreurs.append(
@@ -387,6 +435,43 @@ def verifier(racine: Path) -> list[str]:
             erreurs.append("gemini-extension.json : 'version' semver invalide")
         else:
             versions["gemini-extension.json"] = ver
+        g_servers = gemini_ext.get("mcpServers")
+        if not isinstance(g_servers, dict) or set(g_servers.keys()) != {"jurisprudence"}:
+            erreurs.append(
+                "gemini-extension.json : 'mcpServers' doit déclarer exactement 'jurisprudence'"
+            )
+        else:
+            gsrv = g_servers["jurisprudence"]
+            if not isinstance(gsrv, dict):
+                erreurs.append(
+                    "gemini-extension.json : mcpServers.jurisprudence doit être un objet JSON"
+                )
+            else:
+                if gsrv.get("httpUrl") != EXPECTED_JURISPRUDENCE_URL:
+                    erreurs.append(
+                        f"gemini-extension.json : httpUrl doit valoir '{EXPECTED_JURISPRUDENCE_URL}'"
+                    )
+                if gsrv.get("headers") != {"Authorization": EXPECTED_JURISPRUDENCE_AUTH}:
+                    erreurs.append(
+                        "gemini-extension.json : headers.Authorization doit valoir "
+                        f"'{EXPECTED_JURISPRUDENCE_AUTH}'"
+                    )
+        settings = gemini_ext.get("settings")
+        has_secret_setting = isinstance(settings, list) and any(
+            isinstance(s, dict)
+            and s.get("envVar") == "MCP_JURISPRUDENCE_SECRET"
+            and s.get("sensitive") is True
+            and isinstance(s.get("name"), str)
+            and bool(s["name"].strip())
+            and isinstance(s.get("description"), str)
+            and bool(s["description"].strip())
+            for s in settings
+        )
+        if not has_secret_setting:
+            erreurs.append(
+                "gemini-extension.json : settings doit déclarer MCP_JURISPRUDENCE_SECRET "
+                "avec sensitive=true, 'name' et 'description'"
+            )
 
     if len(set(versions.values())) > 1:
         detail = ", ".join(f"{k}={v}" for k, v in sorted(versions.items()))

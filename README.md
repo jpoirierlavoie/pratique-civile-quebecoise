@@ -14,7 +14,7 @@ recoupent pas.
 
 Aucune ne dépend d'un gestionnaire de dossiers. Le plugin `pallas-athena` fournit celui du
 cabinet; un autre connecteur, ou aucun, laisse les cinq compétences opérantes. Les connecteurs de
-sources de droit, eux, sont déclarés ici : voir `.mcp.json`.
+sources de droit, eux, sont déclarés ici : voir `.mcp.json`, `mcp_config.json` et `gemini-extension.json`.
 
 ---
 
@@ -89,10 +89,17 @@ pour combler.
 
 ## Les connecteurs
 
-Ce plugin déclare dans son `.mcp.json` les deux connecteurs de **sources de droit** dont la méthode
-dépend — « Legislation » et « Jurisprudence » —, par leur nom d'entrée au
-répertoire, ces entrées n'exposant pas d'URL publique. La déclaration ne transporte aucun
-identifiant : l'autorisation reste attachée au compte.
+Ce plugin déclare les deux connecteurs de **sources de droit** dont la méthode dépend :
+
+- **`.mcp.json` (Claude)** déclare « Legislation » et « Jurisprudence » par leur nom d'entrée au
+  répertoire (`{}`) pour `claude.ai`, où l'autorisation reste attachée au compte sans variable
+  d'environnement locale (évitant le déclenchement d'une découverte OAuth sur `401`).
+- **`mcp_config.json` (Google Antigravity)** et **`gemini-extension.json` (Gemini CLI)** câblent
+  directement le point d'entrée Streamable HTTP de « Jurisprudence »
+  (`https://jurisprudence.poirierlavoie.ca/mcp` — page publique
+  <https://jurisprudence.poirierlavoie.ca/>, dépôt source
+  <https://github.com/jpoirierlavoie/MCP-Jurisprudence-Quebec>) avec authentification par en-tête
+  `Authorization: Bearer ${MCP_JURISPRUDENCE_SECRET}`. Aucun secret n'est déposé ici.
 
 Aucun **gestionnaire de dossiers** n'y est déclaré, ni nommé nulle part dans les compétences. C'est
 la seule frontière, et c'est elle qui rend ce plugin installable chez quelqu'un d'autre.
@@ -162,15 +169,21 @@ et **Gemini CLI** : chaque plateforme lit son propre manifeste et ignore les aut
     compétences*;
   - dans `Claude Code`, ajouter le catalogue puis installer le greffon :
     `/plugin marketplace add jpoirierlavoie/pratique-civile-quebecoise` puis
-    `/plugin install pratique-civile-quebecoise@pratique-civile-quebecoise`.
-- **Google Antigravity** — `plugin.json` et `assets/logo.svg` :
+    `/plugin install pratique-civile-quebecoise@pratique-civile-quebecoise`; s'il n'est pas hérité
+    du compte `claude.ai`, enregistrer le connecteur Streamable HTTP `Jurisprudence` avec :
+    `claude mcp add --transport http Jurisprudence https://jurisprudence.poirierlavoie.ca/mcp --header "Authorization: Bearer ${MCP_JURISPRUDENCE_SECRET}"`.
+- **Google Antigravity** — `plugin.json`, `mcp_config.json` et `assets/logo.svg` :
   - installer via `agy plugin install https://github.com/jpoirierlavoie/pratique-civile-quebecoise.git`,
-    ou cloner le dépôt directement dans `~/.gemini/config/plugins/pratique-civile-quebecoise`;
-  - Antigravity ignorant les entrées vides de `.mcp.json`, déclarer les connecteurs
-    `Legislation` et `Jurisprudence` (URL Streamable HTTP ou commande stdio) dans
-    `~/.gemini/config/mcp_config.json`.
+    ou copier le contenu dans `~/.gemini/config/plugins/pratique-civile-quebecoise`;
+  - `mcp_config.json` câble directement le connecteur `jurisprudence`
+    (`https://jurisprudence.poirierlavoie.ca/mcp`) : renseigner `MCP_JURISPRUDENCE_SECRET` sur la
+    page du plugin puis l'activer, et déclarer `Legislation` dans
+    `~/.gemini/config/mcp_config.json` tant que son point d'entrée n'est pas câblé ici.
 - **Gemini CLI** — `gemini-extension.json` :
-  - installer via `gemini extensions install https://github.com/jpoirierlavoie/pratique-civile-quebecoise`.
+  - installer via `gemini extensions install https://github.com/jpoirierlavoie/pratique-civile-quebecoise`
+    — `gemini-extension.json` préconfigure `jurisprudence`
+    (`https://jurisprudence.poirierlavoie.ca/mcp`) et demande de manière sécurisée (`sensitive: true`)
+    le secret `MCP_JURISPRUDENCE_SECRET`.
 - **Contrôle** — exécuter `python verifier.py` depuis la racine du dépôt; le script valide les
   manifestes, les en-têtes YAML, les sept invariants structurels, les renvois aux fichiers de
   référence et l'étanchéité du contrat d'information, et ne retourne rien lorsque tout est conforme.
