@@ -410,34 +410,38 @@ def verifier(racine: Path) -> list[str]:
 
     if agy_mcp is not None:
         agy_servers = agy_mcp.get("mcpServers")
-        if not isinstance(agy_servers, dict) or set(agy_servers.keys()) != {
-            "jurisprudence",
-            "pratique-civile-outils",
-        }:
+        expected_agy_keys = set(EXPECTED_GOOGLE_SERVERS) | {"pratique-civile-outils"}
+        if not isinstance(agy_servers, dict) or set(agy_servers.keys()) != expected_agy_keys:
             erreurs.append(
                 "mcp_config.json : 'mcpServers' doit déclarer exactement "
-                "'jurisprudence' et 'pratique-civile-outils'"
+                "'legislation', 'jurisprudence' et 'pratique-civile-outils'"
             )
         else:
-            srv = agy_servers["jurisprudence"]
-            if not isinstance(srv, dict):
-                erreurs.append("mcp_config.json : mcpServers.jurisprudence doit être un objet JSON")
-            else:
-                if srv.get("url") != EXPECTED_JURISPRUDENCE_URL:
+            for srv_name, (exp_url, exp_auth, exp_var) in EXPECTED_GOOGLE_SERVERS.items():
+                srv = agy_servers[srv_name]
+                if not isinstance(srv, dict):
                     erreurs.append(
-                        f"mcp_config.json : url doit valoir '{EXPECTED_JURISPRUDENCE_URL}'"
+                        f"mcp_config.json : mcpServers.{srv_name} doit être un objet JSON"
                     )
-                if srv.get("headers") != {"Authorization": EXPECTED_JURISPRUDENCE_AUTH}:
+                    continue
+                if srv.get("url") != exp_url:
                     erreurs.append(
-                        "mcp_config.json : headers.Authorization doit valoir "
-                        f"'{EXPECTED_JURISPRUDENCE_AUTH}'"
+                        f"mcp_config.json : mcpServers.{srv_name}.url doit valoir '{exp_url}'"
+                    )
+                if srv.get("headers") != {"Authorization": exp_auth}:
+                    erreurs.append(
+                        f"mcp_config.json : mcpServers.{srv_name}.headers.Authorization doit "
+                        f"valoir '{exp_auth}'"
                     )
                 if "eager" in srv:
-                    erreurs.append("mcp_config.json : 'eager' doit être omis (chargement paresseux)")
+                    erreurs.append(
+                        f"mcp_config.json : mcpServers.{srv_name} ne doit pas contenir 'eager' "
+                        "(chargement paresseux)"
+                    )
                 variables = srv.get("variables")
                 has_secret_var = isinstance(variables, list) and any(
                     isinstance(v, dict)
-                    and v.get("name") == "MCP_JURISPRUDENCE_SECRET"
+                    and v.get("name") == exp_var
                     and isinstance(v.get("title"), str)
                     and bool(v["title"].strip())
                     and isinstance(v.get("description"), str)
@@ -446,8 +450,8 @@ def verifier(racine: Path) -> list[str]:
                 )
                 if not has_secret_var:
                     erreurs.append(
-                        "mcp_config.json : variables doit déclarer MCP_JURISPRUDENCE_SECRET "
-                        "avec 'title' et 'description'"
+                        f"mcp_config.json : mcpServers.{srv_name}.variables doit déclarer "
+                        f"{exp_var} avec 'title' et 'description'"
                     )
             outils_srv = agy_servers["pratique-civile-outils"]
             if not isinstance(outils_srv, dict):
@@ -482,29 +486,29 @@ def verifier(racine: Path) -> list[str]:
         else:
             versions["gemini-extension.json"] = ver
         g_servers = gemini_ext.get("mcpServers")
-        if not isinstance(g_servers, dict) or set(g_servers.keys()) != {
-            "jurisprudence",
-            "pratique-civile-outils",
-        }:
+        expected_gemini_keys = set(EXPECTED_GOOGLE_SERVERS) | {"pratique-civile-outils"}
+        if not isinstance(g_servers, dict) or set(g_servers.keys()) != expected_gemini_keys:
             erreurs.append(
                 "gemini-extension.json : 'mcpServers' doit déclarer exactement "
-                "'jurisprudence' et 'pratique-civile-outils'"
+                "'legislation', 'jurisprudence' et 'pratique-civile-outils'"
             )
         else:
-            gsrv = g_servers["jurisprudence"]
-            if not isinstance(gsrv, dict):
-                erreurs.append(
-                    "gemini-extension.json : mcpServers.jurisprudence doit être un objet JSON"
-                )
-            else:
-                if gsrv.get("httpUrl") != EXPECTED_JURISPRUDENCE_URL:
+            for srv_name, (exp_url, exp_auth, _) in EXPECTED_GOOGLE_SERVERS.items():
+                gsrv = g_servers[srv_name]
+                if not isinstance(gsrv, dict):
                     erreurs.append(
-                        f"gemini-extension.json : httpUrl doit valoir '{EXPECTED_JURISPRUDENCE_URL}'"
+                        f"gemini-extension.json : mcpServers.{srv_name} doit être un objet JSON"
                     )
-                if gsrv.get("headers") != {"Authorization": EXPECTED_JURISPRUDENCE_AUTH}:
+                    continue
+                if gsrv.get("httpUrl") != exp_url:
                     erreurs.append(
-                        "gemini-extension.json : headers.Authorization doit valoir "
-                        f"'{EXPECTED_JURISPRUDENCE_AUTH}'"
+                        f"gemini-extension.json : mcpServers.{srv_name}.httpUrl doit valoir "
+                        f"'{exp_url}'"
+                    )
+                if gsrv.get("headers") != {"Authorization": exp_auth}:
+                    erreurs.append(
+                        f"gemini-extension.json : mcpServers.{srv_name}.headers.Authorization "
+                        f"doit valoir '{exp_auth}'"
                     )
             g_outils = g_servers["pratique-civile-outils"]
             if not isinstance(g_outils, dict):
@@ -524,21 +528,22 @@ def verifier(racine: Path) -> list[str]:
                         "contenir que la clé 'httpUrl'"
                     )
         settings = gemini_ext.get("settings")
-        has_secret_setting = isinstance(settings, list) and any(
-            isinstance(s, dict)
-            and s.get("envVar") == "MCP_JURISPRUDENCE_SECRET"
-            and s.get("sensitive") is True
-            and isinstance(s.get("name"), str)
-            and bool(s["name"].strip())
-            and isinstance(s.get("description"), str)
-            and bool(s["description"].strip())
-            for s in settings
-        )
-        if not has_secret_setting:
-            erreurs.append(
-                "gemini-extension.json : settings doit déclarer MCP_JURISPRUDENCE_SECRET "
-                "avec sensitive=true, 'name' et 'description'"
+        for _, _, exp_var in EXPECTED_GOOGLE_SERVERS.values():
+            has_secret_setting = isinstance(settings, list) and any(
+                isinstance(s, dict)
+                and s.get("envVar") == exp_var
+                and s.get("sensitive") is True
+                and isinstance(s.get("name"), str)
+                and bool(s["name"].strip())
+                and isinstance(s.get("description"), str)
+                and bool(s["description"].strip())
+                for s in settings
             )
+            if not has_secret_setting:
+                erreurs.append(
+                    f"gemini-extension.json : settings doit déclarer {exp_var} "
+                    "avec sensitive=true, 'name' et 'description'"
+                )
 
     if len(set(versions.values())) > 1:
         detail = ", ".join(f"{k}={v}" for k, v in sorted(versions.items()))

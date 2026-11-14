@@ -14,7 +14,7 @@ recoupent pas.
 
 Aucune ne dépend d'un gestionnaire de dossiers. Le plugin `pallas-athena` fournit celui du
 cabinet; un autre connecteur, ou aucun, laisse les cinq compétences opérantes. Les connecteurs
-publics (sources de droit et calcul déterministe), eux, sont déclarés ici : voir `.mcp.json`,
+(sources de droit et calcul déterministe), eux, sont déclarés ici : voir `.mcp.json`,
 `mcp_config.json` et `gemini-extension.json`.
 
 ---
@@ -90,16 +90,23 @@ pour combler.
 
 ## Les connecteurs
 
-Ce plugin déclare les connecteurs publics de **sources de droit** et de **calcul déterministe** dont la méthode dépend :
+Ce plugin déclare les connecteurs de **sources de droit** et de **calcul déterministe** dont la méthode dépend :
 
 - **`.mcp.json` (Claude)** déclare « Legislation » et « Jurisprudence » par leur nom d'entrée au
   répertoire (`{}`) pour `claude.ai`, où l'autorisation reste attachée au compte sans variable
   d'environnement locale (évitant le déclenchement d'une découverte OAuth sur `401`), ainsi que le
   connecteur public et sans état « `pratique-civile-outils` » (`https://outils.poirierlavoie.ca/mcp`).
 - **`mcp_config.json` (Google Antigravity)** et **`gemini-extension.json` (Gemini CLI)** câblent :
+  - le point d'entrée Streamable HTTP de « Legislation »
+    (`https://legislation.poirierlavoie.ca/mcp` — page publique
+    <https://legislation.poirierlavoie.ca/>, fiche SEP-2127
+    <https://legislation.poirierlavoie.ca/mcp/server-card>, dépôt source
+    <https://github.com/jpoirierlavoie/MCP-Legislation>) avec authentification par en-tête
+    `Authorization: Bearer ${MCP_LEGISLATION_SECRET}` (aucun secret n'est déposé ici);
   - le point d'entrée Streamable HTTP de « Jurisprudence »
     (`https://jurisprudence.poirierlavoie.ca/mcp` — page publique
-    <https://jurisprudence.poirierlavoie.ca/>, dépôt source
+    <https://jurisprudence.poirierlavoie.ca/>, fiche SEP-2127
+    <https://jurisprudence.poirierlavoie.ca/mcp/server-card>, dépôt source
     <https://github.com/jpoirierlavoie/MCP-Jurisprudence-Quebec>) avec authentification par en-tête
     `Authorization: Bearer ${MCP_JURISPRUDENCE_SECRET}` (aucun secret n'est déposé ici);
   - le point d'entrée public et sans état « `pratique-civile-outils` »
@@ -175,25 +182,28 @@ et **Gemini CLI** : chaque plateforme lit son propre manifeste et ignore les aut
     compétences*;
   - dans `Claude Code`, ajouter le catalogue puis installer le greffon :
     `/plugin marketplace add jpoirierlavoie/pratique-civile-quebecoise` puis
-    `/plugin install pratique-civile-quebecoise@pratique-civile-quebecoise`; s'il n'est pas hérité
-    du compte `claude.ai`, enregistrer le connecteur Streamable HTTP `Jurisprudence` avec :
+    `/plugin install pratique-civile-quebecoise@pratique-civile-quebecoise`; s'ils ne sont pas
+    hérités du compte `claude.ai`, enregistrer les connecteurs Streamable HTTP avec :
+    `claude mcp add --transport http Legislation https://legislation.poirierlavoie.ca/mcp --header "Authorization: Bearer ${MCP_LEGISLATION_SECRET}"`
+    et
     `claude mcp add --transport http Jurisprudence https://jurisprudence.poirierlavoie.ca/mcp --header "Authorization: Bearer ${MCP_JURISPRUDENCE_SECRET}"`.
   - `.mcp.json` déclare également « `pratique-civile-outils` » (`https://outils.poirierlavoie.ca/mcp`),
     sans secret requis.
 - **Google Antigravity** — `plugin.json`, `mcp_config.json` et `assets/logo.svg` :
   - installer via `agy plugin install https://github.com/jpoirierlavoie/pratique-civile-quebecoise.git`,
     ou copier le contenu dans `~/.gemini/config/plugins/pratique-civile-quebecoise`;
-  - `mcp_config.json` câble directement `jurisprudence`
+  - `mcp_config.json` câble directement `legislation`
+    (`https://legislation.poirierlavoie.ca/mcp`), `jurisprudence`
     (`https://jurisprudence.poirierlavoie.ca/mcp`) et `pratique-civile-outils`
-    (`https://outils.poirierlavoie.ca/mcp`, sans secret) : renseigner `MCP_JURISPRUDENCE_SECRET` sur la
-    page du plugin puis l'activer, et déclarer `Legislation` dans
-    `~/.gemini/config/mcp_config.json` tant que son point d'entrée n'est pas câblé ici.
+    (`https://outils.poirierlavoie.ca/mcp`, sans secret) : renseigner `MCP_LEGISLATION_SECRET` et
+    `MCP_JURISPRUDENCE_SECRET` sur la page du plugin puis l'activer.
 - **Gemini CLI** — `gemini-extension.json` :
   - installer via `gemini extensions install https://github.com/jpoirierlavoie/pratique-civile-quebecoise`
-    — `gemini-extension.json` préconfigure `jurisprudence`
+    — `gemini-extension.json` préconfigure `legislation`
+    (`https://legislation.poirierlavoie.ca/mcp`) et `jurisprudence`
     (`https://jurisprudence.poirierlavoie.ca/mcp`), demande de manière sécurisée (`sensitive: true`)
-    le secret `MCP_JURISPRUDENCE_SECRET`, et câble `pratique-civile-outils`
-    (`https://outils.poirierlavoie.ca/mcp`) sans secret requis.
+    les secrets `MCP_LEGISLATION_SECRET` et `MCP_JURISPRUDENCE_SECRET`, et câble
+    `pratique-civile-outils` (`https://outils.poirierlavoie.ca/mcp`) sans secret requis.
 - **Contrôle** — exécuter `python verifier.py` depuis la racine du dépôt; le script valide les
   manifestes, les en-têtes YAML, les sept invariants structurels, les renvois aux fichiers de
   référence et l'étanchéité du contrat d'information, et ne retourne rien lorsque tout est conforme.

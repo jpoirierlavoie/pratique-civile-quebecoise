@@ -2,7 +2,7 @@
   "name": "pratique-civile-quebecoise",
   "displayName": "Pratique civile québécoise",
   "version": "1.4.0",
-  "description": "Recherche, rédaction, analyse documentaire, calendrier procédural et déontologie en droit civil et commercial québécois. Cinq compétences qui se répondent, indépendantes de tout gestionnaire de dossiers. Câble les connecteurs « Jurisprudence » et « pratique-civile-outils ».",
+  "description": "Recherche, rédaction, analyse documentaire, calendrier procédural et déontologie en droit civil et commercial québécois. Cinq compétences qui se répondent, indépendantes de tout gestionnaire de dossiers. Câble les connecteurs « Legislation », « Jurisprudence » et « pratique-civile-outils ».",
   "logo": "assets/logo.svg",
   "suggestedPrompts": [
     "Vérifie le fondement juridique, les conditions d'ouverture et le délai de prescription d'un recours pour vice caché",
