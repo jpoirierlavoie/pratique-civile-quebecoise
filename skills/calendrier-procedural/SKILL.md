@@ -73,9 +73,12 @@ quantième; à défaut, le dernier jour du mois. Il expire à 24 h; s'il tombe u
 férié, il est prolongé au premier jour ouvrable qui suit. Les jours fériés, et les règles d'heures
 qui déplacent une notification ou un dépôt au jour ouvrable suivant (art. 107 al. 4, 111 al. 2),
 sont dans `references/jours-non-juridiques.md`. Quand le besoin **CALCUL** est servi par un outil
-connecté, s'en servir et rapporter son résultat; sinon, lorsque l'exécution Python locale est
+connecté (`calendrier_compute_deadlines`, et `calendrier_list_holidays` pour lister les jours non
+juridiques), s'en servir et rapporter son résultat; sinon, lorsque l'exécution Python locale est
 disponible, exécuter `scripts/calcul_delai.py` (`python scripts/calcul_delai.py <AAAA-MM-JJ> --jours <N>`)
-plutôt que de compter mentalement, et dans tous les cas montrer le compte visible étape par étape.
+plutôt que de compter mentalement, et dans tous les cas montrer le compte visible étape par étape
+(ancrage, déplacement éventuel selon l'art. 111 al. 2, jour 1, date brute, report selon l'art. 83,
+date effective).
 
 **5. Qualifier chaque délai.** Quatre statuts : **de rigueur** quand le Code le dit — art. 173,
 art. 347 al. 3, art. 363 al. 1; **ordinaire** pour tout autre délai du Code, y compris ceux dont
@@ -121,7 +124,7 @@ dossiers s'il y en a un de connecté — besoins **ÉCHÉANCES** pour ce qui est
 l'ancrage —; à défaut, l'avocat, interrogé sur la date précise et sa preuve; à défaut encore, le
 calendrier se construit sur une date hypothétique, marquée comme telle à chaque ligne.
 
-Le besoin **CALCUL** sert le compte quand un outil existe. Le besoin **INSCRIPTION** sert à
+Le besoin **CALCUL** sert le compte (`calendrier_compute_deadlines` ou outil du gestionnaire, à défaut `scripts/calcul_delai.py` en local). Le besoin **INSCRIPTION** sert à
 proposer chaque échéance à l'agenda : **une échéance qui n'existe que dans le tableau n'existe
 nulle part.** Proposer l'inscription, ne pas l'exécuter sans instruction.
 

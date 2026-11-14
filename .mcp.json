@@ -1,7 +1,11 @@
 {
   "mcpServers": {
     "Legislation": {},
-    "Jurisprudence": {}
+    "Jurisprudence": {},
+    "pratique-civile-outils": {
+      "type": "http",
+      "url": "https://outils.poirierlavoie.ca/mcp"
+    }
   },
   "recommendedCategories": [
     "legal-research"

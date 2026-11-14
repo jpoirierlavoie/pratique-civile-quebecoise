@@ -66,11 +66,32 @@ RETIRED_REPO_SLUGS = (
     "competence-pratique-civile-quebecoise",
 )
 EXPECTED_LICENSE = "CC0-1.0"
-EXPECTED_MCP_SERVERS = {"Legislation": {}, "Jurisprudence": {}}
+EXPECTED_OUTILS_URL = "https://outils.poirierlavoie.ca/mcp"
+EXPECTED_MCP_SERVERS = {
+    "Legislation": {},
+    "Jurisprudence": {},
+    "pratique-civile-outils": {"type": "http", "url": EXPECTED_OUTILS_URL},
+}
+EXPECTED_LEGISLATION_URL = "https://legislation.poirierlavoie.ca/mcp"
+EXPECTED_LEGISLATION_AUTH = "Bearer $" + "{MCP_LEGISLATION_SECRET}"
 EXPECTED_JURISPRUDENCE_URL = "https://jurisprudence.poirierlavoie.ca/mcp"
 EXPECTED_JURISPRUDENCE_AUTH = "Bearer $" + "{MCP_JURISPRUDENCE_SECRET}"
+EXPECTED_GOOGLE_SERVERS = {
+    "legislation": (
+        EXPECTED_LEGISLATION_URL,
+        EXPECTED_LEGISLATION_AUTH,
+        "MCP_LEGISLATION_SECRET",
+    ),
+    "jurisprudence": (
+        EXPECTED_JURISPRUDENCE_URL,
+        EXPECTED_JURISPRUDENCE_AUTH,
+        "MCP_JURISPRUDENCE_SECRET",
+    ),
+}
 _HEX_SECRET_RE = re.compile(r"[0-9a-f]{32,}", re.I)
-ALLOWED_TOOL_PREFIXES = frozenset({"legislation", "jurisprudence", "greffe", "palais"})
+ALLOWED_TOOL_PREFIXES = frozenset(
+    {"legislation", "jurisprudence", "greffe", "palais", "calendrier", "interets"}
+)
 
 BANNED_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     ("mention de pallas-athena", re.compile(r"pallas[-_]athena", re.I)),
@@ -389,9 +410,13 @@ def verifier(racine: Path) -> list[str]:
 
     if agy_mcp is not None:
         agy_servers = agy_mcp.get("mcpServers")
-        if not isinstance(agy_servers, dict) or set(agy_servers.keys()) != {"jurisprudence"}:
+        if not isinstance(agy_servers, dict) or set(agy_servers.keys()) != {
+            "jurisprudence",
+            "pratique-civile-outils",
+        }:
             erreurs.append(
-                "mcp_config.json : 'mcpServers' doit déclarer exactement 'jurisprudence'"
+                "mcp_config.json : 'mcpServers' doit déclarer exactement "
+                "'jurisprudence' et 'pratique-civile-outils'"
             )
         else:
             srv = agy_servers["jurisprudence"]
@@ -424,6 +449,27 @@ def verifier(racine: Path) -> list[str]:
                         "mcp_config.json : variables doit déclarer MCP_JURISPRUDENCE_SECRET "
                         "avec 'title' et 'description'"
                     )
+            outils_srv = agy_servers["pratique-civile-outils"]
+            if not isinstance(outils_srv, dict):
+                erreurs.append(
+                    "mcp_config.json : mcpServers.pratique-civile-outils doit être un objet JSON"
+                )
+            else:
+                if "eager" in outils_srv:
+                    erreurs.append(
+                        "mcp_config.json : mcpServers.pratique-civile-outils ne doit pas "
+                        "contenir 'eager'"
+                    )
+                if outils_srv.get("url") != EXPECTED_OUTILS_URL:
+                    erreurs.append(
+                        "mcp_config.json : mcpServers.pratique-civile-outils.url doit valoir "
+                        f"'{EXPECTED_OUTILS_URL}'"
+                    )
+                if set(outils_srv.keys()) != {"url"}:
+                    erreurs.append(
+                        "mcp_config.json : mcpServers.pratique-civile-outils ne doit contenir "
+                        "que la clé 'url'"
+                    )
 
     if gemini_ext is not None:
         if gemini_ext.get("name") != EXPECTED_PLUGIN_NAME:
@@ -436,9 +482,13 @@ def verifier(racine: Path) -> list[str]:
         else:
             versions["gemini-extension.json"] = ver
         g_servers = gemini_ext.get("mcpServers")
-        if not isinstance(g_servers, dict) or set(g_servers.keys()) != {"jurisprudence"}:
+        if not isinstance(g_servers, dict) or set(g_servers.keys()) != {
+            "jurisprudence",
+            "pratique-civile-outils",
+        }:
             erreurs.append(
-                "gemini-extension.json : 'mcpServers' doit déclarer exactement 'jurisprudence'"
+                "gemini-extension.json : 'mcpServers' doit déclarer exactement "
+                "'jurisprudence' et 'pratique-civile-outils'"
             )
         else:
             gsrv = g_servers["jurisprudence"]
@@ -455,6 +505,23 @@ def verifier(racine: Path) -> list[str]:
                     erreurs.append(
                         "gemini-extension.json : headers.Authorization doit valoir "
                         f"'{EXPECTED_JURISPRUDENCE_AUTH}'"
+                    )
+            g_outils = g_servers["pratique-civile-outils"]
+            if not isinstance(g_outils, dict):
+                erreurs.append(
+                    "gemini-extension.json : mcpServers.pratique-civile-outils doit être "
+                    "un objet JSON"
+                )
+            else:
+                if g_outils.get("httpUrl") != EXPECTED_OUTILS_URL:
+                    erreurs.append(
+                        "gemini-extension.json : mcpServers.pratique-civile-outils.httpUrl "
+                        f"doit valoir '{EXPECTED_OUTILS_URL}'"
+                    )
+                if set(g_outils.keys()) != {"httpUrl"}:
+                    erreurs.append(
+                        "gemini-extension.json : mcpServers.pratique-civile-outils ne doit "
+                        "contenir que la clé 'httpUrl'"
                     )
         settings = gemini_ext.get("settings")
         has_secret_setting = isinstance(settings, list) and any(
@@ -480,8 +547,8 @@ def verifier(racine: Path) -> list[str]:
     if mcp_json is not None:
         if mcp_json.get("mcpServers") != EXPECTED_MCP_SERVERS:
             erreurs.append(
-                ".mcp.json : 'mcpServers' doit déclarer exactement Legislation: {} et "
-                "Jurisprudence: {}"
+                ".mcp.json : 'mcpServers' doit déclarer exactement Legislation: {}, "
+                "Jurisprudence: {} et pratique-civile-outils"
             )
 
     # 4. Skills & references

@@ -13,8 +13,9 @@ recoupent pas.
 | `deontologie-professionnelle` | Qu'est-ce que je dois, ici? | L'obligation nommée au texte, signalée sans qu'on la demande |
 
 Aucune ne dépend d'un gestionnaire de dossiers. Le plugin `pallas-athena` fournit celui du
-cabinet; un autre connecteur, ou aucun, laisse les cinq compétences opérantes. Les connecteurs de
-sources de droit, eux, sont déclarés ici : voir `.mcp.json`, `mcp_config.json` et `gemini-extension.json`.
+cabinet; un autre connecteur, ou aucun, laisse les cinq compétences opérantes. Les connecteurs
+publics (sources de droit et calcul déterministe), eux, sont déclarés ici : voir `.mcp.json`,
+`mcp_config.json` et `gemini-extension.json`.
 
 ---
 
@@ -69,7 +70,7 @@ commun de douze besoins :
 | **TEXTE** | Le texte d'un document donné |
 | **ÉCHÉANCES** | Protocole, audiences, tâches, portrait de prescription |
 | **CORRESPONDANCE** | Les échanges — courriels, lettres, pièces jointes |
-| **CALCUL** | Le calcul d'un délai de procédure |
+| **CALCUL** | Le calcul d'un délai de procédure ou d'intérêts légaux — servi par le connecteur « pratique-civile-outils » (`calendrier_*`, `interets_compute_1619`), à défaut par `scripts/calcul_delai.py` pour les délais, autant que par un gestionnaire de dossiers |
 | **GREFFE** | La décomposition d'un numéro de dossier de cour — servi par le connecteur « Jurisprudence » (`greffe_*`, `palais_*`) autant que par un gestionnaire de dossiers |
 | **VOCABULAIRE** | Les codes qu'un système accepte en écriture |
 | **INSCRIPTION** | Verser un résultat au dossier |
@@ -89,17 +90,22 @@ pour combler.
 
 ## Les connecteurs
 
-Ce plugin déclare les deux connecteurs de **sources de droit** dont la méthode dépend :
+Ce plugin déclare les connecteurs publics de **sources de droit** et de **calcul déterministe** dont la méthode dépend :
 
 - **`.mcp.json` (Claude)** déclare « Legislation » et « Jurisprudence » par leur nom d'entrée au
   répertoire (`{}`) pour `claude.ai`, où l'autorisation reste attachée au compte sans variable
-  d'environnement locale (évitant le déclenchement d'une découverte OAuth sur `401`).
-- **`mcp_config.json` (Google Antigravity)** et **`gemini-extension.json` (Gemini CLI)** câblent
-  directement le point d'entrée Streamable HTTP de « Jurisprudence »
-  (`https://jurisprudence.poirierlavoie.ca/mcp` — page publique
-  <https://jurisprudence.poirierlavoie.ca/>, dépôt source
-  <https://github.com/jpoirierlavoie/MCP-Jurisprudence-Quebec>) avec authentification par en-tête
-  `Authorization: Bearer ${MCP_JURISPRUDENCE_SECRET}`. Aucun secret n'est déposé ici.
+  d'environnement locale (évitant le déclenchement d'une découverte OAuth sur `401`), ainsi que le
+  connecteur public et sans état « `pratique-civile-outils` » (`https://outils.poirierlavoie.ca/mcp`).
+- **`mcp_config.json` (Google Antigravity)** et **`gemini-extension.json` (Gemini CLI)** câblent :
+  - le point d'entrée Streamable HTTP de « Jurisprudence »
+    (`https://jurisprudence.poirierlavoie.ca/mcp` — page publique
+    <https://jurisprudence.poirierlavoie.ca/>, dépôt source
+    <https://github.com/jpoirierlavoie/MCP-Jurisprudence-Quebec>) avec authentification par en-tête
+    `Authorization: Bearer ${MCP_JURISPRUDENCE_SECRET}` (aucun secret n'est déposé ici);
+  - le point d'entrée public et sans état « `pratique-civile-outils` »
+    (`https://outils.poirierlavoie.ca/mcp`, sans secret requis), qui expose trois outils déterministes
+    sans journalisation des charges utiles ni persistance : `calendrier_list_holidays`,
+    `calendrier_compute_deadlines` et `interets_compute_1619`.
 
 Aucun **gestionnaire de dossiers** n'y est déclaré, ni nommé nulle part dans les compétences. C'est
 la seule frontière, et c'est elle qui rend ce plugin installable chez quelqu'un d'autre.
@@ -131,11 +137,11 @@ Toute compétence de ce plugin respecte un **contrat structurel à sept invarian
   effectivement une décision à une autre compétence. Nulle part ailleurs : un renvoi décoratif
   périme.
 - **Aucun nom de gestionnaire de dossiers ni de ses outils** dans ce plugin — c'est la seule
-  frontière, et elle est étanche. Les **connecteurs de sources de droit** sont au contraire nommés
-  librement : ce plugin déclare « Legislation » et « Jurisprudence » dans son
-  `.mcp.json`, et ses fichiers appellent leurs outils par leur nom, parce que la méthode n'a de
-  sens qu'appliquée à des appels précis. Le contrôle se fait par `verifier.py`, qui ne doit rien
-  retourner.
+  frontière, et elle est étanche. Les **connecteurs de sources de droit et de calcul** sont au contraire nommés
+  librement : ce plugin déclare « Legislation », « Jurisprudence » et « pratique-civile-outils » dans
+  ses manifestes MCP (`.mcp.json`, `mcp_config.json`, `gemini-extension.json`), et ses fichiers
+  appellent leurs outils par leur nom, parce que la méthode n'a de sens qu'appliquée à des appels
+  précis. Le contrôle se fait par `verifier.py`, qui ne doit rien retourner.
 - **Les chiffres sont des hypothèses** — seuils, délais, montants. Ils dérivent avec les
   modifications législatives et se revérifient aux sources avant emploi.
 - **Progressive disclosure** : le SKILL.md reste sous 3 000 mots; le détail va dans
@@ -172,18 +178,22 @@ et **Gemini CLI** : chaque plateforme lit son propre manifeste et ignore les aut
     `/plugin install pratique-civile-quebecoise@pratique-civile-quebecoise`; s'il n'est pas hérité
     du compte `claude.ai`, enregistrer le connecteur Streamable HTTP `Jurisprudence` avec :
     `claude mcp add --transport http Jurisprudence https://jurisprudence.poirierlavoie.ca/mcp --header "Authorization: Bearer ${MCP_JURISPRUDENCE_SECRET}"`.
+  - `.mcp.json` déclare également « `pratique-civile-outils` » (`https://outils.poirierlavoie.ca/mcp`),
+    sans secret requis.
 - **Google Antigravity** — `plugin.json`, `mcp_config.json` et `assets/logo.svg` :
   - installer via `agy plugin install https://github.com/jpoirierlavoie/pratique-civile-quebecoise.git`,
     ou copier le contenu dans `~/.gemini/config/plugins/pratique-civile-quebecoise`;
-  - `mcp_config.json` câble directement le connecteur `jurisprudence`
-    (`https://jurisprudence.poirierlavoie.ca/mcp`) : renseigner `MCP_JURISPRUDENCE_SECRET` sur la
+  - `mcp_config.json` câble directement `jurisprudence`
+    (`https://jurisprudence.poirierlavoie.ca/mcp`) et `pratique-civile-outils`
+    (`https://outils.poirierlavoie.ca/mcp`, sans secret) : renseigner `MCP_JURISPRUDENCE_SECRET` sur la
     page du plugin puis l'activer, et déclarer `Legislation` dans
     `~/.gemini/config/mcp_config.json` tant que son point d'entrée n'est pas câblé ici.
 - **Gemini CLI** — `gemini-extension.json` :
   - installer via `gemini extensions install https://github.com/jpoirierlavoie/pratique-civile-quebecoise`
     — `gemini-extension.json` préconfigure `jurisprudence`
-    (`https://jurisprudence.poirierlavoie.ca/mcp`) et demande de manière sécurisée (`sensitive: true`)
-    le secret `MCP_JURISPRUDENCE_SECRET`.
+    (`https://jurisprudence.poirierlavoie.ca/mcp`), demande de manière sécurisée (`sensitive: true`)
+    le secret `MCP_JURISPRUDENCE_SECRET`, et câble `pratique-civile-outils`
+    (`https://outils.poirierlavoie.ca/mcp`) sans secret requis.
 - **Contrôle** — exécuter `python verifier.py` depuis la racine du dépôt; le script valide les
   manifestes, les en-têtes YAML, les sept invariants structurels, les renvois aux fichiers de
   référence et l'étanchéité du contrat d'information, et ne retourne rien lorsque tout est conforme.

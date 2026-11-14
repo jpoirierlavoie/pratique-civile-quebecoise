@@ -1,8 +1,14 @@
 {
   "name": "pratique-civile-quebecoise",
   "version": "1.3.0",
-  "description": "Recherche, rédaction, analyse documentaire, calendrier procédural et déontologie en droit civil et commercial québécois. Câble le connecteur « Jurisprudence ».",
+  "description": "Recherche, rédaction, analyse documentaire, calendrier procédural et déontologie en droit civil et commercial québécois. Câble les connecteurs « Legislation » et « Jurisprudence ».",
   "settings": [
+    {
+      "name": "Secret partagé MCP Législation",
+      "description": "Secret partagé de l'instance MCP Législation (https://legislation.poirierlavoie.ca/mcp), transmis dans l'en-tête Authorization: Bearer.",
+      "envVar": "MCP_LEGISLATION_SECRET",
+      "sensitive": true
+    },
     {
       "name": "Secret partagé MCP Jurisprudence",
       "description": "Secret partagé de l'instance MCP Jurisprudence (https://jurisprudence.poirierlavoie.ca/mcp), transmis dans l'en-tête Authorization: Bearer.",
@@ -11,6 +17,12 @@
     }
   ],
   "mcpServers": {
+    "legislation": {
+      "httpUrl": "https://legislation.poirierlavoie.ca/mcp",
+      "headers": {
+        "Authorization": "Bearer ${MCP_LEGISLATION_SECRET}"
+      }
+    },
     "jurisprudence": {
       "httpUrl": "https://jurisprudence.poirierlavoie.ca/mcp",
       "headers": {

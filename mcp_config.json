@@ -1,5 +1,18 @@
 {
   "mcpServers": {
+    "legislation": {
+      "url": "https://legislation.poirierlavoie.ca/mcp",
+      "headers": {
+        "Authorization": "Bearer ${MCP_LEGISLATION_SECRET}"
+      },
+      "variables": [
+        {
+          "name": "MCP_LEGISLATION_SECRET",
+          "title": "Secret partagé MCP Législation",
+          "description": "Secret partagé de l'instance MCP Législation (https://legislation.poirierlavoie.ca/mcp), transmis dans l'en-tête Authorization: Bearer."
+        }
+      ]
+    },
     "jurisprudence": {
       "url": "https://jurisprudence.poirierlavoie.ca/mcp",
       "headers": {

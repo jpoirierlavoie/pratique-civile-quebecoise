@@ -180,7 +180,7 @@ fichier de famille précise, à sa section 0, lesquels lui sont indispensables.
 | **INVENTAIRE** | Ce qui existe comme document — donc la cote et la formule de pièce, et le téléversement à demander |
 | **CORRESPONDANCE** | Ce que le dossier ne porte pas : l'échange antérieur, les engagements pris, la mise en demeure déjà envoyée |
 | **ÉCHÉANCES** | Le contexte procédural, quand l'écrit s'y rattache |
-| **CALCUL** | Tout délai de procédure à énoncer, plutôt qu'un calcul à la main |
+| **CALCUL** | Tout délai de procédure (`calendrier_compute_deadlines`) ou décompte d'intérêts légaux et d'indemnité additionnelle (`interets_compute_1619`) à énoncer, plutôt qu'un calcul à la main |
 | **GREFFE** | Le district et le tribunal à alléguer, dérivés du numéro de dossier de cour |
 
 **La substance vit souvent hors du dossier**, dans la correspondance plutôt que dans les notes :

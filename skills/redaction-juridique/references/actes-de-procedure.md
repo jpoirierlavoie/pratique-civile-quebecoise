@@ -346,6 +346,14 @@ cabinet si l'utilisateur en a un.
 **Point de départ des intérêts.** Généralement la date de la mise en demeure. Le préciser
 plutôt que de laisser « à compter de la demande », qui perd du temps d'intérêts.
 
+**Chiffrage des intérêts courus.** Lorsqu'un montant liquidé d'intérêts légaux et d'indemnité
+additionnelle (art. 1619 C.c.Q.) doit être chiffré à une date donnée dans une allégation ou une
+conclusion, exécuter `interets_compute_1619` (intérêt simple selon l'art. 1620 C.c.Q., décompte
+Exact/Exact par tranche trimestrielle, sans extrapoler de trimestre art. 28 L.A.F. non publié)
+plutôt que de calculer mentalement; si le besoin **CALCUL** n'est pas servi, conclure pour le
+capital avec intérêt au taux légal et indemnité additionnelle à compter de la mise en demeure et
+signaler hors projet toute période de taux non vérifiée.
+
 **Solidarité entre défendeurs.** Ne jamais conclure à `CONDAMNER solidairement` par automatisme.
 La solidarité entre codébiteurs ne se présume pas (art. 1525 al. 1 C.c.Q.) : elle exige une
 stipulation expresse, une disposition légale, une obligation contractée pour le service ou

@@ -98,7 +98,11 @@ celle des actes de procédure appliquée à la prose : les faits, précis, sans 
 
 Formuler la demande, **de manière vérifiable**. « Remédier à la situation » ne se vérifie pas.
 « Payer la somme de 14 250,00 $ » et « reprendre le solin périmétrique et le contre-solin de la
-façade est, conformément aux règles de l'art » se vérifient.
+façade est, conformément aux règles de l'art » se vérifient. Lorsque les intérêts légaux et
+l'indemnité additionnelle (art. 1619 C.c.Q.) courus sont chiffrés dans une mise en demeure ou
+une lettre de règlement, exécuter `interets_compute_1619` plutôt que de calculer mentalement; à
+défaut d'outillage, réclamer le capital augmenté des intérêts au taux légal et de l'indemnité
+additionnelle depuis la mise en demeure sans avancer de somme non vérifiée.
 
 Fixer le délai et le justifier implicitement par sa proportion à l'obligation.
 

@@ -95,3 +95,8 @@ juillet, 8 h 00 (111 al. 2) → 30 jours → 5 août ».
 3. Écrire l'échéance **avec** son compte : « 30 jours de l'avis du 3 juillet → 2 août, samedi →
    reporté au lundi 4 août ». Le compte visible est ce qui permet à l'avocat de le vérifier en dix
    secondes.
+4. Automatiser le compte sans compter de tête lorsque l'outillage est disponible : `calendrier_list_holidays`
+   (régimes `qc_cpc`, `qc_li`, `ca_li`) et `calendrier_compute_deadlines` résolvent les fériés statutaires,
+   le report de l'art. 83 et le déplacement de l'art. 111 al. 2 C.p.c., avec repli hors ligne sur
+   `scripts/calcul_delai.py` en régime `qc_cpc`; les jours proclamés et les heures d'ouverture du greffe
+   demeurent à vérifier séparément.
